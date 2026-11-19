@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cycladic Villa Kea — Private villa above Ioulida, Kea</title>
+<meta name="description" content="A private Cycladic villa above Ioulida on Kea, for up to six guests, with a terrace facing the Aegean and the sunset. Request availability and we reply personally.">
+<meta name="theme-color" content="#F6F3EE">
+<script>
+  /* Before paint: arm the motion states. Failsafe: if main.js never runs, show everything. */
+  document.documentElement.classList.add('js');
+  window.__cvkFailsafe = setTimeout(function () { document.documentElement.classList.add('is-ready', 'reveal-all'); }, 3000);
+</script>
+<link rel="preload" as="image" type="image/webp"
+      imagesrcset="assets/img/hero-terrace-lounge-720.webp 720w, assets/img/hero-terrace-lounge-1080.webp 1080w, assets/img/hero-terrace-lounge-1440.webp 1440w"
+      imagesizes="(min-width: 960px) 56vw, 100vw">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Noto Serif Display (Latin + Greek, incl. Greek italics) · Commissioner (Latin + Greek). Falls back to system fonts offline. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300..600&family=Noto+Serif+Display:ital,wght@0,300..500;1,300..400&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" data-home aria-label="Cycladic Villa Kea — Home" data-i18n-aria="brandAria">
+      <span class="brand__name">Cycladic Villa Kea</span>
+      <span class="brand__place" data-i18n="place">Ioulida · Kea</span>
+    </a>
+    <nav class="nav" aria-label="Main" data-i18n-aria="navMain">
+      <ul class="nav__links">
+        <li><a href="#top" data-home data-i18n="navHome">Home</a></li>
+        <li><a href="#villa" data-i18n="navVilla">The villa</a></li>
+        <li><a href="#kea" data-i18n="navLocation">Location</a></li>
+        <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+      </ul>
+      <div class="lang" role="group" aria-label="Language" data-i18n-aria="langGroup">
+        <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="el" aria-pressed="false" lang="el">EL</button>
+      </div>
+      <a class="btn btn--sm" href="#contact" data-i18n="cta">Request availability</a>
+    </nav>
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Language" data-i18n-aria="langGroup">
+        <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="el" aria-pressed="false" lang="el">EL</button>
+      </div>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-panel">
+        <span class="menu-btn__label"><span class="menu-btn__open" data-i18n="menu">Menu</span><span class="menu-btn__close" data-i18n="menuClose">Close</span></span>
+        <span class="menu-btn__icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu: a full-screen panel that drops like a curtain; links arrive one after another. -->
+  <div class="menu-panel" id="menu-panel" aria-label="Menu" data-i18n-aria="menu">
+    <ol class="menu-panel__list">
+      <li style="--i:0"><a href="#top" data-home><span class="menu-panel__n">01</span><span data-i18n="navHome">Home</span></a></li>
+      <li style="--i:1"><a href="#villa"><span class="menu-panel__n">02</span><span data-i18n="navVilla">The villa</span></a></li>
+      <li style="--i:2"><a href="#kea"><span class="menu-panel__n">03</span><span data-i18n="navLocation">Location</span></a></li>
+      <li style="--i:3"><a href="#contact"><span class="menu-panel__n">04</span><span data-i18n="navContact">Contact</span></a></li>
+    </ol>
+    <div class="menu-panel__foot" style="--i:4">
+      <a class="btn" href="#contact"><span data-i18n="cta">Request availability</span></a>
+      <p class="menu-panel__meta"><a href="tel:+306945541114">+30 694 554 1114</a><span aria-hidden="true"> · </span><a href="https://www.instagram.com/cycladicvillakea" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<!-- ================= 1 · HERO =================
+     Photo of the terrace lounge = first image and fallback. On desktop a discreet moving shot
+     (the live panel of 01-kea-terrace-landscape.mp4) plays muted beside it; on mobile, with
+     reduced motion, or if playback fails, the photo stays and a Play button offers the clip. -->
+<section class="hero" id="top" data-scene="flow" tabindex="-1" aria-labelledby="hero-title">
+  <div class="hero__grid">
+    <div class="hero__media">
+      <figure class="ph hero__photo">
+        <picture>
+          <source type="image/webp"
+                  srcset="assets/img/hero-terrace-lounge-720.webp 720w, assets/img/hero-terrace-lounge-1080.webp 1080w, assets/img/hero-terrace-lounge-1440.webp 1440w"
+                  sizes="(min-width: 960px) 56vw, 100vw">
+          <img src="assets/img/hero-terrace-lounge-1440.jpg" width="1440" height="1084" fetchpriority="high" decoding="async"
+               alt="The shaded terrace lounge between two stone columns, looking out over the hills to the Aegean" data-i18n-alt="altHero">
+        </picture>
+      </figure>
+      <!-- Intro: a hairline appears on the sea horizon, then the view opens up and down from it. -->
+      <span class="hero__horizon" aria-hidden="true"></span>
+      <svg class="parapet" viewBox="0 0 1600 60" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path class="cap" d="M0 14 C160 9 300 16 470 11 C640 6 780 15 960 10 C1140 5 1300 13 1460 9 C1530 7 1570 9 1600 8 L1600 60 L0 60 Z"/>
+        <path class="wall" d="M0 22 C160 17 300 24 470 19 C640 14 780 23 960 18 C1140 13 1300 21 1460 17 C1530 15 1570 17 1600 16 L1600 60 L0 60 Z"/>
+      </svg>
+
+      <!-- Moving shot: only the right-hand live panel of the landscape file is shown (CSS crop, see .clip--panel). -->
+      <figure class="clip clip--panel hero-clip" data-clip="hero">
+        <video muted playsinline loop preload="none" poster="assets/video/01-kea-terrace-poster.jpg"
+               aria-label="Video: walking out from under the pergola towards the view" data-i18n-aria="vHeroAria">
+          <source src="assets/video/01-kea-terrace-landscape.mp4" type="video/mp4">
+        </video>
+        <button class="clip__btn" type="button" data-action="toggle" hidden>
+          <svg class="i-play" width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>
+          <svg class="i-pause" width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z" fill="currentColor"/></svg>
+          <span class="sr-only clip__label" data-i18n="vPause">Pause video</span>
+        </button>
+      </figure>
+      <button class="hero-play" type="button" hidden>
+        <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>
+        <span data-i18n="vHeroPlay">The terrace · 15 s</span>
+      </button>
+    </div>
+
+    <div class="hero__text">
+      <h1 id="hero-title" class="display">
+        <span class="l1-group">
+          <span class="kicker" data-i18n="eyebrow">A private villa on Kea, Cyclades</span>
+          <span class="l l1"><span data-i18n="h1a">Above Ioulida,</span></span>
+        </span>
+        <span class="l l2"><span><em data-i18n="h1b">facing the Aegean.</em></span></span>
+      </h1>
+      <div class="hero__after">
+        <p class="lead" data-i18n="heroSub">An elegant Cycladic house for up to six guests, with a shaded terrace that looks straight out to the Aegean.</p>
+      </div>
+      <!-- The two actions sit in their own row, lower in the column: they close the hero. -->
+      <div class="hero__actions">
+        <a class="btn" href="#contact"><span data-i18n="cta">Request availability</span><svg class="arr" width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a>
+        <a class="link" href="#villa"><span data-i18n="heroLink">Discover the house</span><svg class="arr" width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="wrap">
+      <ul>
+        <li style="--i:0"><strong>6</strong><span data-i18n="fGuests">guests at most</span></li>
+        <li style="--i:1"><strong>3</strong><span data-i18n="fBeds">bedrooms, double beds</span></li>
+        <li style="--i:2"><strong>100 m²</strong><span data-i18n="fSize">Cycladic house</span></li>
+        <li style="--i:3"><strong>2</strong><span data-i18n="fPark">cars, private parking</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2 · WELCOME — the statement lights up word by word as you scroll ================= -->
+<section class="welcome" data-scene="flow" aria-labelledby="welcome-title">
+  <div class="wrap welcome__grid">
+    <p class="kicker" id="welcome-title" data-i18n="kWelcome">Welcome</p>
+    <p class="welcome__text display" data-words data-i18n="welcome">White walls, grey stone and a wide view of the Aegean. Cycladic Villa Kea is a house for slow days above Ioulida, with room for six and a terrace that follows the light from morning to sunset.</p>
+    <figure class="ph ph--hover welcome__sign" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/villa-sign-640.webp 640w, assets/img/villa-sign-1080.webp 1080w, assets/img/villa-sign-1440.webp 1440w" sizes="(min-width: 960px) 22vw, 60vw"><img src="assets/img/villa-sign-1080.jpg" width="1080" height="608" loading="lazy" decoding="async" style="object-position:80% 50%" alt="A stone hand-painted with the words Cycladic villa and an arrow" data-i18n-alt="altSign"></picture></figure>
+  </div>
+</section>
+
+<!-- ================= 3 · THE HOUSE — text stays put while the photographs pass by ================= -->
+<section class="house" id="villa" tabindex="-1" aria-labelledby="house-title">
+  <div class="wrap house__layout">
+    <aside class="house__aside">
+      <div class="house__sticky">
+        <p class="kicker" data-i18n="kHouse">The house</p>
+        <h2 id="house-title" class="display section-title" data-i18n-html="houseTitle">An elegant Cycladic house, <em>open to the light.</em></h2>
+        <p class="body" data-i18n="houseP1">The house is built the way the island builds: whitewashed walls, blue shutters and stone paving underfoot. Its 100 m² are laid out for up to six people, so a family or a group of friends can share the days and still find a quiet room of their own.</p>
+        <p class="body" data-i18n="houseP2">Terraces wrap around the villa, so you can follow the shade or the sun as the day turns. Beyond them, an estate planted with oak trees keeps the house private and quiet above the village.</p>
+        <div class="house__index" aria-hidden="true">
+          <span class="house__count"><span class="house__n">01</span><span class="house__of"> / 07</span></span>
+          <span class="house__label" data-i18n="gl1">The façade</span>
+          <span class="house__bar"><span class="house__fill"></span></span>
+        </div>
+      </div>
+    </aside>
+    <div class="house__gallery">
+      <div class="house__ticker" aria-hidden="true"><span class="house__n">01</span><span class="house__of">/07</span><span class="house__label" data-i18n="gl1">The façade</span><span class="house__bar"><span class="house__fill"></span></span></div>
+
+      <div class="g-item g--wide" data-index="1" data-label="gl1">
+        <figure class="ph ph--hover g-ph" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/facade-800.webp 800w, assets/img/facade-1280.webp 1280w, assets/img/facade-1800.webp 1800w" sizes="(min-width: 960px) 52vw, 100vw"><img src="assets/img/facade-1280.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="The whitewashed façade with blue shutters, stone paving and a terracotta jar" data-i18n-alt="altFacade"></picture></figure>
+        <p class="g-cap"><span class="g-cap__n">01</span> <span data-i18n="gl1">The façade</span><span class="g-cap__sep" aria-hidden="true"> · </span><span class="g-cap__t" data-i18n="gc1">Whitewash, blue shutters, stone underfoot.</span></p>
+      </div>
+      <div class="g-item g--left" data-index="2" data-label="gl2">
+        <figure class="ph ph--hover g-ph" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/aerial-house-640.webp 640w, assets/img/aerial-house-1080.webp 1080w, assets/img/aerial-house-1440.webp 1440w" sizes="(min-width: 960px) 52vw, 100vw"><img src="assets/img/aerial-house-1080.jpg" width="1080" height="1080" loading="lazy" decoding="async" alt="The villa from above, with its stone terraces, the hills and the sea" data-i18n-alt="altAerial"></picture></figure>
+        <p class="g-cap"><span class="g-cap__n">02</span> <span data-i18n="gl2">On its own land</span><span class="g-cap__sep" aria-hidden="true"> · </span><span class="g-cap__t" data-i18n="gc2">Terraces around the house, the hills and the sea beyond.</span></p>
+      </div>
+      <div class="g-item g--wide" data-index="3" data-label="gl3">
+        <figure class="ph ph--hover g-ph" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/living-room-640.webp 640w, assets/img/living-room-1080.webp 1080w" sizes="(min-width: 960px) 52vw, 100vw"><img src="assets/img/living-room-1080.jpg" width="1080" height="1080" loading="lazy" decoding="async" alt="The living room with blue sofas, a coffee table and the kitchen beyond" data-i18n-alt="altLiving"></picture></figure>
+        <p class="g-cap"><span class="g-cap__n">03</span> <span data-i18n="gl3">The living room</span><span class="g-cap__sep" aria-hidden="true"> · </span><span class="g-cap__t" data-i18n="gc3">Deep sofas in island blue, open to the kitchen.</span></p>
+      </div>
+      <div class="g-item g--right" data-index="4" data-label="gl4">
+        <figure class="ph ph--hover g-ph" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/kitchen-640.webp 640w, assets/img/kitchen-1080.webp 1080w" sizes="(min-width: 960px) 52vw, 100vw"><img src="assets/img/kitchen-1080.jpg" width="1080" height="1080" loading="lazy" decoding="async" alt="The kitchen with grey cabinets, patterned tiles and a wooden dining table" data-i18n-alt="altKitchen"></picture></figure>
+        <p class="g-cap"><span class="g-cap__n">04</span> <span data-i18n="gl4">The kitchen</span><span class="g-cap__sep" aria-hidden="true"> · </span><span class="g-cap__t" data-i18n="gc4">Fully equipped, with a dining table for meals indoors.</span></p>
+      </div>
+      <div class="g-item g--pair" data-index="5" data-label="gl5">
+        <figure class="ph ph--hover g-ph g-ph--a" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/bedroom-canopy-640.webp 640w, assets/img/bedroom-canopy-1080.webp 1080w" sizes="(min-width: 960px) 26vw, 50vw"><img src="assets/img/bedroom-canopy-1080.jpg" width="1080" height="1080" loading="lazy" decoding="async" alt="A bedroom with a canopy over the double bed and a door to the garden" data-i18n-alt="altCanopy"></picture></figure><figure class="ph ph--hover g-ph g-ph--b g-arch" data-reveal="photo" style="--d:140ms"><picture><source type="image/webp" srcset="assets/img/bedroom-640.webp 640w, assets/img/bedroom-1024.webp 1024w, assets/img/bedroom-1080.webp 1080w, assets/img/bedroom-1600.webp 1600w" sizes="(min-width: 960px) 26vw, 50vw"><img src="assets/img/bedroom-1024.jpg" width="1024" height="576" loading="lazy" decoding="async" style="object-position:62% 50%" alt="A bright bedroom with a double bed and windows open to the hills" data-i18n-alt="altBedroom"></picture></figure>
+        <p class="g-cap"><span class="g-cap__n">05</span> <span data-i18n="gl5">The bedrooms</span><span class="g-cap__sep" aria-hidden="true"> · </span><span class="g-cap__t" data-i18n="gc5">Three, each with a double bed.</span></p>
+      </div>
+      <div class="g-item g--trio" data-index="6" data-label="gl6">
+        <figure class="ph ph--hover g-ph g-ph--a" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/detail-plate-640.webp 640w, assets/img/detail-plate-1080.webp 1080w" sizes="(min-width: 960px) 26vw, 50vw"><img src="assets/img/detail-plate-1080.jpg" width="1080" height="1351" loading="lazy" decoding="async" alt="Hand-painted blue plates on a whitewashed wall" data-i18n-alt="altPlate"></picture></figure><figure class="ph ph--hover g-ph g-ph--b" data-reveal="photo" style="--d:120ms"><picture><source type="image/webp" srcset="assets/img/detail-towels-640.webp 640w, assets/img/detail-towels-1080.webp 1080w, assets/img/detail-towels-1440.webp 1440w" sizes="(min-width: 960px) 26vw, 50vw"><img src="assets/img/detail-towels-1080.jpg" width="1080" height="1080" loading="lazy" decoding="async" alt="Rolled white towels on a made bed" data-i18n-alt="altTowels"></picture></figure><figure class="ph ph--hover g-ph g-ph--c" data-reveal="photo" style="--d:240ms"><picture><source type="image/webp" srcset="assets/img/detail-window-640.webp 640w, assets/img/detail-window-1080.webp 1080w" sizes="(min-width: 960px) 26vw, 50vw"><img src="assets/img/detail-window-1080.jpg" width="1080" height="1350" loading="lazy" decoding="async" alt="A window with blue shutters and a pot of geraniums" data-i18n-alt="altWindow"></picture></figure>
+        <p class="g-cap"><span class="g-cap__n">06</span> <span data-i18n="gl6">Details</span><span class="g-cap__sep" aria-hidden="true"> · </span><span class="g-cap__t" data-i18n="gc6">Hand-painted plates, soft linen, blue shutters.</span></p>
+      </div>
+
+      <div class="g-item g--tour" data-index="7" data-label="gl7">
+        <figure class="clip clip--panel house__tour" data-clip="section" data-reveal="photo">
+          <video muted playsinline preload="none" poster="assets/video/03-kea-villa-montage-poster.jpg"
+                 aria-label="Video: a short tour around the house" data-i18n-aria="vTourAria">
+            <source src="assets/video/03-kea-villa-montage-landscape.mp4" type="video/mp4">
+          </video>
+          <button class="clip__play" type="button" data-action="toggle"><span class="clip__icon" aria-hidden="true"><svg class="i-play" width="14" height="14" viewBox="0 0 14 14"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg><svg class="i-pause" width="14" height="14" viewBox="0 0 14 14"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z" fill="currentColor"/></svg></span><span class="clip__label" data-i18n="vTourPlay">Play the tour · 27 s</span></button>
+          <button class="clip__sound" type="button" data-action="sound" aria-pressed="false" hidden><span data-i18n="vSoundOn">Sound on</span></button>
+        </figure>
+        <div class="in-short" data-reveal style="--d:120ms">
+          <p class="in-short__title"><span class="g-cap__n">07</span> <span data-i18n="gl7">In short</span></p>
+          <dl class="spec">
+            <div><dt data-i18n="sGuests">Guests</dt><dd data-i18n="vGuests">Up to 6</dd></div>
+            <div><dt data-i18n="sBeds">Bedrooms</dt><dd data-i18n="vBeds">3, all with double beds</dd></div>
+            <div><dt data-i18n="sSize">Size</dt><dd data-i18n="vSize">100 m²</dd></div>
+            <div><dt data-i18n="sComfort">Comfort</dt><dd data-i18n="vComfort">Wi-Fi, air conditioning</dd></div>
+            <div><dt data-i18n="sKitchen">Kitchen</dt><dd data-i18n="vKitchen">Fully equipped</dd></div>
+            <div><dt data-i18n="sPark">Parking</dt><dd data-i18n="vPark">Private, for 2 cars</dd></div>
+            <!-- The one place where the price appears. Indicative until Nicole confirms it. -->
+            <div class="spec__cost"><dt data-i18n="sCost">Cost</dt><dd><strong><span data-i18n="vCost">€100 per night</span><sup aria-hidden="true">*</sup></strong></dd></div>
+          </dl>
+          <p class="spec__foot"><span aria-hidden="true">* </span><span data-i18n="vCostNote">Indicative, to be confirmed</span></p>
+          <!-- TODO: link to "The villa" page when it exists: add href="villa.html" (EL: el/villa.html) and remove aria-disabled. -->
+          <p class="more"><a class="link link--pending" aria-disabled="true"><span data-i18n="houseCta">Explore the villa</span><svg class="arr" width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4 · THE TERRACE — one pinned stage, morning turns into late afternoon ================= -->
+<section class="stage-scene" id="terrace" data-scene="pin" tabindex="-1" aria-labelledby="terrace-title">
+  <div class="stage">
+    <div class="stage__sky" aria-hidden="true"></div>
+    <div class="wrap stage__grid">
+      <div class="stage__text">
+        <p class="kicker" data-i18n="kTerrace">The terrace</p>
+        <h2 id="terrace-title" class="display section-title" data-i18n-html="terraceTitle">Under the pergola, <em>the Aegean in front of you.</em></h2>
+        <div class="moments">
+          <div class="moment moment--am">
+            <p class="moment__label" data-i18n="mMorning">Morning</p>
+            <p class="body" data-i18n="terraceMorning">In the morning the pergola throws striped shade across the table. Breakfast happens in the cool, while the hills and the sea are still pale in the distance.</p>
+          </div>
+          <div class="moment moment--pm">
+            <p class="moment__label" data-i18n="mEvening">Late afternoon</p>
+            <p class="body" data-i18n="terraceEvening">Later the light turns and falls towards the Aegean. The stone wall warms, the hills go gold, and the sun sets over the sea in front of the main terrace.</p>
+          </div>
+        </div>
+        <div class="dial" aria-hidden="true">
+          <svg class="dial__arc" viewBox="0 0 200 104"><path d="M6 100 A94 94 0 0 1 194 100" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 5"/><line x1="0" y1="100.5" x2="200" y2="100.5" stroke="currentColor" stroke-width="1"/></svg>
+          <span class="dial__arm"><span class="dial__sun"></span></span>
+          <span class="dial__l" data-i18n="dialAm">Morning</span><span class="dial__r" data-i18n="dialPm">Sunset</span>
+        </div>
+      </div>
+      <div class="stage__media">
+        <div class="layer layer--am">
+          <figure class="ph ph--hover layer__main"><picture><source type="image/webp" srcset="assets/img/terrace-table-640.webp 640w, assets/img/terrace-table-960.webp 960w, assets/img/terrace-table-1365.webp 1365w" sizes="(min-width: 960px) 46vw, 100vw"><img src="assets/img/terrace-table-960.jpg" width="960" height="960" loading="lazy" decoding="async" alt="The dining table under the pergola, with the hills and the Aegean beyond" data-i18n-alt="altTerrace"></picture></figure>
+          <figure class="ph ph--hover layer__aside"><picture><source type="image/webp" srcset="assets/img/breakfast-view-640.webp 640w, assets/img/breakfast-view-1080.webp 1080w, assets/img/breakfast-view-1440.webp 1440w" sizes="(min-width: 960px) 18vw, 40vw"><img src="assets/img/breakfast-view-1080.jpg" width="1080" height="950" loading="lazy" decoding="async" alt="Coffee for two on the glass table, with Ioulida and the sea beyond" data-i18n-alt="altBreakfast"></picture></figure>
+        </div>
+        <div class="layer layer--pm">
+          <figure class="ph ph--hover layer__main"><picture><source type="image/webp" srcset="assets/img/sunset-house-640.webp 640w, assets/img/sunset-house-1080.webp 1080w, assets/img/sunset-house-1440.webp 1440w" sizes="(min-width: 960px) 46vw, 100vw"><img src="assets/img/sunset-house-1080.jpg" width="1080" height="720" loading="lazy" decoding="async" alt="The villa at sunset, the sun low over the sea beyond the stone terrace" data-i18n-alt="altSunsetHouse"></picture></figure>
+          <figure class="clip clip--panel layer__aside layer__clip" data-clip="section">
+            <video muted playsinline preload="none" poster="assets/video/02-kea-golden-hour-poster.jpg"
+                   aria-label="Video: late afternoon light through the curtains" data-i18n-aria="vGoldAria">
+              <source src="assets/video/02-kea-golden-hour-landscape.mp4" type="video/mp4">
+            </video>
+            <button class="clip__play" type="button" data-action="toggle"><span class="clip__icon" aria-hidden="true"><svg class="i-play" width="14" height="14" viewBox="0 0 14 14"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg><svg class="i-pause" width="14" height="14" viewBox="0 0 14 14"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z" fill="currentColor"/></svg></span><span class="clip__label" data-i18n="vGoldPlay">Golden hour</span></button>
+            <button class="clip__sound" type="button" data-action="sound" aria-pressed="false" hidden><span data-i18n="vSoundOn">Sound on</span></button>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5 · IOULIDA — a Cycladic arch opens onto the village ================= -->
+<section class="window-scene" id="kea" data-scene="pin" tabindex="-1" aria-labelledby="kea-title">
+  <div class="window">
+    <p class="window__title display" aria-hidden="true" data-i18n-html="windowTitle">Ioulida, <em>just below.</em></p>
+    <figure class="window__frame">
+      <picture><source type="image/webp" srcset="assets/img/ioulida-view-600.webp 600w, assets/img/ioulida-view-960.webp 960w, assets/img/ioulida-view-1440.webp 1440w" sizes="100vw"><img src="assets/img/ioulida-view-960.jpg" width="960" height="1200" loading="lazy" decoding="async" style="object-position:50% 36%" alt="Ioulida spread across the hillside, seen from the villa’s terrace wall" data-i18n-alt="altIoulida"></picture>
+    </figure>
+    <div class="window__card">
+      <div class="window__head">
+        <p class="kicker" data-i18n="kKea">Ioulida &amp; Kea</p>
+        <h2 id="kea-title" class="window__h" data-i18n-html="keaTitle">A village of stairways, <em>just below.</em></h2>
+      </div>
+      <div class="window__body">
+      <p class="body" data-i18n="keaP">The villa sits on the slope above Ioulida, Kea’s hilltop capital. From the terrace wall you look down over its rooftops, lanes and stairways, with oak-covered hills folding away towards the sea.</p>
+      <p class="body" data-i18n="keaP2">Kea is the closest of the Cyclades to Athens, about an hour by ferry from Lavrio.</p>
+      <!-- TODO: link to the "Location" page when it exists: add href="location.html" (EL: el/location.html) and remove aria-disabled. -->
+      <p class="more"><a class="link link--pending" aria-disabled="true"><span data-i18n="keaCta">Location &amp; directions</span><svg class="arr" width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6 · CLOSING — night falls, the sun sets on the horizon line =================
+     For now every "Request availability" lands here. In the full site they go to the form on the Contact page. -->
+<section class="ask" id="contact" data-scene="flow" tabindex="-1" aria-labelledby="ask-title">
+  <div class="wrap">
+    <div class="ask__head" data-reveal>
+      <p class="kicker" data-i18n="kAsk">Availability</p>
+      <h2 id="ask-title" class="display" data-i18n-html="askTitle">Tell us <em>your dates.</em></h2>
+    </div>
+    <div class="ask__body" data-reveal style="--d:120ms">
+      <p data-i18n="askP">Send us the dates you have in mind and how many of you are coming. We’ll check availability and reply personally with the total price for your stay.</p>
+      <p class="ask__langs" data-i18n="askLangs">We reply in English, Greek or French.</p>
+      <div class="ask__actions">
+        <!-- TODO: link to the Contact page (form + date picker) when it exists: add href="contact.html" (EL: el/contact.html) and remove aria-disabled. -->
+        <a class="btn btn--light btn--pending" aria-disabled="true"><span data-i18n="askContact">Contact us</span><svg class="arr" width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a>
+        <a class="link link--light" href="tel:+306945541114"><span data-i18n="askCall">Call us</span>&nbsp;<span style="font-variant-numeric: tabular-nums">+30 694 554 1114</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="footer__horizon" aria-hidden="true"></span>
+    <div class="footer__top">
+      <div class="footer__brand">
+        <p class="footer__name">Cycladic Villa Kea</p>
+        <p class="footer__tagline" data-i18n="tagline">Your Cycladic escape above the sea.</p>
+        <p class="footer__follow"><span class="footer__label" data-i18n="fFollow">Follow us</span>
+          <a class="footer__link" href="https://www.instagram.com/cycladicvillakea" target="_blank" rel="noopener">Instagram</a>
+          <!-- Facebook: add once the correct page URL is confirmed.
+          <a class="footer__link" href="FACEBOOK_PAGE_URL" target="_blank" rel="noopener">Facebook</a>
+          -->
+        </p>
+      </div>
+      <div class="footer__spacer" aria-hidden="true"></div>
+      <nav class="footer__col" aria-labelledby="f-explore">
+        <h2 id="f-explore" data-i18n="fExplore">Explore</h2>
+        <ul>
+          <li><a class="footer__link" href="#villa" data-i18n="navVilla">The villa</a></li>
+          <li><a class="footer__link" href="#kea" data-i18n="navLocation">Location</a></li>
+          <li><a class="footer__link" href="#contact" data-i18n="navContact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer__col">
+        <h2 data-i18n="fContact">Contact</h2>
+        <ul>
+          <!-- Email address may change -->
+          <li><a class="footer__link" href="mailto:info@cycladicvillakea.com">info@cycladicvillakea.com</a></li>
+          <li><a class="footer__link" href="tel:+306945541114" style="font-variant-numeric: tabular-nums">+30 694 554 1114</a></li>
+          <li class="footer__langs" data-i18n="fLangs">English · Ελληνικά · Français</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <!-- Copyright kept exactly as before. The privacy policy link returns when that page exists. -->
+      <p>© 2026 Cycladic Villa Kea · <span data-i18n="privacy">Privacy policy</span></p>
+      <p data-i18n="credit">Website by Michalis Merkouris</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" aria-hidden="true">
+  <p><strong data-i18n="stickyA">Personal reply</strong><span data-i18n="stickyB">EN · EL · FR</span></p>
+  <a class="btn btn--sm" href="#contact" tabindex="-1" data-i18n="cta">Request availability</a>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
