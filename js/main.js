@@ -199,20 +199,36 @@
     window.addEventListener('resize', function () { if (window.innerWidth >= 960 && menuBtn.getAttribute('aria-expanded') === 'true') setMenu(false, true); });
   }
 
-  /* ---------------- Home and in-page links ---------------- */
+  /* ---------------- Home and in-page links: eased smooth scroll (v4.7) ----------------
+     Our own animation, so it stays smooth even where the browser drops CSS smooth scrolling
+     (e.g. Chrome on Windows with animation effects off). Any wheel/touch/key input takes over at once. */
+  var scrollAnim = 0;
+  function stopScroll() { if (scrollAnim) { cancelAnimationFrame(scrollAnim); scrollAnim = 0; } }
+  ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) { window.addEventListener(ev, stopScroll, { passive: true }); });
+  function smoothScrollTo(y, done) {
+    stopScroll();
+    var start = window.scrollY, dist = y - start, t0 = null;
+    if (Math.abs(dist) < 2) { if (done) done(); return; }
+    var dur = Math.min(1500, Math.max(650, Math.abs(dist) * 0.45));
+    var ease = function (t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
+    (function step(now) {
+      if (t0 === null) t0 = now;
+      var k = Math.min(1, (now - t0) / dur);
+      window.scrollTo(0, start + dist * ease(k));
+      if (k < 1) scrollAnim = requestAnimationFrame(step); else { scrollAnim = 0; if (done) done(); }
+    })(performance.now());
+  }
   document.addEventListener('click', function (e) {
     var a = e.target.closest('a[href^="#"]');
-    if (!a) return;
-    if (a.hasAttribute('data-home')) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
-      setTimeout(function () { document.getElementById('top').focus({ preventScroll: true }); }, 450);
-      return;
-    }
+    if (!a || a.classList.contains('skip') || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
     var id = a.getAttribute('href').slice(1);
-    var target = id && document.getElementById(id);
-    if (target) setTimeout(function () { target.focus({ preventScroll: true }); }, 450);
+    var target = a.hasAttribute('data-home') ? document.getElementById('top') : (id && document.getElementById(id));
+    if (!target) return;
+    e.preventDefault();
+    var y = a.hasAttribute('data-home') ? 0
+      : target.getBoundingClientRect().top + window.scrollY - (parseFloat(getComputedStyle(target).scrollMarginTop) || 0);
+    smoothScrollTo(Math.max(0, Math.round(y)), function () { target.focus({ preventScroll: true }); });
+    if (history.replaceState) history.replaceState(null, '', a.hasAttribute('data-home') ? location.pathname + location.search : '#' + id);
   });
 
   /* ---------------- Video clips ----------------

@@ -36,6 +36,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html.js { scroll-behavior: auto; }   /* v4.7: with JS, in-page links use our own eased scroll (works even when the OS turns off animations) */
 body {
   margin: 0; background: var(--chalk); color: var(--ink);
   font-family: var(--f-text); font-size: 17px; line-height: 1.65;

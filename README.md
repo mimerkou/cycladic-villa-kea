@@ -9,4 +9,4 @@ Static site (HTML, CSS, JS), no build step. Open `index.html` or deploy the repo
 - `js/main.js` — scroll scenes, language switcher, menu, video clips
 - `assets/img`, `assets/video` — photos and video clips
 
-Version: v4.6
+Version: v4.7
