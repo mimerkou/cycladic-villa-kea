@@ -369,8 +369,11 @@
       var first = new Date(view.getFullYear(), view.getMonth() + m, 1);
       var title = fmt(first, { month: 'long', year: 'numeric' });
       html += '<div class="cal__month"><p class="cal__title">' + title.charAt(0).toUpperCase() + title.slice(1) + '</p>' +
-        '<div class="cal__grid" role="grid" aria-label="' + title + '"><div class="cal__wd" role="row">' +
-        wd.map(function (w) { return '<span role="columnheader">' + w + '</span>'; }).join('') + '</div><div class="cal__days">';
+        // A labelled group of day buttons (arrow keys move between days). Each button's label already
+        // names the weekday, so the weekday row is visual only. (A role="grid" would need row/gridcell
+        // wrappers, which the 7-column layout does not have.)
+        '<div class="cal__grid" role="group" aria-label="' + title + '"><div class="cal__wd" aria-hidden="true">' +
+        wd.map(function (w) { return '<span>' + w + '</span>'; }).join('') + '</div><div class="cal__days">';
       var lead = (first.getDay() + 6) % 7;
       for (var i = 0; i < lead; i++) html += '<span class="cal__pad" aria-hidden="true"></span>';
       var days = new Date(first.getFullYear(), first.getMonth() + 1, 0).getDate();
