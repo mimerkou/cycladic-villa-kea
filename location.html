@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Location — Cycladic Villa Kea, above Ioulida, Kea</title>
+<meta name="description" content="Where Cycladic Villa Kea is and how to get there: the ferry from Lavrio to Korissia, the road up to Ioulida, distances, and a few ideas for your days on Kea.">
+<meta name="theme-color" content="#F6F3EE">
+<script>
+  /* Before paint: arm the motion states. Failsafe: if location.js never runs, show everything. */
+  document.documentElement.classList.add('js');
+  window.__cvkFailsafe = setTimeout(function () { document.documentElement.classList.add('is-ready', 'reveal-all'); }, 3000);
+</script>
+<link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/ioulida-clean-720.webp 720w, assets/img/ioulida-clean-1080.webp 1080w, assets/img/ioulida-clean-1440.webp 1440w" imagesizes="100vw">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300..600&family=Noto+Serif+Display:ital,wght@0,300..500;1,300..400&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/location.css">
+</head>
+<body class="page-location">
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Cycladic Villa Kea — Home" data-i18n-aria="brandAria">
+      <span class="brand__name">Cycladic Villa Kea</span>
+      <span class="brand__place" data-i18n="place">Ioulida · Kea</span>
+    </a>
+    <nav class="nav" aria-label="Main" data-i18n-aria="navMain">
+      <ul class="nav__links">
+        <li><a href="index.html" data-i18n="navHome">Home</a></li>
+        <li><a href="villa.html" data-i18n="navVilla">The villa</a></li>
+        <li><a href="location.html" aria-current="page" data-i18n="navLocation">Location</a></li>
+        <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+      </ul>
+      <div class="lang" role="group" aria-label="Language" data-i18n-aria="langGroup"><button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="el" aria-pressed="false" lang="el">EL</button></div>
+      <!-- TODO: link to the Contact page (form + date picker) when it exists: add href="contact.html" (EL: el/contact.html) and remove aria-disabled. -->
+      <a class="btn btn--sm btn--pending" aria-disabled="true" data-i18n="cta">Request availability</a>
+    </nav>
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Language" data-i18n-aria="langGroup"><button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="el" aria-pressed="false" lang="el">EL</button></div>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-panel">
+        <span class="menu-btn__label"><span class="menu-btn__open" data-i18n="menu">Menu</span><span class="menu-btn__close" data-i18n="menuClose">Close</span></span>
+        <span class="menu-btn__icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+  <div class="menu-panel" id="menu-panel" aria-label="Menu" data-i18n-aria="menu">
+    <ol class="menu-panel__list">
+      <li style="--i:0"><a href="index.html"><span class="menu-panel__n">01</span><span data-i18n="navHome">Home</span></a></li>
+      <li style="--i:1"><a href="villa.html"><span class="menu-panel__n">02</span><span data-i18n="navVilla">The villa</span></a></li>
+      <li style="--i:2"><a href="location.html" aria-current="page"><span class="menu-panel__n">03</span><span data-i18n="navLocation">Location</span></a></li>
+      <li style="--i:3"><a href="#contact"><span class="menu-panel__n">04</span><span data-i18n="navContact">Contact</span></a></li>
+    </ol>
+    <div class="menu-panel__foot" style="--i:4">
+      <!-- TODO: link to the Contact page (form + date picker) when it exists: add href="contact.html" (EL: el/contact.html) and remove aria-disabled. -->
+      <a class="btn btn--pending" aria-disabled="true"><span data-i18n="cta">Request availability</span></a>
+      <p class="menu-panel__meta"><a href="tel:+306945541114">+30 694 554 1114</a><span aria-hidden="true"> · </span><a href="https://www.instagram.com/cycladicvillakea" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- ================= HERO — the morning haze lifts off Ioulida ================= -->
+<section class="lhero" id="top" aria-labelledby="lhero-title">
+  <div class="wrap lhero__head">
+    <p class="kicker lhero__kicker" data-i18n="lKicker">Location</p>
+    <h1 id="lhero-title" class="display lhero__title" data-i18n-html="lTitle">Above Ioulida, <em>at the heart of Kea.</em></h1>
+    <p class="lead lhero__lead" data-i18n="lLead">Kea is the closest of the Cyclades to Athens, yet it keeps its own slow pace. The villa sits just above Ioulida, the island’s whitewashed capital, looking out over the hills to the Aegean.</p>
+  </div>
+  <div class="lhero__frame">
+    <figure class="ph lhero__photo"><picture><source type="image/webp" srcset="assets/img/ioulida-clean-720.webp 720w, assets/img/ioulida-clean-1080.webp 1080w, assets/img/ioulida-clean-1440.webp 1440w" sizes="100vw"><img src="assets/img/ioulida-clean-1080.jpg" width="1080" height="699" fetchpriority="high" decoding="async" style="object-position:50% 62%" alt="Ioulida spread across the hillside, with the hills and the sea beyond" data-i18n-alt="altHeroL"></picture></figure>
+    <div class="haze" aria-hidden="true"><span class="haze__veil"></span><span class="haze__bank haze__bank--a"></span><span class="haze__bank haze__bank--b"></span></div>
+  </div>
+  <div class="wrap"><ul class="vfacts lfacts"><li style="--i:0"><span class="vfacts__n" data-i18n="lf1n">≈1 h</span><span class="vfacts__t" data-i18n="lf1">by ferry from Lavrio</span></li><li style="--i:1"><span class="vfacts__n" data-i18n="lf2n">Ioulida</span><span class="vfacts__t" data-i18n="lf2">just below the villa</span></li><li style="--i:2"><span class="vfacts__n" data-i18n="lf3n">≈15′</span><span class="vfacts__t" data-i18n="lf3">by car from the port</span></li></ul> <!-- DEMO: ferry and drive times to be confirmed --></div>
+</section>
+
+<!-- ================= 01 GETTING HERE — the island rises; the journey travels the map as you scroll ================= -->
+<section class="journey" id="getting-here" aria-labelledby="journey-title">
+  <div class="wrap journey__grid">
+    <div class="journey__intro" data-reveal>
+      <p class="kicker" data-i18n="kJourney">01 · Getting here</p>
+      <h2 id="journey-title" class="display section-title" data-i18n-html="jTitle">From the harbour <em>to the house.</em></h2>
+      <p class="body journey__p journey__p--d" data-i18n="jP">Scroll on and follow the way: across the water to Korissia, then up the hill to Ioulida.</p>
+      <p class="body journey__p journey__p--m" data-i18n="jPm">Follow the way on the map: across the water to Korissia, then up the hill to Ioulida.</p>
+    </div>
+    <div class="journey__map">
+      <figure class="map">
+<svg class="map__svg" viewBox="-60 20 620 780" role="img" aria-labelledby="map-title">
+  <title id="map-title" data-i18n="mapAria">Illustrated map of Kea with Korissia, the port, and Ioulida, where the villa is</title>
+  <defs>
+    <pattern id="sea" width="10" height="7" patternUnits="userSpaceOnUse"><path d="M0 6.5H10" stroke="#93AEC6" stroke-width=".7" opacity=".55"/></pattern>
+    <clipPath id="island-clip"><path d="M300 58C308.7 58.0 321.3 63.8 330 70C338.7 76.2 345.0 87.0 352 95C359.0 103.0 364.8 112.5 372 118C379.2 123.5 390.0 122.7 395 128C400.0 133.3 397.8 148.0 402 150C406.2 152.0 412.8 138.3 420 140C427.2 141.7 439.7 151.7 445 160C450.3 168.3 452.8 180.8 452 190C451.2 199.2 440.0 206.7 440 215C440.0 223.3 447.0 230.8 452 240C457.0 249.2 467.3 259.2 470 270C472.7 280.8 470.0 294.2 468 305C466.0 315.8 459.0 324.2 458 335C457.0 345.8 463.3 358.3 462 370C460.7 381.7 454.0 395.0 450 405C446.0 415.0 439.0 420.8 438 430C437.0 439.2 445.3 448.3 444 460C442.7 471.7 434.3 486.7 430 500C425.7 513.3 422.2 527.5 418 540C413.8 552.5 409.3 563.3 405 575C400.7 586.7 396.2 597.5 392 610C387.8 622.5 385.0 636.7 380 650C375.0 663.3 368.7 677.5 362 690C355.3 702.5 347.3 714.7 340 725C332.7 735.3 324.7 749.5 318 752C311.3 754.5 305.0 747.8 300 740C295.0 732.2 291.7 717.0 288 705C284.3 693.0 282.3 680.5 278 668C273.7 655.5 266.7 643.0 262 630C257.3 617.0 254.0 601.7 250 590C246.0 578.3 239.0 570.0 238 560C237.0 550.0 245.7 540.0 244 530C242.3 520.0 233.0 510.8 228 500C223.0 489.2 217.7 476.7 214 465C210.3 453.3 206.0 440.8 206 430C206.0 419.2 215.0 410.0 214 400C213.0 390.0 204.0 380.8 200 370C196.0 359.2 193.0 346.7 190 335C187.0 323.3 184.3 310.0 182 300C179.7 290.0 177.7 283.0 176 275C174.3 267.0 169.7 257.2 172 252C174.3 246.8 183.0 243.3 190 244C197.0 244.7 207.0 253.0 214 256C221.0 259.0 227.7 263.8 232 262C236.3 260.2 240.0 251.0 240 245C240.0 239.0 236.3 231.2 232 226C227.7 220.8 220.0 217.3 214 214C208.0 210.7 200.0 210.0 196 206C192.0 202.0 188.3 196.8 190 190C191.7 183.2 200.7 173.3 206 165C211.3 156.7 216.3 147.8 222 140C227.7 132.2 234.0 126.0 240 118C246.0 110.0 251.7 100.0 258 92C264.3 84.0 271.0 75.7 278 70C285.0 64.3 291.3 58.0 300 58Z"/></clipPath>
+  </defs>
+  <rect class="map__sea" x="-60" y="20" width="620" height="780" fill="url(#sea)"/>
+  <g class="map__rings"><path class="map__ring" style="--r:4" d="M300 58C308.7 58.0 321.3 63.8 330 70C338.7 76.2 345.0 87.0 352 95C359.0 103.0 364.8 112.5 372 118C379.2 123.5 390.0 122.7 395 128C400.0 133.3 397.8 148.0 402 150C406.2 152.0 412.8 138.3 420 140C427.2 141.7 439.7 151.7 445 160C450.3 168.3 452.8 180.8 452 190C451.2 199.2 440.0 206.7 440 215C440.0 223.3 447.0 230.8 452 240C457.0 249.2 467.3 259.2 470 270C472.7 280.8 470.0 294.2 468 305C466.0 315.8 459.0 324.2 458 335C457.0 345.8 463.3 358.3 462 370C460.7 381.7 454.0 395.0 450 405C446.0 415.0 439.0 420.8 438 430C437.0 439.2 445.3 448.3 444 460C442.7 471.7 434.3 486.7 430 500C425.7 513.3 422.2 527.5 418 540C413.8 552.5 409.3 563.3 405 575C400.7 586.7 396.2 597.5 392 610C387.8 622.5 385.0 636.7 380 650C375.0 663.3 368.7 677.5 362 690C355.3 702.5 347.3 714.7 340 725C332.7 735.3 324.7 749.5 318 752C311.3 754.5 305.0 747.8 300 740C295.0 732.2 291.7 717.0 288 705C284.3 693.0 282.3 680.5 278 668C273.7 655.5 266.7 643.0 262 630C257.3 617.0 254.0 601.7 250 590C246.0 578.3 239.0 570.0 238 560C237.0 550.0 245.7 540.0 244 530C242.3 520.0 233.0 510.8 228 500C223.0 489.2 217.7 476.7 214 465C210.3 453.3 206.0 440.8 206 430C206.0 419.2 215.0 410.0 214 400C213.0 390.0 204.0 380.8 200 370C196.0 359.2 193.0 346.7 190 335C187.0 323.3 184.3 310.0 182 300C179.7 290.0 177.7 283.0 176 275C174.3 267.0 169.7 257.2 172 252C174.3 246.8 183.0 243.3 190 244C197.0 244.7 207.0 253.0 214 256C221.0 259.0 227.7 263.8 232 262C236.3 260.2 240.0 251.0 240 245C240.0 239.0 236.3 231.2 232 226C227.7 220.8 220.0 217.3 214 214C208.0 210.7 200.0 210.0 196 206C192.0 202.0 188.3 196.8 190 190C191.7 183.2 200.7 173.3 206 165C211.3 156.7 216.3 147.8 222 140C227.7 132.2 234.0 126.0 240 118C246.0 110.0 251.7 100.0 258 92C264.3 84.0 271.0 75.7 278 70C285.0 64.3 291.3 58.0 300 58Z" transform="translate(320 400) scale(1.300) translate(-320 -400)"/><path class="map__ring" style="--r:3" d="M300 58C308.7 58.0 321.3 63.8 330 70C338.7 76.2 345.0 87.0 352 95C359.0 103.0 364.8 112.5 372 118C379.2 123.5 390.0 122.7 395 128C400.0 133.3 397.8 148.0 402 150C406.2 152.0 412.8 138.3 420 140C427.2 141.7 439.7 151.7 445 160C450.3 168.3 452.8 180.8 452 190C451.2 199.2 440.0 206.7 440 215C440.0 223.3 447.0 230.8 452 240C457.0 249.2 467.3 259.2 470 270C472.7 280.8 470.0 294.2 468 305C466.0 315.8 459.0 324.2 458 335C457.0 345.8 463.3 358.3 462 370C460.7 381.7 454.0 395.0 450 405C446.0 415.0 439.0 420.8 438 430C437.0 439.2 445.3 448.3 444 460C442.7 471.7 434.3 486.7 430 500C425.7 513.3 422.2 527.5 418 540C413.8 552.5 409.3 563.3 405 575C400.7 586.7 396.2 597.5 392 610C387.8 622.5 385.0 636.7 380 650C375.0 663.3 368.7 677.5 362 690C355.3 702.5 347.3 714.7 340 725C332.7 735.3 324.7 749.5 318 752C311.3 754.5 305.0 747.8 300 740C295.0 732.2 291.7 717.0 288 705C284.3 693.0 282.3 680.5 278 668C273.7 655.5 266.7 643.0 262 630C257.3 617.0 254.0 601.7 250 590C246.0 578.3 239.0 570.0 238 560C237.0 550.0 245.7 540.0 244 530C242.3 520.0 233.0 510.8 228 500C223.0 489.2 217.7 476.7 214 465C210.3 453.3 206.0 440.8 206 430C206.0 419.2 215.0 410.0 214 400C213.0 390.0 204.0 380.8 200 370C196.0 359.2 193.0 346.7 190 335C187.0 323.3 184.3 310.0 182 300C179.7 290.0 177.7 283.0 176 275C174.3 267.0 169.7 257.2 172 252C174.3 246.8 183.0 243.3 190 244C197.0 244.7 207.0 253.0 214 256C221.0 259.0 227.7 263.8 232 262C236.3 260.2 240.0 251.0 240 245C240.0 239.0 236.3 231.2 232 226C227.7 220.8 220.0 217.3 214 214C208.0 210.7 200.0 210.0 196 206C192.0 202.0 188.3 196.8 190 190C191.7 183.2 200.7 173.3 206 165C211.3 156.7 216.3 147.8 222 140C227.7 132.2 234.0 126.0 240 118C246.0 110.0 251.7 100.0 258 92C264.3 84.0 271.0 75.7 278 70C285.0 64.3 291.3 58.0 300 58Z" transform="translate(320 400) scale(1.225) translate(-320 -400)"/><path class="map__ring" style="--r:2" d="M300 58C308.7 58.0 321.3 63.8 330 70C338.7 76.2 345.0 87.0 352 95C359.0 103.0 364.8 112.5 372 118C379.2 123.5 390.0 122.7 395 128C400.0 133.3 397.8 148.0 402 150C406.2 152.0 412.8 138.3 420 140C427.2 141.7 439.7 151.7 445 160C450.3 168.3 452.8 180.8 452 190C451.2 199.2 440.0 206.7 440 215C440.0 223.3 447.0 230.8 452 240C457.0 249.2 467.3 259.2 470 270C472.7 280.8 470.0 294.2 468 305C466.0 315.8 459.0 324.2 458 335C457.0 345.8 463.3 358.3 462 370C460.7 381.7 454.0 395.0 450 405C446.0 415.0 439.0 420.8 438 430C437.0 439.2 445.3 448.3 444 460C442.7 471.7 434.3 486.7 430 500C425.7 513.3 422.2 527.5 418 540C413.8 552.5 409.3 563.3 405 575C400.7 586.7 396.2 597.5 392 610C387.8 622.5 385.0 636.7 380 650C375.0 663.3 368.7 677.5 362 690C355.3 702.5 347.3 714.7 340 725C332.7 735.3 324.7 749.5 318 752C311.3 754.5 305.0 747.8 300 740C295.0 732.2 291.7 717.0 288 705C284.3 693.0 282.3 680.5 278 668C273.7 655.5 266.7 643.0 262 630C257.3 617.0 254.0 601.7 250 590C246.0 578.3 239.0 570.0 238 560C237.0 550.0 245.7 540.0 244 530C242.3 520.0 233.0 510.8 228 500C223.0 489.2 217.7 476.7 214 465C210.3 453.3 206.0 440.8 206 430C206.0 419.2 215.0 410.0 214 400C213.0 390.0 204.0 380.8 200 370C196.0 359.2 193.0 346.7 190 335C187.0 323.3 184.3 310.0 182 300C179.7 290.0 177.7 283.0 176 275C174.3 267.0 169.7 257.2 172 252C174.3 246.8 183.0 243.3 190 244C197.0 244.7 207.0 253.0 214 256C221.0 259.0 227.7 263.8 232 262C236.3 260.2 240.0 251.0 240 245C240.0 239.0 236.3 231.2 232 226C227.7 220.8 220.0 217.3 214 214C208.0 210.7 200.0 210.0 196 206C192.0 202.0 188.3 196.8 190 190C191.7 183.2 200.7 173.3 206 165C211.3 156.7 216.3 147.8 222 140C227.7 132.2 234.0 126.0 240 118C246.0 110.0 251.7 100.0 258 92C264.3 84.0 271.0 75.7 278 70C285.0 64.3 291.3 58.0 300 58Z" transform="translate(320 400) scale(1.150) translate(-320 -400)"/><path class="map__ring" style="--r:1" d="M300 58C308.7 58.0 321.3 63.8 330 70C338.7 76.2 345.0 87.0 352 95C359.0 103.0 364.8 112.5 372 118C379.2 123.5 390.0 122.7 395 128C400.0 133.3 397.8 148.0 402 150C406.2 152.0 412.8 138.3 420 140C427.2 141.7 439.7 151.7 445 160C450.3 168.3 452.8 180.8 452 190C451.2 199.2 440.0 206.7 440 215C440.0 223.3 447.0 230.8 452 240C457.0 249.2 467.3 259.2 470 270C472.7 280.8 470.0 294.2 468 305C466.0 315.8 459.0 324.2 458 335C457.0 345.8 463.3 358.3 462 370C460.7 381.7 454.0 395.0 450 405C446.0 415.0 439.0 420.8 438 430C437.0 439.2 445.3 448.3 444 460C442.7 471.7 434.3 486.7 430 500C425.7 513.3 422.2 527.5 418 540C413.8 552.5 409.3 563.3 405 575C400.7 586.7 396.2 597.5 392 610C387.8 622.5 385.0 636.7 380 650C375.0 663.3 368.7 677.5 362 690C355.3 702.5 347.3 714.7 340 725C332.7 735.3 324.7 749.5 318 752C311.3 754.5 305.0 747.8 300 740C295.0 732.2 291.7 717.0 288 705C284.3 693.0 282.3 680.5 278 668C273.7 655.5 266.7 643.0 262 630C257.3 617.0 254.0 601.7 250 590C246.0 578.3 239.0 570.0 238 560C237.0 550.0 245.7 540.0 244 530C242.3 520.0 233.0 510.8 228 500C223.0 489.2 217.7 476.7 214 465C210.3 453.3 206.0 440.8 206 430C206.0 419.2 215.0 410.0 214 400C213.0 390.0 204.0 380.8 200 370C196.0 359.2 193.0 346.7 190 335C187.0 323.3 184.3 310.0 182 300C179.7 290.0 177.7 283.0 176 275C174.3 267.0 169.7 257.2 172 252C174.3 246.8 183.0 243.3 190 244C197.0 244.7 207.0 253.0 214 256C221.0 259.0 227.7 263.8 232 262C236.3 260.2 240.0 251.0 240 245C240.0 239.0 236.3 231.2 232 226C227.7 220.8 220.0 217.3 214 214C208.0 210.7 200.0 210.0 196 206C192.0 202.0 188.3 196.8 190 190C191.7 183.2 200.7 173.3 206 165C211.3 156.7 216.3 147.8 222 140C227.7 132.2 234.0 126.0 240 118C246.0 110.0 251.7 100.0 258 92C264.3 84.0 271.0 75.7 278 70C285.0 64.3 291.3 58.0 300 58Z" transform="translate(320 400) scale(1.075) translate(-320 -400)"/></g>
+  <path class="map__land" d="M300 58C308.7 58.0 321.3 63.8 330 70C338.7 76.2 345.0 87.0 352 95C359.0 103.0 364.8 112.5 372 118C379.2 123.5 390.0 122.7 395 128C400.0 133.3 397.8 148.0 402 150C406.2 152.0 412.8 138.3 420 140C427.2 141.7 439.7 151.7 445 160C450.3 168.3 452.8 180.8 452 190C451.2 199.2 440.0 206.7 440 215C440.0 223.3 447.0 230.8 452 240C457.0 249.2 467.3 259.2 470 270C472.7 280.8 470.0 294.2 468 305C466.0 315.8 459.0 324.2 458 335C457.0 345.8 463.3 358.3 462 370C460.7 381.7 454.0 395.0 450 405C446.0 415.0 439.0 420.8 438 430C437.0 439.2 445.3 448.3 444 460C442.7 471.7 434.3 486.7 430 500C425.7 513.3 422.2 527.5 418 540C413.8 552.5 409.3 563.3 405 575C400.7 586.7 396.2 597.5 392 610C387.8 622.5 385.0 636.7 380 650C375.0 663.3 368.7 677.5 362 690C355.3 702.5 347.3 714.7 340 725C332.7 735.3 324.7 749.5 318 752C311.3 754.5 305.0 747.8 300 740C295.0 732.2 291.7 717.0 288 705C284.3 693.0 282.3 680.5 278 668C273.7 655.5 266.7 643.0 262 630C257.3 617.0 254.0 601.7 250 590C246.0 578.3 239.0 570.0 238 560C237.0 550.0 245.7 540.0 244 530C242.3 520.0 233.0 510.8 228 500C223.0 489.2 217.7 476.7 214 465C210.3 453.3 206.0 440.8 206 430C206.0 419.2 215.0 410.0 214 400C213.0 390.0 204.0 380.8 200 370C196.0 359.2 193.0 346.7 190 335C187.0 323.3 184.3 310.0 182 300C179.7 290.0 177.7 283.0 176 275C174.3 267.0 169.7 257.2 172 252C174.3 246.8 183.0 243.3 190 244C197.0 244.7 207.0 253.0 214 256C221.0 259.0 227.7 263.8 232 262C236.3 260.2 240.0 251.0 240 245C240.0 239.0 236.3 231.2 232 226C227.7 220.8 220.0 217.3 214 214C208.0 210.7 200.0 210.0 196 206C192.0 202.0 188.3 196.8 190 190C191.7 183.2 200.7 173.3 206 165C211.3 156.7 216.3 147.8 222 140C227.7 132.2 234.0 126.0 240 118C246.0 110.0 251.7 100.0 258 92C264.3 84.0 271.0 75.7 278 70C285.0 64.3 291.3 58.0 300 58Z"/>
+  <g class="map__relief" clip-path="url(#island-clip)">
+    <path d="M300 58C308.7 58.0 321.3 63.8 330 70C338.7 76.2 345.0 87.0 352 95C359.0 103.0 364.8 112.5 372 118C379.2 123.5 390.0 122.7 395 128C400.0 133.3 397.8 148.0 402 150C406.2 152.0 412.8 138.3 420 140C427.2 141.7 439.7 151.7 445 160C450.3 168.3 452.8 180.8 452 190C451.2 199.2 440.0 206.7 440 215C440.0 223.3 447.0 230.8 452 240C457.0 249.2 467.3 259.2 470 270C472.7 280.8 470.0 294.2 468 305C466.0 315.8 459.0 324.2 458 335C457.0 345.8 463.3 358.3 462 370C460.7 381.7 454.0 395.0 450 405C446.0 415.0 439.0 420.8 438 430C437.0 439.2 445.3 448.3 444 460C442.7 471.7 434.3 486.7 430 500C425.7 513.3 422.2 527.5 418 540C413.8 552.5 409.3 563.3 405 575C400.7 586.7 396.2 597.5 392 610C387.8 622.5 385.0 636.7 380 650C375.0 663.3 368.7 677.5 362 690C355.3 702.5 347.3 714.7 340 725C332.7 735.3 324.7 749.5 318 752C311.3 754.5 305.0 747.8 300 740C295.0 732.2 291.7 717.0 288 705C284.3 693.0 282.3 680.5 278 668C273.7 655.5 266.7 643.0 262 630C257.3 617.0 254.0 601.7 250 590C246.0 578.3 239.0 570.0 238 560C237.0 550.0 245.7 540.0 244 530C242.3 520.0 233.0 510.8 228 500C223.0 489.2 217.7 476.7 214 465C210.3 453.3 206.0 440.8 206 430C206.0 419.2 215.0 410.0 214 400C213.0 390.0 204.0 380.8 200 370C196.0 359.2 193.0 346.7 190 335C187.0 323.3 184.3 310.0 182 300C179.7 290.0 177.7 283.0 176 275C174.3 267.0 169.7 257.2 172 252C174.3 246.8 183.0 243.3 190 244C197.0 244.7 207.0 253.0 214 256C221.0 259.0 227.7 263.8 232 262C236.3 260.2 240.0 251.0 240 245C240.0 239.0 236.3 231.2 232 226C227.7 220.8 220.0 217.3 214 214C208.0 210.7 200.0 210.0 196 206C192.0 202.0 188.3 196.8 190 190C191.7 183.2 200.7 173.3 206 165C211.3 156.7 216.3 147.8 222 140C227.7 132.2 234.0 126.0 240 118C246.0 110.0 251.7 100.0 258 92C264.3 84.0 271.0 75.7 278 70C285.0 64.3 291.3 58.0 300 58Z" transform="translate(318 380) scale(.82) translate(-318 -380)"/>
+    <path d="M300 58C308.7 58.0 321.3 63.8 330 70C338.7 76.2 345.0 87.0 352 95C359.0 103.0 364.8 112.5 372 118C379.2 123.5 390.0 122.7 395 128C400.0 133.3 397.8 148.0 402 150C406.2 152.0 412.8 138.3 420 140C427.2 141.7 439.7 151.7 445 160C450.3 168.3 452.8 180.8 452 190C451.2 199.2 440.0 206.7 440 215C440.0 223.3 447.0 230.8 452 240C457.0 249.2 467.3 259.2 470 270C472.7 280.8 470.0 294.2 468 305C466.0 315.8 459.0 324.2 458 335C457.0 345.8 463.3 358.3 462 370C460.7 381.7 454.0 395.0 450 405C446.0 415.0 439.0 420.8 438 430C437.0 439.2 445.3 448.3 444 460C442.7 471.7 434.3 486.7 430 500C425.7 513.3 422.2 527.5 418 540C413.8 552.5 409.3 563.3 405 575C400.7 586.7 396.2 597.5 392 610C387.8 622.5 385.0 636.7 380 650C375.0 663.3 368.7 677.5 362 690C355.3 702.5 347.3 714.7 340 725C332.7 735.3 324.7 749.5 318 752C311.3 754.5 305.0 747.8 300 740C295.0 732.2 291.7 717.0 288 705C284.3 693.0 282.3 680.5 278 668C273.7 655.5 266.7 643.0 262 630C257.3 617.0 254.0 601.7 250 590C246.0 578.3 239.0 570.0 238 560C237.0 550.0 245.7 540.0 244 530C242.3 520.0 233.0 510.8 228 500C223.0 489.2 217.7 476.7 214 465C210.3 453.3 206.0 440.8 206 430C206.0 419.2 215.0 410.0 214 400C213.0 390.0 204.0 380.8 200 370C196.0 359.2 193.0 346.7 190 335C187.0 323.3 184.3 310.0 182 300C179.7 290.0 177.7 283.0 176 275C174.3 267.0 169.7 257.2 172 252C174.3 246.8 183.0 243.3 190 244C197.0 244.7 207.0 253.0 214 256C221.0 259.0 227.7 263.8 232 262C236.3 260.2 240.0 251.0 240 245C240.0 239.0 236.3 231.2 232 226C227.7 220.8 220.0 217.3 214 214C208.0 210.7 200.0 210.0 196 206C192.0 202.0 188.3 196.8 190 190C191.7 183.2 200.7 173.3 206 165C211.3 156.7 216.3 147.8 222 140C227.7 132.2 234.0 126.0 240 118C246.0 110.0 251.7 100.0 258 92C264.3 84.0 271.0 75.7 278 70C285.0 64.3 291.3 58.0 300 58Z" transform="translate(316 360) scale(.62) translate(-316 -360)"/>
+    <path d="M300 58C308.7 58.0 321.3 63.8 330 70C338.7 76.2 345.0 87.0 352 95C359.0 103.0 364.8 112.5 372 118C379.2 123.5 390.0 122.7 395 128C400.0 133.3 397.8 148.0 402 150C406.2 152.0 412.8 138.3 420 140C427.2 141.7 439.7 151.7 445 160C450.3 168.3 452.8 180.8 452 190C451.2 199.2 440.0 206.7 440 215C440.0 223.3 447.0 230.8 452 240C457.0 249.2 467.3 259.2 470 270C472.7 280.8 470.0 294.2 468 305C466.0 315.8 459.0 324.2 458 335C457.0 345.8 463.3 358.3 462 370C460.7 381.7 454.0 395.0 450 405C446.0 415.0 439.0 420.8 438 430C437.0 439.2 445.3 448.3 444 460C442.7 471.7 434.3 486.7 430 500C425.7 513.3 422.2 527.5 418 540C413.8 552.5 409.3 563.3 405 575C400.7 586.7 396.2 597.5 392 610C387.8 622.5 385.0 636.7 380 650C375.0 663.3 368.7 677.5 362 690C355.3 702.5 347.3 714.7 340 725C332.7 735.3 324.7 749.5 318 752C311.3 754.5 305.0 747.8 300 740C295.0 732.2 291.7 717.0 288 705C284.3 693.0 282.3 680.5 278 668C273.7 655.5 266.7 643.0 262 630C257.3 617.0 254.0 601.7 250 590C246.0 578.3 239.0 570.0 238 560C237.0 550.0 245.7 540.0 244 530C242.3 520.0 233.0 510.8 228 500C223.0 489.2 217.7 476.7 214 465C210.3 453.3 206.0 440.8 206 430C206.0 419.2 215.0 410.0 214 400C213.0 390.0 204.0 380.8 200 370C196.0 359.2 193.0 346.7 190 335C187.0 323.3 184.3 310.0 182 300C179.7 290.0 177.7 283.0 176 275C174.3 267.0 169.7 257.2 172 252C174.3 246.8 183.0 243.3 190 244C197.0 244.7 207.0 253.0 214 256C221.0 259.0 227.7 263.8 232 262C236.3 260.2 240.0 251.0 240 245C240.0 239.0 236.3 231.2 232 226C227.7 220.8 220.0 217.3 214 214C208.0 210.7 200.0 210.0 196 206C192.0 202.0 188.3 196.8 190 190C191.7 183.2 200.7 173.3 206 165C211.3 156.7 216.3 147.8 222 140C227.7 132.2 234.0 126.0 240 118C246.0 110.0 251.7 100.0 258 92C264.3 84.0 271.0 75.7 278 70C285.0 64.3 291.3 58.0 300 58Z" transform="translate(314 340) scale(.42) translate(-314 -340)"/>
+  </g>
+  <path class="map__coast" d="M300 58C308.7 58.0 321.3 63.8 330 70C338.7 76.2 345.0 87.0 352 95C359.0 103.0 364.8 112.5 372 118C379.2 123.5 390.0 122.7 395 128C400.0 133.3 397.8 148.0 402 150C406.2 152.0 412.8 138.3 420 140C427.2 141.7 439.7 151.7 445 160C450.3 168.3 452.8 180.8 452 190C451.2 199.2 440.0 206.7 440 215C440.0 223.3 447.0 230.8 452 240C457.0 249.2 467.3 259.2 470 270C472.7 280.8 470.0 294.2 468 305C466.0 315.8 459.0 324.2 458 335C457.0 345.8 463.3 358.3 462 370C460.7 381.7 454.0 395.0 450 405C446.0 415.0 439.0 420.8 438 430C437.0 439.2 445.3 448.3 444 460C442.7 471.7 434.3 486.7 430 500C425.7 513.3 422.2 527.5 418 540C413.8 552.5 409.3 563.3 405 575C400.7 586.7 396.2 597.5 392 610C387.8 622.5 385.0 636.7 380 650C375.0 663.3 368.7 677.5 362 690C355.3 702.5 347.3 714.7 340 725C332.7 735.3 324.7 749.5 318 752C311.3 754.5 305.0 747.8 300 740C295.0 732.2 291.7 717.0 288 705C284.3 693.0 282.3 680.5 278 668C273.7 655.5 266.7 643.0 262 630C257.3 617.0 254.0 601.7 250 590C246.0 578.3 239.0 570.0 238 560C237.0 550.0 245.7 540.0 244 530C242.3 520.0 233.0 510.8 228 500C223.0 489.2 217.7 476.7 214 465C210.3 453.3 206.0 440.8 206 430C206.0 419.2 215.0 410.0 214 400C213.0 390.0 204.0 380.8 200 370C196.0 359.2 193.0 346.7 190 335C187.0 323.3 184.3 310.0 182 300C179.7 290.0 177.7 283.0 176 275C174.3 267.0 169.7 257.2 172 252C174.3 246.8 183.0 243.3 190 244C197.0 244.7 207.0 253.0 214 256C221.0 259.0 227.7 263.8 232 262C236.3 260.2 240.0 251.0 240 245C240.0 239.0 236.3 231.2 232 226C227.7 220.8 220.0 217.3 214 214C208.0 210.7 200.0 210.0 196 206C192.0 202.0 188.3 196.8 190 190C191.7 183.2 200.7 173.3 206 165C211.3 156.7 216.3 147.8 222 140C227.7 132.2 234.0 126.0 240 118C246.0 110.0 251.7 100.0 258 92C264.3 84.0 271.0 75.7 278 70C285.0 64.3 291.3 58.0 300 58Z"/>
+  <text class="map__kea" x="335" y="470" data-i18n="mKea">KEA</text>
+  <text class="map__seaname" x="40" y="560" transform="rotate(-90 40 560)" data-i18n="mSea">Aegean Sea</text>
+
+  <path class="map__route map__route--sea" d="M-30 205C40 190 110 205 150 225S205 252 226 257"/>
+  <path class="map__route-done map__route-done--sea" d="M-30 205C40 190 110 205 150 225S205 252 226 257" pathLength="1"/>
+  <path class="map__route map__route--road" d="M232 258C248 270 262 246 276 254S296 276 310 262S326 246 336 254"/>
+  <path class="map__route-done map__route-done--road" d="M232 258C248 270 262 246 276 254S296 276 310 262S326 246 336 254" pathLength="1"/>
+
+  <g class="map__lavrio"><path d="M-44 205h26m-20-6-6 6 6 6" fill="none"/><text x="-46" y="190" data-i18n="mLavrio">Lavrio · Athens</text></g>
+
+  <g class="map__pin map__pin--kor" transform="translate(230 258)">
+    <circle class="map__wave" r="6"/><circle class="map__dot" r="6"/>
+    <text class="map__name" x="-14" y="30" text-anchor="end" data-i18n="mKorissia">Korissia</text>
+    <text class="map__sub" x="-14" y="48" text-anchor="end" data-i18n="mKorissiaS">the port</text>
+  </g>
+  <g class="map__pin map__pin--iou" transform="translate(340 254)">
+    <circle class="map__wave" r="6"/><circle class="map__dot" r="6"/>
+    <text class="map__name" x="16" y="-14" data-i18n="mIoulida">Ioulida</text>
+    <text class="map__sub" x="16" y="4" data-i18n="mIoulidaS">the villa, just above</text>
+  </g>
+
+  <g class="map__boat"><path d="M-9 0h18l-4 5h-10z M0-11v10 M0-10l7 7h-7" /></g>
+  <g class="map__car"><circle r="5"/></g>
+
+  <g class="map__compass" transform="translate(500 92)">
+    <circle r="22"/><path d="M0-30V30M-30 0H30" /><path class="map__needle" d="M0-22l5 22-5-5-5 5z"/><text y="-36" text-anchor="middle">N</text>
+  </g>
+  <g class="map__scale" transform="translate(-30 760)"><path d="M0 0h66M0-5v10M33-3v6M66-5v10"/><text x="76" y="4" data-i18n="mScale">2 km</text></g>
+</svg>
+        <figcaption class="map__foot">
+          <!-- TODO: replace with the villa's exact pin when Nicole confirms it (Google Maps link with the coordinates). -->
+          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Ioulida%2C%20Kea%2C%20Greece" target="_blank" rel="noopener"><span data-i18n="mapsBtn">Open in Maps</span><svg class="arr" width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
+          <span class="map__note" data-i18n="mapsNote">Shows Ioulida for now; the villa’s exact pin will follow.</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="journey__steps">
+        <article class="step" data-step="0">
+          <p class="step__k" data-i18n="st1k">Step 1 · By sea</p>
+          <h3 class="display step__t" data-i18n="st1t">Lavrio to Korissia</h3>
+          <p class="body" data-i18n="st1p">Ferries leave from Lavrio, about an hour’s drive from Athens and close to the airport. The crossing takes about an hour. In summer, book your tickets early, especially if you bring a car.</p> <!-- DEMO text -->
+        </article>
+        <article class="step" data-step="1">
+          <p class="step__k" data-i18n="st2k">Step 2 · By road</p>
+          <h3 class="display step__t" data-i18n="st2t">Up to Ioulida</h3>
+          <p class="body" data-i18n="st2p">From the port, the road climbs inland to Ioulida in about fifteen minutes. A car makes island life easy; there are also taxis at the port, and cars can be rented on Kea.</p> <!-- DEMO text -->
+        </article>
+        <article class="step" data-step="2">
+          <p class="step__k" data-i18n="st3k">Step 3 · Arrival</p>
+          <h3 class="display step__t" data-i18n="st3t">The last stretch</h3>
+          <p class="body" data-i18n="st3p">The villa is just above the village, with private parking for two cars. Before you arrive, we send you directions and the exact location, and we are a phone call away.</p> <!-- DEMO text -->
+        </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 DISTANCES — bars grow to their minutes ================= -->
+<section class="dist" id="distances" aria-labelledby="dist-title">
+  <div class="wrap dist__grid">
+    <div class="dist__head" data-reveal>
+      <p class="kicker" data-i18n="kDist">02 · Distances</p>
+      <h2 id="dist-title" class="display section-title" data-i18n-html="distTitle">Close to <em>what you need.</em></h2>
+      <p class="body" data-i18n="distP">Approximate times from the villa. We will confirm them, and share our own favourites, when we reply.</p>
+    </div>
+    <div class="dist__chart">
+      <div class="dist__scale" aria-hidden="true"><span>0′</span><span>10′</span><span>20′</span><span>30′</span></div>
+      <ul class="dist__list">
+        <li style="--i:0; --v:0.333"><span class="dist__name" data-i18n="d1">Ioulida, the village</span>
+          <span class="dist__bar" aria-hidden="true"><span></span></span>
+          <span class="dist__val"><b>10</b> <span data-i18n="min">min</span> <span class="dist__how" data-i18n="onFoot">on foot</span></span></li>
+        <li style="--i:1; --v:0.167"><span class="dist__name" data-i18n="d2">Bakery and grocery</span>
+          <span class="dist__bar" aria-hidden="true"><span></span></span>
+          <span class="dist__val"><b>5</b> <span data-i18n="min">min</span> <span class="dist__how" data-i18n="byCar">by car</span></span></li>
+        <li style="--i:2; --v:0.167"><span class="dist__name" data-i18n="d3">Pharmacy</span>
+          <span class="dist__bar" aria-hidden="true"><span></span></span>
+          <span class="dist__val"><b>5</b> <span data-i18n="min">min</span> <span class="dist__how" data-i18n="byCar">by car</span></span></li>
+        <li style="--i:3; --v:0.333"><span class="dist__name" data-i18n="d4">Petrol station</span>
+          <span class="dist__bar" aria-hidden="true"><span></span></span>
+          <span class="dist__val"><b>10</b> <span data-i18n="min">min</span> <span class="dist__how" data-i18n="byCar">by car</span></span></li>
+        <li style="--i:4; --v:0.500"><span class="dist__name" data-i18n="d5">Korissia, the port</span>
+          <span class="dist__bar" aria-hidden="true"><span></span></span>
+          <span class="dist__val"><b>15</b> <span data-i18n="min">min</span> <span class="dist__how" data-i18n="byCar">by car</span></span></li>
+        <li style="--i:5; --v:0.667"><span class="dist__name" data-i18n="d6">Nearest sandy beach</span>
+          <span class="dist__bar" aria-hidden="true"><span></span></span>
+          <span class="dist__val"><b>20</b> <span data-i18n="min">min</span> <span class="dist__how" data-i18n="byCar">by car</span></span></li>
+      </ul>
+      <p class="dist__note" data-i18n="distNote">Indicative times · to be confirmed</p> <!-- DEMO: all times are placeholders -->
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 DISCOVER KEA — postcards that stack as you scroll ================= -->
+<section class="kea" id="discover" aria-labelledby="kea-title">
+  <div class="wrap">
+    <div class="kea__head" data-reveal>
+      <p class="kicker" data-i18n="kKea">03 · Discover Kea</p>
+      <h2 id="kea-title" class="display section-title" data-i18n-html="keaTitle">Slow days <em>on Kea.</em></h2>
+      <p class="body" data-i18n="keaP">Old stone paths between oak trees, quiet bays and long lunches by the water. A few ideas to start with; ask us for more.</p>
+    </div>
+    <div class="kea__stack">
+      <article class="pcard" style="--n:0">
+        <div class="pcard__inner">
+          <div class="pcard__media"><div class="slot" role="img" aria-label="Photo to come: Ioulida · lanes and steps" data-slot="ph1"><svg class="slot__arch" viewBox="0 0 40 52" aria-hidden="true"><path d="M4 51V22a16 16 0 0 1 32 0v29" fill="none" stroke="currentColor" stroke-width="1"/><path d="M12 51V27a8 8 0 0 1 16 0v24" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/></svg><span class="slot__tag" data-i18n="phTag">Photo to come</span><span class="slot__label" data-i18n="ph1">Ioulida · lanes and steps</span></div></div>
+          <div class="pcard__body">
+            <p class="pcard__n">01 <span aria-hidden="true">/</span> 04</p>
+            <h3 class="display pcard__t" data-i18n="c1t">Ioulida</h3>
+            <p class="body" data-i18n="c1p">Steep lanes, steps and whitewashed walls, small squares with cafés and the old town hall. Walk down in the morning for bread and coffee, come back in the evening when the village fills with life.</p>
+            <p class="pcard__meta" data-i18n="c1m">Just below the villa · on foot · morning or evening</p>
+          </div>
+        </div>
+      </article>
+      <article class="pcard" style="--n:1">
+        <div class="pcard__inner">
+          <div class="pcard__media"><div class="slot" role="img" aria-label="Photo to come: The path to the Lion" data-slot="ph2"><svg class="slot__arch" viewBox="0 0 40 52" aria-hidden="true"><path d="M4 51V22a16 16 0 0 1 32 0v29" fill="none" stroke="currentColor" stroke-width="1"/><path d="M12 51V27a8 8 0 0 1 16 0v24" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/></svg><span class="slot__tag" data-i18n="phTag">Photo to come</span><span class="slot__label" data-i18n="ph2">The path to the Lion</span></div></div>
+          <div class="pcard__body">
+            <p class="pcard__n">02 <span aria-hidden="true">/</span> 04</p>
+            <h3 class="display pcard__t" data-i18n="c2t">The Lion of Kea</h3>
+            <p class="body" data-i18n="c2p">A great stone lion carved into the rock more than two thousand years ago, a short walk from Ioulida along an old path. Go early, when the light is soft and the path is cool.</p> <!-- DEMO -->
+            <p class="pcard__meta" data-i18n="c2m">From Ioulida · on foot · early morning</p>
+          </div>
+        </div>
+      </article>
+      <article class="pcard" style="--n:2">
+        <div class="pcard__inner">
+          <div class="pcard__media"><div class="slot" role="img" aria-label="Photo to come: A quiet bay, early in the day" data-slot="ph3"><svg class="slot__arch" viewBox="0 0 40 52" aria-hidden="true"><path d="M4 51V22a16 16 0 0 1 32 0v29" fill="none" stroke="currentColor" stroke-width="1"/><path d="M12 51V27a8 8 0 0 1 16 0v24" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/></svg><span class="slot__tag" data-i18n="phTag">Photo to come</span><span class="slot__label" data-i18n="ph3">A quiet bay, early in the day</span></div></div>
+          <div class="pcard__body">
+            <p class="pcard__n">03 <span aria-hidden="true">/</span> 04</p>
+            <h3 class="display pcard__t" data-i18n="c3t">A beach for the morning</h3>
+            <p class="body" data-i18n="c3p">Kea has bays for every wind, from sandy coves to quiet pebble beaches. Nicole will suggest the right one for the day’s weather.</p> <!-- DEMO -->
+            <p class="pcard__meta" data-i18n="c3m">By car · to choose with Nicole</p>
+          </div>
+        </div>
+      </article>
+      <article class="pcard" style="--n:3">
+        <div class="pcard__inner">
+          <div class="pcard__media"><div class="slot" role="img" aria-label="Photo to come: A table by the water" data-slot="ph4"><svg class="slot__arch" viewBox="0 0 40 52" aria-hidden="true"><path d="M4 51V22a16 16 0 0 1 32 0v29" fill="none" stroke="currentColor" stroke-width="1"/><path d="M12 51V27a8 8 0 0 1 16 0v24" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/></svg><span class="slot__tag" data-i18n="phTag">Photo to come</span><span class="slot__label" data-i18n="ph4">A table by the water</span></div></div>
+          <div class="pcard__body">
+            <p class="pcard__n">04 <span aria-hidden="true">/</span> 04</p>
+            <h3 class="display pcard__t" data-i18n="c4t">Lunch by the water</h3>
+            <p class="body" data-i18n="c4p">Fish tavernas line the small harbours near Korissia. Order what came in that morning and stay until the light goes golden.</p> <!-- DEMO -->
+            <p class="pcard__meta" data-i18n="c4m">Near the port · by car · lunch</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLOSING — same as the other pages ================= -->
+<section class="ask" id="contact" data-scene="flow" tabindex="-1" aria-labelledby="ask-title">
+  <div class="wrap">
+    <div class="ask__head" data-reveal>
+      <p class="kicker" data-i18n="kAsk">Availability</p>
+      <h2 id="ask-title" class="display" data-i18n-html="askTitle">Tell us <em>your dates.</em></h2>
+    </div>
+    <div class="ask__body" data-reveal style="--d:120ms">
+      <p data-i18n="askP">Send us the dates you have in mind and how many of you are coming. We’ll check availability and reply personally with the total price for your stay.</p>
+      <p class="ask__langs" data-i18n="askLangs">We reply in English, Greek or French.</p>
+      <div class="ask__actions">
+        <!-- TODO: link to the Contact page (form + date picker) when it exists: add href="contact.html" (EL: el/contact.html) and remove aria-disabled. -->
+        <a class="btn btn--light btn--pending" aria-disabled="true"><span data-i18n="askContact">Contact us</span><svg class="arr" width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a>
+        <a class="link link--light" href="tel:+306945541114"><span data-i18n="askCall">Call us</span>&nbsp;<span style="font-variant-numeric: tabular-nums">+30 694 554 1114</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="footer__horizon" aria-hidden="true"></span>
+    <div class="footer__top">
+      <div class="footer__brand">
+        <p class="footer__name">Cycladic Villa Kea</p>
+        <p class="footer__tagline" data-i18n="tagline">Your Cycladic escape above the sea.</p>
+        <p class="footer__follow"><span class="footer__label" data-i18n="fFollow">Follow us</span>
+          <a class="footer__link" href="https://www.instagram.com/cycladicvillakea" target="_blank" rel="noopener">Instagram</a>
+          <!-- Facebook: add once the correct page URL is confirmed.
+          <a class="footer__link" href="FACEBOOK_PAGE_URL" target="_blank" rel="noopener">Facebook</a>
+          -->
+        </p>
+      </div>
+      <div class="footer__spacer" aria-hidden="true"></div>
+      <nav class="footer__col" aria-labelledby="f-explore">
+        <h2 id="f-explore" data-i18n="fExplore">Explore</h2>
+        <ul>
+          <li><a class="footer__link" href="villa.html" data-i18n="navVilla">The villa</a></li>
+          <li><a class="footer__link" href="location.html" data-i18n="navLocation">Location</a></li>
+          <li><a class="footer__link" href="#contact" data-i18n="navContact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer__col">
+        <h2 data-i18n="fContact">Contact</h2>
+        <ul>
+          <!-- Email address may change -->
+          <li><a class="footer__link" href="mailto:info@cycladicvillakea.com">info@cycladicvillakea.com</a></li>
+          <li><a class="footer__link" href="tel:+306945541114" style="font-variant-numeric: tabular-nums">+30 694 554 1114</a></li>
+          <li class="footer__langs" data-i18n="fLangs">English · Ελληνικά · Français</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <!-- Copyright kept exactly as before. The privacy policy link returns when that page exists. -->
+      <p>© 2026 Cycladic Villa Kea · <span data-i18n="privacy">Privacy policy</span></p>
+      <p data-i18n="credit">Website by Michalis Merkouris</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta" aria-hidden="true">
+  <p><strong data-i18n="stickyA">Personal reply</strong><span data-i18n="stickyB">EN · EL · FR</span></p>
+  <!-- TODO: link to the Contact page (form + date picker) when it exists: add href="contact.html" (EL: el/contact.html) and remove aria-disabled. -->
+  <a class="btn btn--sm btn--pending" aria-disabled="true" tabindex="-1" data-i18n="cta">Request availability</a>
+</div>
+
+
+<script src="js/location.js"></script>
+</body>
+</html>
