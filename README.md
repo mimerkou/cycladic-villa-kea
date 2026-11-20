@@ -66,4 +66,4 @@ No video ever starts by itself, on any screen. The hero clip on the home page sh
 
 The footer copyright year updates itself every year; the credit links to michalismerkouris.com (new tab).
 
-Version: v5.9 (home, The villa, Location, Contact, Privacy, 404)
+Version: v5.10 (home, The villa, Location, Contact, Privacy, 404)
