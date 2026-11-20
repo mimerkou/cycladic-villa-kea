@@ -429,6 +429,33 @@ html.js .welcome__text .w.on { opacity: 1; }
 .moment--pm { opacity: var(--k, 0); transform: translateY(calc((1 - var(--k, 0)) * 14px)); }
 .moment__label { margin-bottom: 4px; font-family: var(--f-display); font-size: 21px; font-style: italic; color: var(--aegean); }
 .dial { display: none; }
+/* v5.13 — Phones and tablets: the day line. Sits right under the photos, inside the pinned stage, so it
+   stays in view while the scroll turns morning into sunset. A straight version of the desktop sun dial:
+   the sun travels left to right, the line behind it fills from the cool morning blue to sunset gold,
+   and the label of the current part of the day is the one in ink. */
+.dayline {
+  order: -1; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: 14px;
+  margin-top: 4px; font-size: 10.5px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--muted);
+}
+.dayline__l, .dayline__r { transition: color .5s var(--ease-soft); }
+.dayline__l { color: var(--ink); }
+.stage.is-pm .dayline__l { color: var(--muted); }
+.stage.is-pm .dayline__r { color: var(--ink); }
+.dayline__track {
+  position: relative; height: 14px;
+  background: radial-gradient(circle, rgba(90, 101, 115, .55) 0 .9px, transparent 1.2px) left center / 7px 3px repeat-x;   /* dotted, like the dial's arc */
+}
+.dayline__fill {
+  position: absolute; left: 0; right: 0; top: 50%; height: 1.5px; margin-top: -.75px; border-radius: 1px;
+  background: linear-gradient(90deg, var(--horizon), #E9B27A 70%, #E39A5E);
+  transform-origin: 0 50%; transform: scaleX(var(--q, 0));
+}
+.dayline__sun {
+  position: absolute; top: 50%; left: calc(var(--q, 0) * 100%); width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%;
+  background: #F2C98F; box-shadow: 0 0 0 4px rgba(242, 201, 143, .25), 0 0 14px 3px rgba(240, 160, 90, calc(var(--k, 0) * .55));
+}
+/* Short phones (e.g. 375×667): give back the height the day line takes, so the text still fits above the bottom bar */
+@media (max-height: 720px) { .stage__media { height: 30svh; } .dayline { margin-top: 0; } }
 
 /* ---------- Ioulida: a Cycladic arch opens onto the village ---------- */
 .window-scene { position: relative; height: 210svh; }
@@ -524,6 +551,7 @@ html:not(.js) .window__card { position: relative; opacity: 1; transform: none; l
   .layer__clip { width: 24%; }
   .stage .section-title { font-size: clamp(38px, 3.3vw, 52px); margin-bottom: 26px; }
   .moment__label { font-size: 24px; }
+  .dayline { display: none; }
   .dial { position: relative; display: block; width: 200px; height: 130px; margin-top: 44px; color: var(--muted); }
   .dial__arc { position: absolute; left: 0; top: 0; width: 200px; height: 104px; overflow: visible; }
   .dial__arm { position: absolute; left: 100px; top: 100px; width: 94px; height: 0; transform-origin: 0 0; transform: rotate(calc(180deg + var(--q, 0) * 180deg)); }
