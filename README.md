@@ -27,4 +27,4 @@ The page is a working draft while the photos and some facts are on their way.
 - **Photo placeholders** ("Photo to come"): living room details, dining table, bedroom three, bathroom (3), stone and wood, oak trees, arrival and parking. Each says which shot is needed.
 - **Demo text, to be confirmed** (marked `<!-- DEMO -->` in `villa.html`): the floor plan (indicative drawing, incl. one bathroom), living & kitchen card, bedroom three, bathroom text, amenities "bed linen and towels", "dining table for six", "coffee maker and kettle", and the Practical answers (check-in/out times, minimum stay, house rules, getting here).
 
-Version: v5.0 (home v4.8 + The villa page)
+Version: v5.1 (home v4.8 + The villa page)

@@ -32,7 +32,8 @@
    ========================================================================== */
 .vhero { padding-top: 44px; }
 .vhero__head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; }
-.vhero__title { font-size: clamp(40px, 10.4vw, 56px); line-height: 1.02; text-wrap: balance; }
+.vhero__title { font-size: clamp(40px, 11.4vw, 52px); line-height: 1; text-wrap: balance; }   /* = home hero title */
+html[lang="el"] .vhero__title { font-size: clamp(34px, 9.6vw, 44px); }
 .vhero__title em { color: var(--aegean); }
 .vhero__lead { margin-top: 22px; }
 .vhero__frame { position: relative; margin-top: 36px; aspect-ratio: 4 / 3.3; overflow: hidden; background: var(--stone); perspective: 1800px; }
@@ -116,7 +117,6 @@ html.js .plan__svg.is-drawn .plan__labels text, html.js .plan__svg.is-drawn .pla
 .rcard__n { font-size: 11.5px; font-weight: 500; letter-spacing: .2em; color: var(--muted); margin-bottom: 6px; }
 .rcard__t { font-family: var(--f-display); font-size: 23px; font-weight: 400; line-height: 1.15; margin-bottom: 8px; }
 .rcard__p { font-size: var(--fs-text); line-height: 1.5; color: var(--ink-2); }
-.rcard__pill { display: inline-block; margin-top: 12px; padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; letter-spacing: .04em; color: var(--ink-2); }
 .rcard.is-on { border-color: rgba(26, 76, 128, .5); box-shadow: inset 3px 0 0 var(--aegean), 0 18px 34px -30px rgba(8, 30, 54, .55); }
 
 /* ==========================================================================
@@ -142,7 +142,6 @@ html.js .plan__svg.is-drawn .plan__labels text, html.js .plan__svg.is-drawn .pla
 .room__thumbs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
 .room__thumb { aspect-ratio: 1 / 1; }
 .room__open { align-self: flex-start; margin-top: 14px; border: 0; background-color: transparent; font-family: inherit; cursor: pointer; }
-.room__count { color: var(--muted); font-weight: 400; }
 
 .gfig { position: relative; margin: 0; overflow: hidden; background: var(--stone); }
 .gfig__btn { display: block; width: 100%; height: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
@@ -318,8 +317,8 @@ html.lb-open { overflow: hidden; }
   .vhero { padding-top: clamp(64px, 6vw, 96px); }
   .vhero__head { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; align-items: end; }
   .vhero__kicker { grid-column: 1 / -1; }
-  .vhero__title { grid-column: 1 / 9; font-size: clamp(58px, 5.6vw, 92px); line-height: .98; }
-  html[lang="el"] .vhero__title { font-size: clamp(52px, 4.8vw, 80px); }
+  .vhero__title { grid-column: 1 / 9; font-size: clamp(52px, 5vw, 78px); line-height: .98; letter-spacing: -.024em; }   /* = home hero title */
+  html[lang="el"] .vhero__title { font-size: clamp(42px, 3.9vw, 60px); line-height: 1.02; }
   .vhero__lead { grid-column: 9 / 13; margin: 0 0 10px; }
   .vhero__frame { margin: 48px var(--pad) 0; aspect-ratio: auto; height: min(74svh, 56vw); }
   .vfacts { grid-template-columns: repeat(5, minmax(0, 1fr)); border-bottom: 0; }
