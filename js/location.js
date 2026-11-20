@@ -52,6 +52,8 @@
   "altTerrace": "The dining table under the pergola, with the hills and the Aegean beyond",
   "altAerial": "The villa from above, with its stone terraces, the hills and the sea",
   "altFacade": "The whitewashed façade with blue shutters, stone paving and a terracotta jar",
+  "creditBy": "Website by",
+  "creditName": "Michalis Merkouris",
   "toHome": "Cycladic Villa Kea — home page",
   "title": "Location — Cycladic Villa Kea, above Ioulida, Kea",
   "desc": "Where Cycladic Villa Kea is and how to get there: the ferry from Lavrio to Korissia, the road up to Ioulida, distances, and a few ideas for your days on Kea.",
@@ -169,6 +171,8 @@
   "altTerrace": "Το τραπέζι κάτω από την πέργκολα, με θέα τους λόφους και το Αιγαίο",
   "altAerial": "Η βίλα από ψηλά, με τις πέτρινες βεράντες, τους λόφους και τη θάλασσα",
   "altFacade": "Η ασβεστωμένη πρόσοψη με τα μπλε παντζούρια, το πέτρινο πλακόστρωτο και ένα πήλινο πιθάρι",
+  "creditBy": "Δημιουργία ιστοσελίδας:",
+  "creditName": "Μιχάλης Μερκούρης",
   "toHome": "Cycladic Villa Kea — αρχική σελίδα",
   "title": "Η τοποθεσία — Cycladic Villa Kea, πάνω από την Ιουλίδα, Κέα",
   "desc": "Πού βρίσκεται η Cycladic Villa Kea και πώς θα έρθετε: το πλοίο από το Λαύριο για την Κορησσία, ο δρόμος για την Ιουλίδα, αποστάσεις και μερικές ιδέες για τις μέρες σας στην Κέα.",
@@ -278,6 +282,8 @@
     });
   });
   try { if (sessionStorage.getItem('cvk-lang-tab') === 'el') applyLang('el'); } catch (e) {}
+
+  each('[data-year]', function (el) { el.textContent = String(new Date().getFullYear()); });   // © year follows the calendar
 
   /* ---------------- Sticky header ---------------- */
   var header = document.querySelector('.site-header');

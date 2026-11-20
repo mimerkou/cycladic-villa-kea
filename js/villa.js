@@ -52,6 +52,8 @@
   "altTerrace": "The dining table under the pergola, with the hills and the Aegean beyond",
   "altAerial": "The villa from above, with its stone terraces, the hills and the sea",
   "altFacade": "The whitewashed façade with blue shutters, stone paving and a terracotta jar",
+  "creditBy": "Website by",
+  "creditName": "Michalis Merkouris",
   "toHome": "Cycladic Villa Kea — home page",
   "title": "The villa — Cycladic Villa Kea, Ioulida, Kea",
   "desc": "Inside Cycladic Villa Kea: three bedrooms with double beds for up to six guests, 100 m² of traditional Cycladic architecture, terraces facing the Aegean and an estate of oak trees above Ioulida.",
@@ -220,6 +222,8 @@
   "altTerrace": "Το τραπέζι κάτω από την πέργκολα, με θέα τους λόφους και το Αιγαίο",
   "altAerial": "Η βίλα από ψηλά, με τις πέτρινες βεράντες, τους λόφους και τη θάλασσα",
   "altFacade": "Η ασβεστωμένη πρόσοψη με τα μπλε παντζούρια, το πέτρινο πλακόστρωτο και ένα πήλινο πιθάρι",
+  "creditBy": "Δημιουργία ιστοσελίδας:",
+  "creditName": "Μιχάλης Μερκούρης",
   "toHome": "Cycladic Villa Kea — αρχική σελίδα",
   "title": "Η βίλα — Cycladic Villa Kea, Ιουλίδα, Κέα",
   "desc": "Μέσα στη Cycladic Villa Kea: τρία υπνοδωμάτια με διπλά κρεβάτια για έως έξι επισκέπτες, 100 τ.μ. παραδοσιακής κυκλαδίτικης αρχιτεκτονικής, βεράντες με θέα στο Αιγαίο και ένα κτήμα με βελανιδιές πάνω από την Ιουλίδα.",
@@ -380,6 +384,8 @@
     });
   });
   try { if (sessionStorage.getItem('cvk-lang-tab') === 'el') applyLang('el'); } catch (e) {}
+
+  each('[data-year]', function (el) { el.textContent = String(new Date().getFullYear()); });   // © year follows the calendar
 
   /* ---------------- Sticky header ---------------- */
   var header = document.querySelector('.site-header');

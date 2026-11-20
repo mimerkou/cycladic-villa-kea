@@ -72,7 +72,7 @@
       askCall: 'Call us', askInsta: 'Message us on Instagram',
       tagline: 'Your Cycladic escape above the sea.',
       toTop: 'Cycladic Villa Kea — back to top', fExplore: 'Explore', fFollow: 'Follow us', fCall: 'Call',
-      fLangs: 'English · Ελληνικά · Français', privacy: 'Privacy policy', credit: 'Website by Michalis Merkouris',
+      fLangs: 'English · Ελληνικά · Français', privacy: 'Privacy policy', credit: 'Website by Michalis Merkouris', creditBy: 'Website by', creditName: 'Michalis Merkouris',
       stickyA: 'Personal reply', stickyB: 'EN · EL · FR'
     },
     el: {
@@ -138,7 +138,7 @@
       askCall: 'Καλέστε μας', askInsta: 'Στείλτε μας μήνυμα στο Instagram',
       tagline: 'Το κυκλαδίτικο καταφύγιό σας, πάνω από τη θάλασσα.',
       toTop: 'Cycladic Villa Kea — επιστροφή στην αρχή', fExplore: 'Περιηγηθείτε', fFollow: 'Ακολουθήστε μας', fCall: 'Τηλέφωνο',
-      fLangs: 'Ελληνικά · English · Français', privacy: 'Πολιτική απορρήτου', credit: 'Δημιουργία ιστοσελίδας: Μιχάλης Μερκούρης',
+      fLangs: 'Ελληνικά · English · Français', privacy: 'Πολιτική απορρήτου', credit: 'Δημιουργία ιστοσελίδας: Μιχάλης Μερκούρης', creditBy: 'Δημιουργία ιστοσελίδας:', creditName: 'Μιχάλης Μερκούρης',
       stickyA: 'Προσωπική απάντηση', stickyB: 'EL · EN · FR'
     }
   };
@@ -484,4 +484,5 @@
   }
   // Greek chosen on another page of this tab carries over; a fresh visit always opens in English.
   try { if (sessionStorage.getItem('cvk-lang-tab') === 'el') applyLang('el'); } catch (e) {}
+  each('[data-year]', function (el) { el.textContent = String(new Date().getFullYear()); });   // © year follows the calendar
 })();

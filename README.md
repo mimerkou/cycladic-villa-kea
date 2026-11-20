@@ -10,6 +10,7 @@ Static site (HTML, CSS, JS), no build step. Open `index.html` or deploy the repo
 - `villa.html` — The villa ("A walk through the house"): shutters that open, a floor plan that draws itself, a corridor of rooms, per-room photo galleries, whitewash reveals, pergola shadows, a zoom out over the estate
 - `location.html` — Location ("The journey here"): the morning haze lifts off Ioulida, an illustrated Kea rises from the sea, a ferry and then the road travel the map as you scroll, distance bars, postcards that stack
 - `contact.html` — Contact: the availability request. Custom range calendar, guest counter (1–6), gentle validation, and a letter that writes itself beside the form and is sealed on sending. **Demo:** the form is not connected yet; nothing is sent (connect it when moving to WordPress). Every "Request availability" on the site opens `contact.html#request`.
+- `privacy.html` — Privacy policy (**demo text**, to be completed and confirmed by the owners; gaps are highlighted in [ ]). Contents stay in view on the left (desktop) and fold into a panel on phones. Linked from every footer and from the consent box of the form (opens in a new tab, so the form keeps what was typed).
 
 ## Files
 
@@ -17,10 +18,12 @@ Static site (HTML, CSS, JS), no build step. Open `index.html` or deploy the repo
 - `css/villa.css` — The villa page
 - `css/location.css` — Location page
 - `css/contact.css` — Contact page
+- `css/privacy.css` — Privacy policy
 - `js/main.js` — home page behaviour
 - `js/villa.js` — The villa page behaviour and its EN/EL text
 - `js/location.js` — Location page behaviour and its EN/EL text
 - `js/contact.js` — Contact page: calendar, form, letter, and its EN/EL text
+- `js/privacy.js` — Privacy policy: contents that follow the reader, and its EN/EL text
 - `assets/img`, `assets/video` — photos and video clips
 
 English loads first. Greek is chosen with the EN/EL switch and carries over between pages in the same browser tab.
@@ -42,6 +45,7 @@ The page is a working draft while the photos and some facts are on their way.
 
 - The recipient email `info@cycladicvillakea.com` is a placeholder.
 - The minimum-stay hint (three nights) is demo text.
-- The privacy policy link in the consent box is inactive until that page exists (`TODO`).
 
-Version: v5.5 (home, The villa, Location, Contact)
+The footer copyright year updates itself every year; the credit links to michalismerkouris.com (new tab).
+
+Version: v5.6 (home, The villa, Location, Contact, Privacy)

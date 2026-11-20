@@ -52,6 +52,8 @@
   "altTerrace": "The dining table under the pergola, with the hills and the Aegean beyond",
   "altAerial": "The villa from above, with its stone terraces, the hills and the sea",
   "altFacade": "The whitewashed façade with blue shutters, stone paving and a terracotta jar",
+  "creditBy": "Website by",
+  "creditName": "Michalis Merkouris",
   "toHome": "Cycladic Villa Kea — home page",
   "title": "Request availability — Cycladic Villa Kea, Ioulida, Kea",
   "desc": "Send us your dates and the number of guests. We check availability and reply personally, usually within the same day, with the total price for your stay.",
@@ -93,7 +95,7 @@
   "optional": "optional",
   "fMsg": "Anything we should know?",
   "fMsgPh": "Flexible dates, children’s ages, a special occasion…",
-  "fConsent": "I agree that my details are used to reply to this request, as described in the <a class=\"link--inline link--pending\" aria-disabled=\"true\">privacy policy</a>.",
+  "fConsent": "I agree that my details are used to reply to this request, as described in the <a class=\"link--inline\" href=\"privacy.html\" target=\"_blank\" rel=\"noopener\">privacy policy</a>.",
   "fSend": "Request availability",
   "fNote": "Not a booking · nothing to pay",
   "summaryEmpty": "Choose your dates above",
@@ -166,6 +168,8 @@
   "altTerrace": "Το τραπέζι κάτω από την πέργκολα, με θέα τους λόφους και το Αιγαίο",
   "altAerial": "Η βίλα από ψηλά, με τις πέτρινες βεράντες, τους λόφους και τη θάλασσα",
   "altFacade": "Η ασβεστωμένη πρόσοψη με τα μπλε παντζούρια, το πέτρινο πλακόστρωτο και ένα πήλινο πιθάρι",
+  "creditBy": "Δημιουργία ιστοσελίδας:",
+  "creditName": "Μιχάλης Μερκούρης",
   "toHome": "Cycladic Villa Kea — αρχική σελίδα",
   "title": "Αίτημα διαθεσιμότητας — Cycladic Villa Kea, Ιουλίδα, Κέα",
   "desc": "Στείλτε μας τις ημερομηνίες και τον αριθμό των επισκεπτών. Ελέγχουμε τη διαθεσιμότητα και σας απαντάμε προσωπικά, συνήθως την ίδια μέρα, με τη συνολική τιμή.",
@@ -207,7 +211,7 @@
   "optional": "προαιρετικό",
   "fMsg": "Κάτι που θα θέλατε να ξέρουμε;",
   "fMsgPh": "Ευέλικτες ημερομηνίες, ηλικίες παιδιών, μια ξεχωριστή περίσταση…",
-  "fConsent": "Συμφωνώ να χρησιμοποιηθούν τα στοιχεία μου για την απάντηση σε αυτό το αίτημα, όπως περιγράφεται στην <a class=\"link--inline link--pending\" aria-disabled=\"true\">πολιτική απορρήτου</a>.",
+  "fConsent": "Συμφωνώ να χρησιμοποιηθούν τα στοιχεία μου για την απάντηση σε αυτό το αίτημα, όπως περιγράφεται στην <a class=\"link--inline\" href=\"privacy.html\" target=\"_blank\" rel=\"noopener\">πολιτική απορρήτου</a>.",
   "fSend": "Ρωτήστε για διαθεσιμότητα",
   "fNote": "Δεν είναι κράτηση · δεν πληρώνετε τίποτα",
   "summaryEmpty": "Επιλέξτε πρώτα τις ημερομηνίες σας",
@@ -272,6 +276,8 @@
       if (lang !== current) applyLang(lang);
     });
   });
+
+  each('[data-year]', function (el) { el.textContent = String(new Date().getFullYear()); });   // © year follows the calendar
 
   /* ---------------- Sticky header ---------------- */
   var header = document.querySelector('.site-header');
