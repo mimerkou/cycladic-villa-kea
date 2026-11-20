@@ -168,6 +168,7 @@
   each('[data-lang]', function (b) {
     b.addEventListener('click', function () {
       var lang = b.getAttribute('data-lang');
+      try { sessionStorage.setItem('cvk-lang-tab', lang); } catch (e) {}   // carried to the other pages of this tab
       if (lang !== current) applyLang(lang);
     });
   });
@@ -479,4 +480,6 @@
   } else {
     root.classList.add('reveal-all');
   }
+  // Greek chosen on another page of this tab carries over; a fresh visit always opens in English.
+  try { if (sessionStorage.getItem('cvk-lang-tab') === 'el') applyLang('el'); } catch (e) {}
 })();

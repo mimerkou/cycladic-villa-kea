@@ -32,7 +32,7 @@
     <nav class="nav" aria-label="Main" data-i18n-aria="navMain">
       <ul class="nav__links">
         <li><a href="#top" data-home data-i18n="navHome">Home</a></li>
-        <li><a href="#villa" data-i18n="navVilla">The villa</a></li>
+        <li><a href="villa.html" data-i18n="navVilla">The villa</a></li>
         <li><a href="#kea" data-i18n="navLocation">Location</a></li>
         <li><a href="#contact" data-i18n="navContact">Contact</a></li>
       </ul>
@@ -56,7 +56,7 @@
   <div class="menu-panel" id="menu-panel" aria-label="Menu" data-i18n-aria="menu">
     <ol class="menu-panel__list">
       <li style="--i:0"><a href="#top" data-home><span class="menu-panel__n">01</span><span data-i18n="navHome">Home</span></a></li>
-      <li style="--i:1"><a href="#villa"><span class="menu-panel__n">02</span><span data-i18n="navVilla">The villa</span></a></li>
+      <li style="--i:1"><a href="villa.html"><span class="menu-panel__n">02</span><span data-i18n="navVilla">The villa</span></a></li>
       <li style="--i:2"><a href="#kea"><span class="menu-panel__n">03</span><span data-i18n="navLocation">Location</span></a></li>
       <li style="--i:3"><a href="#contact"><span class="menu-panel__n">04</span><span data-i18n="navContact">Contact</span></a></li>
     </ol>
@@ -217,8 +217,7 @@
             <div class="spec__cost"><dt data-i18n="sCost">Cost</dt><dd><strong><span data-i18n="vCost">€100 per night</span><sup aria-hidden="true">*</sup></strong></dd></div>
           </dl>
           <p class="spec__foot"><span aria-hidden="true">* </span><span data-i18n="vCostNote">Indicative, to be confirmed</span></p>
-          <!-- TODO: link to "The villa" page when it exists: add href="villa.html" (EL: el/villa.html) and remove aria-disabled. -->
-          <p class="more"><a class="link link--pending" aria-disabled="true"><span data-i18n="houseCta">Explore the villa</span><svg class="arr" width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a></p>
+          <p class="more"><a class="link" href="villa.html"><span data-i18n="houseCta">Explore the villa</span><svg class="arr" width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a></p>
         </div>
       </div>
     </div>
@@ -332,7 +331,7 @@
       <nav class="footer__col" aria-labelledby="f-explore">
         <h2 id="f-explore" data-i18n="fExplore">Explore</h2>
         <ul>
-          <li><a class="footer__link" href="#villa" data-i18n="navVilla">The villa</a></li>
+          <li><a class="footer__link" href="villa.html" data-i18n="navVilla">The villa</a></li>
           <li><a class="footer__link" href="#kea" data-i18n="navLocation">Location</a></li>
           <li><a class="footer__link" href="#contact" data-i18n="navContact">Contact</a></li>
         </ul>
