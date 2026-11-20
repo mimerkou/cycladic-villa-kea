@@ -32,9 +32,8 @@ The page is a working draft while the photos and some facts are on their way.
 
 ## Location page: demo content
 
-- **Photo placeholders**: the four "Discover Kea" postcards (Ioulida lanes, the path to the Lion, a quiet bay, a table by the water).
-- **Demo text, to be confirmed** (marked `<!-- DEMO -->` in `location.html`): ferry and drive times, the three journey steps, all distances, and the three "Discover Kea" picks after Ioulida (to choose with Nicole).
+- **Demo text, to be confirmed** (marked `<!-- DEMO -->` in `location.html`): ferry and drive times, the three journey steps, all distances, and the "Discover Kea" texts after Ioulida.
 - **Open in Maps** points to Ioulida for now; replace it with the villa's exact pin when confirmed (`TODO` in the code).
-- The map is an illustration, not to scale.
+- The map is an illustration of Kea's outline (traced and redrawn), not to scale.
 
-Version: v5.2 (home, The villa, Location)
+Version: v5.3 (home, The villa, Location)
