@@ -179,7 +179,7 @@
   var header = document.querySelector('.site-header');
   function syncHeader() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
   window.addEventListener('scroll', syncHeader, { passive: true });
-  syncHeader();
+  requestAnimationFrame(syncHeader);   // v5.9: not during setup (avoids a forced layout)
 
   /* ---------------- Mobile menu ---------------- */
   var menuBtn = document.querySelector('.menu-btn');
@@ -281,6 +281,15 @@
     }
   };
 
+  // v5.9: posters are not in the HTML (the browser would fetch all three at once). Each is set here,
+  // in WebP, small on phones, when its clip is about to be seen (hero: when Play is offered).
+  function setPoster(v) {
+    var base = v && v.getAttribute('data-poster');
+    if (!base || v.getAttribute('poster')) return;
+    var w = Math.min(window.innerWidth, 1600) * (window.devicePixelRatio || 1);
+    v.setAttribute('poster', base + (w > 760 ? '-1280.webp' : '-640.webp'));
+  }
+
   // Section clips
   each('[data-clip="section"]', function (fig) {
     var key = fig.querySelector('.clip__label').getAttribute('data-i18n');
@@ -303,6 +312,7 @@
     // v4.8: start buffering early so Play is instant: on desktop as soon as the Play button is offered,
     // on touch devices the moment a finger lands on it (saves mobile data until then).
     var warm = function () {
+      setPoster(hero.video);
       if (hero.warmed) return; hero.warmed = true;
       hero.video.preload = 'auto';
       if (hero.video.readyState === 0) hero.video.load();
@@ -476,8 +486,13 @@
       });
     }, { threshold: 0.15 });
     clips.forEach(function (c) { vio.observe(c.fig); });
+    var pio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { setPoster(en.target.querySelector('video')); pio.unobserve(en.target); } });
+    }, { rootMargin: '600px 0px' });
+    clips.forEach(function (c) { if (c !== hero) pio.observe(c.fig); });
   } else {
     root.classList.add('reveal-all');
+    each('video[data-poster]', setPoster);
   }
   // Greek chosen on another page of this tab carries over; a fresh visit always opens in English.
   try { if (sessionStorage.getItem('cvk-lang-tab') === 'el') applyLang('el'); } catch (e) {}

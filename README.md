@@ -52,10 +52,18 @@ The page is a working draft while the photos and some facts are on their way.
 
 No video ever starts by itself, on any screen. The hero clip on the home page shows its photo with a Play button; on desktop the clip is buffered in the background so Play starts at once. All clips are muted until the visitor turns the sound on, and pause when scrolled away.
 
+## Speed (v5.9)
+
+- **Fonts are served from the site** (`assets/fonts/`), not from Google Fonts: Noto Serif Display (upright and italic) and Commissioner, variable weight, cut to the characters the site uses and split into Latin and Greek files. A browser downloads the Greek files only when Greek text is on screen. The three Latin files the first screen needs are preloaded in each page's `<head>`. Licence: SIL Open Font License (`OFL-*.txt` in the same folder).
+- **Video posters are set by `js/main.js`**, not in the HTML (`data-poster` on each `<video>`), so the browser does not fetch all three on arrival. Each poster is WebP, 640 px on phones and 1280 px on larger screens, and loads when its clip is about to come into view (the hero's when Play is offered or pressed).
+- **Phones: the hero photo is on screen from the first frame.** Desktop keeps the full intro (the view opening from the horizon line).
+- Contact, Privacy and 404 run their entrance in CSS from the first frame, instead of waiting for the scripts.
+- `sizes` on the home page images match the real layout, and there are extra sizes for the hero (800 px) and the stone sign (480 px), so phones download smaller files.
+
 ## Social preview
 
 `assets/img/og-image.jpg` (1200×630) is the picture shown when a page is shared on Facebook, WhatsApp, LinkedIn and others. Every page carries the Open Graph / Twitter tags for it, between `<!-- Social preview -->` comments. **The tags use the placeholder domain `https://cycladicvillakea.com`**: replace it with the real one before launch (one line, `SITE`, in the generator's `og_meta.py`, or a find-and-replace in the HTML).
 
 The footer copyright year updates itself every year; the credit links to michalismerkouris.com (new tab).
 
-Version: v5.8 (home, The villa, Location, Contact, Privacy, 404)
+Version: v5.9 (home, The villa, Location, Contact, Privacy, 404)
