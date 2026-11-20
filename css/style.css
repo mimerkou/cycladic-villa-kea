@@ -544,7 +544,7 @@ html.is-ready .hero__horizon { animation: cvk-horizon 1.9s var(--ease-out) .15s 
 .hero__after, .hero__actions { translate: 0 calc(var(--hp, 0) * -18px); }
 .hero-clip { translate: 0 calc(var(--hp, 0) * -150px); }
 @media (min-width: 960px) {
-  html:not(.intro-done) .hero-clip.is-on { transition-delay: 1.5s; }   /* autoplay arrives once the view has opened; a click shows it at once */
+  html:not(.intro-done) .hero-clip.is-on { transition-delay: 1.5s; }   /* (from the autoplay era; Play now always adds .by-tap) */
 }
 
 /* ---------- Mobile menu ---------- */

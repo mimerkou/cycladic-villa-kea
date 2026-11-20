@@ -1,7 +1,7 @@
 /* Cycladic Villa Kea — homepage behaviour (v4: "a day above Ioulida")
    English is the main language: every page load renders in English. EL is switched on by the visitor.
    Also: sticky header, mobile menu, Home link, hero intro, scroll reveals, mobile sticky CTA,
-   hero moving shot (desktop autoplay, muted) and click-to-play clips lower on the page. */
+   hero moving shot and the clips lower on the page, all play only when the visitor presses Play (muted). */
 (function () {
   'use strict';
   var root = document.documentElement;
@@ -235,7 +235,7 @@
   });
 
   /* ---------------- Video clips ----------------
-     Hero: may start by itself (desktop, no reduced-motion), always muted, pausable.
+     Hero: starts only on Play (never by itself), always muted, pausable.
      Section clips: start only on Play, load only then, pause when scrolled away. */
   var desktop = window.matchMedia('(min-width: 960px)');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -312,17 +312,14 @@
       warm(); hero.userPaused = false;
       heroFig.classList.add('by-tap'); showClip(true); hero.play();
     });
-    var autoStart = function () {
-      if (desktop.matches && !reduce.matches) {
-        showClip(true);
-        hero.play();
-      } else {
-        heroPlay.hidden = false;                                    // mobile / reduced motion: photo + Play option
-        if (desktop.matches) warm();                                // desktop: have the clip ready before anyone clicks
-      }
+    // v5.8: no video ever starts by itself. The hero shows the photo with its Play button on every screen;
+    // on desktop the clip is buffered in the background so Play starts at once.
+    var offerPlay = function () {
+      heroPlay.hidden = false;
+      if (desktop.matches && !reduce.matches) warm();
     };
-    if (document.readyState === 'complete') setTimeout(autoStart, 400);
-    else window.addEventListener('load', function () { setTimeout(autoStart, 400); });
+    if (document.readyState === 'complete') setTimeout(offerPlay, 400);
+    else window.addEventListener('load', function () { setTimeout(offerPlay, 400); });
     hero.sync();
   }
 

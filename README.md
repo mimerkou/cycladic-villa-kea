@@ -11,6 +11,7 @@ Static site (HTML, CSS, JS), no build step. Open `index.html` or deploy the repo
 - `location.html` — Location ("The journey here"): the morning haze lifts off Ioulida, an illustrated Kea rises from the sea, a ferry and then the road travel the map as you scroll, distance bars, postcards that stack
 - `contact.html` — Contact: the availability request. Custom range calendar, guest counter (1–6), gentle validation, and a letter that writes itself beside the form and is sealed on sending. **Demo:** the form is not connected yet; nothing is sent (connect it when moving to WordPress). Every "Request availability" on the site opens `contact.html#request`.
 - `privacy.html` — Privacy policy (**demo text**, to be completed and confirmed by the owners; gaps are highlighted in [ ]). Contents stay in view on the left (desktop) and fold into a panel on phones. Linked from every footer and from the consent box of the form (opens in a new tab, so the form keeps what was typed).
+- `404.html` — Page not found (EN/EL), with two ways back: Request availability and Home. Its links and files use root paths (`/css/style.css`), because the server shows it at any missing address; this works when the site sits at the root of its domain (Netlify serves `404.html` by itself). In WordPress it becomes the theme's `404.php`. Not indexed by search engines.
 
 ## Files
 
@@ -23,6 +24,7 @@ Static site (HTML, CSS, JS), no build step. Open `index.html` or deploy the repo
 - `js/villa.js` — The villa page behaviour and its EN/EL text
 - `js/location.js` — Location page behaviour and its EN/EL text
 - `js/contact.js` — Contact page: calendar, form, letter, and its EN/EL text
+- `css/404.css`, `js/404.js` — the 404 page
 - `js/privacy.js` — Privacy policy: contents that follow the reader, and its EN/EL text
 - `assets/img`, `assets/video` — photos and video clips
 
@@ -46,6 +48,14 @@ The page is a working draft while the photos and some facts are on their way.
 - The recipient email `info@cycladicvillakea.com` is a placeholder.
 - The minimum-stay hint (three nights) is demo text.
 
+## Videos
+
+No video ever starts by itself, on any screen. The hero clip on the home page shows its photo with a Play button; on desktop the clip is buffered in the background so Play starts at once. All clips are muted until the visitor turns the sound on, and pause when scrolled away.
+
+## Social preview
+
+`assets/img/og-image.jpg` (1200×630) is the picture shown when a page is shared on Facebook, WhatsApp, LinkedIn and others. Every page carries the Open Graph / Twitter tags for it, between `<!-- Social preview -->` comments. **The tags use the placeholder domain `https://cycladicvillakea.com`**: replace it with the real one before launch (one line, `SITE`, in the generator's `og_meta.py`, or a find-and-replace in the HTML).
+
 The footer copyright year updates itself every year; the credit links to michalismerkouris.com (new tab).
 
-Version: v5.7 (home, The villa, Location, Contact, Privacy)
+Version: v5.8 (home, The villa, Location, Contact, Privacy, 404)
