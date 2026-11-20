@@ -191,6 +191,7 @@ html[lang="el"] .hero h1 { font-size: clamp(34px, 9.6vw, 44px); }
   transition: opacity .8s var(--ease-soft), transform .9s var(--ease-out), visibility 0s .9s;
 }
 .hero-clip.is-on { opacity: 1; visibility: visible; transform: none; transition: opacity .8s var(--ease-soft), transform .9s var(--ease-out), visibility 0s; }
+.hero-clip.is-on.by-tap { transition-duration: .35s, .45s, 0s; }   /* v4.8: opened by the Play button: quick */
 .clip__btn { left: 8px; bottom: 8px; justify-content: center; width: 36px; min-height: 36px; height: 36px; padding: 0; }
 .hero-play { right: 12px; bottom: calc(clamp(22px, 5%, 44px) + 10px); padding: 0 16px 0 14px; }
 
@@ -543,7 +544,7 @@ html.is-ready .hero__horizon { animation: cvk-horizon 1.9s var(--ease-out) .15s 
 .hero__after, .hero__actions { translate: 0 calc(var(--hp, 0) * -18px); }
 .hero-clip { translate: 0 calc(var(--hp, 0) * -150px); }
 @media (min-width: 960px) {
-  .hero-clip.is-on { transition-delay: 1.5s; }   /* arrives once the view has opened */
+  html:not(.intro-done) .hero-clip.is-on { transition-delay: 1.5s; }   /* autoplay arrives once the view has opened; a click shows it at once */
 }
 
 /* ---------- Mobile menu ---------- */
@@ -650,10 +651,10 @@ html.is-ready .hero .parapet { opacity: 1; transition: transform 1s var(--ease-o
 
 /* v4.3 — the terrace Play button is the last thing to appear, after the whole intro */
 html.js .hero-play, html.js .hero-clip .clip__btn { opacity: 0; visibility: hidden; pointer-events: none; }
-html.js.intro-done .hero-clip .clip__btn { visibility: visible; pointer-events: auto; animation: cvk-chip .7s var(--ease-out) both; }
+html.js.intro-done .hero-clip.is-on .clip__btn { visibility: visible; pointer-events: auto; animation: cvk-chip .7s var(--ease-out) both; }
 html.js.intro-done .hero-play { visibility: visible; pointer-events: auto; animation: cvk-chip .7s var(--ease-out) both; }
 @keyframes cvk-chip { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { html.js.intro-done .hero-play, html.js.intro-done .hero-clip .clip__btn { animation: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { html.js.intro-done .hero-play, html.js.intro-done .hero-clip.is-on .clip__btn { animation: none; opacity: 1; } }
 @media (max-width: 959.98px) and (max-height: 780px) {
   .window__frame img { transform: translateY(calc((1 - var(--w, 0)) * 19% - var(--w, 0) * 15%)) scale(1.14); }
 }

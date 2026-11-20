@@ -297,13 +297,25 @@
     clips.push(hero);
     var showClip = function (on) { heroFig.classList.toggle('is-on', on); heroPlay.hidden = on; };
     hero.onFail = function () { showClip(false); };               // playback failed: the photo carries the hero
-    heroPlay.addEventListener('click', function () { hero.userPaused = false; showClip(true); hero.play(); });
+    // v4.8: start buffering early so Play is instant: on desktop as soon as the Play button is offered,
+    // on touch devices the moment a finger lands on it (saves mobile data until then).
+    var warm = function () {
+      if (hero.warmed) return; hero.warmed = true;
+      hero.video.preload = 'auto';
+      if (hero.video.readyState === 0) hero.video.load();
+    };
+    ['pointerenter', 'pointerdown', 'touchstart', 'focus'].forEach(function (ev) { heroPlay.addEventListener(ev, warm, { passive: true }); });
+    heroPlay.addEventListener('click', function () {
+      warm(); hero.userPaused = false;
+      heroFig.classList.add('by-tap'); showClip(true); hero.play();
+    });
     var autoStart = function () {
       if (desktop.matches && !reduce.matches) {
         showClip(true);
         hero.play();
       } else {
         heroPlay.hidden = false;                                    // mobile / reduced motion: photo + Play option
+        if (desktop.matches) warm();                                // desktop: have the clip ready before anyone clicks
       }
     };
     if (document.readyState === 'complete') setTimeout(autoStart, 400);
