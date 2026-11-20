@@ -48,4 +48,4 @@ The page is a working draft while the photos and some facts are on their way.
 
 The footer copyright year updates itself every year; the credit links to michalismerkouris.com (new tab).
 
-Version: v5.6 (home, The villa, Location, Contact, Privacy)
+Version: v5.7 (home, The villa, Location, Contact, Privacy)
