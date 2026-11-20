@@ -157,7 +157,7 @@
   var header = document.querySelector('.site-header');
   function syncHeader() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
   window.addEventListener('scroll', syncHeader, { passive: true });
-  syncHeader();
+  requestAnimationFrame(syncHeader);   // not during setup (avoids a forced layout)
 
   /* ---------------- Mobile menu ---------------- */
   var menuBtn = document.querySelector('.menu-btn');

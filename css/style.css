@@ -685,7 +685,7 @@ html.js.intro-done .hero-clip.is-on .clip__btn { visibility: visible; pointer-ev
 html.js.intro-done .hero-play { visibility: visible; pointer-events: auto; animation: cvk-chip .7s var(--ease-out) both; }
 /* v5.9: page entrances run in CSS from the first frame (not after the scripts), so the first thing
    read on each page shows as early as possible. */
-@keyframes cvk-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes cvk-rise { from { opacity: .01; transform: translateY(14px); } to { opacity: 1; transform: none; } }   /* .01, not 0: Chrome does not count text that starts fully transparent as the page's main content (PageSpeed then reports NO_LCP) */
 @keyframes cvk-chip { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { html.js.intro-done .hero-play, html.js.intro-done .hero-clip.is-on .clip__btn { animation: none; opacity: 1; } }
 @media (max-width: 959.98px) and (max-height: 780px) {
