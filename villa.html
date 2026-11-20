@@ -32,11 +32,10 @@
         <li><a href="index.html" data-i18n="navHome">Home</a></li>
         <li><a href="villa.html" aria-current="page" data-i18n="navVilla">The villa</a></li>
         <li><a href="location.html" data-i18n="navLocation">Location</a></li>
-        <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+        <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
       </ul>
       <div class="lang" role="group" aria-label="Language" data-i18n-aria="langGroup"><button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="el" aria-pressed="false" lang="el">EL</button></div>
-      <!-- TODO: link to the Contact page (form + date picker) when it exists: add href="contact.html" (EL: el/contact.html) and remove aria-disabled. -->
-      <a class="btn btn--sm btn--pending" aria-disabled="true" data-i18n="cta">Request availability</a>
+      <a class="btn btn--sm" href="contact.html#request" data-i18n="cta">Request availability</a>
     </nav>
     <div class="header-tools">
       <div class="lang" role="group" aria-label="Language" data-i18n-aria="langGroup"><button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="el" aria-pressed="false" lang="el">EL</button></div>
@@ -51,11 +50,10 @@
       <li style="--i:0"><a href="index.html"><span class="menu-panel__n">01</span><span data-i18n="navHome">Home</span></a></li>
       <li style="--i:1"><a href="villa.html" aria-current="page"><span class="menu-panel__n">02</span><span data-i18n="navVilla">The villa</span></a></li>
       <li style="--i:2"><a href="location.html"><span class="menu-panel__n">03</span><span data-i18n="navLocation">Location</span></a></li>
-      <li style="--i:3"><a href="#contact"><span class="menu-panel__n">04</span><span data-i18n="navContact">Contact</span></a></li>
+      <li style="--i:3"><a href="contact.html"><span class="menu-panel__n">04</span><span data-i18n="navContact">Contact</span></a></li>
     </ol>
     <div class="menu-panel__foot" style="--i:4">
-      <!-- TODO: link to the Contact page (form + date picker) when it exists: add href="contact.html" (EL: el/contact.html) and remove aria-disabled. -->
-      <a class="btn btn--pending" aria-disabled="true"><span data-i18n="cta">Request availability</span></a>
+      <a class="btn" href="contact.html#request"><span data-i18n="cta">Request availability</span></a>
       <p class="menu-panel__meta"><a href="tel:+306945541114">+30 694 554 1114</a><span aria-hidden="true"> · </span><a href="https://www.instagram.com/cycladicvillakea" target="_blank" rel="noopener">Instagram</a></p>
     </div>
   </div>
@@ -324,8 +322,7 @@
       <p data-i18n="askP">Send us the dates you have in mind and how many of you are coming. We’ll check availability and reply personally with the total price for your stay.</p>
       <p class="ask__langs" data-i18n="askLangs">We reply in English, Greek or French.</p>
       <div class="ask__actions">
-        <!-- TODO: link to the Contact page (form + date picker) when it exists: add href="contact.html" (EL: el/contact.html) and remove aria-disabled. -->
-        <a class="btn btn--light btn--pending" aria-disabled="true"><span data-i18n="askContact">Contact us</span><svg class="arr" width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a>
+          <a class="btn btn--light" href="contact.html#request"><span data-i18n="askContact">Contact us</span><svg class="arr" width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a>
         <a class="link link--light" href="tel:+306945541114"><span data-i18n="askCall">Call us</span>&nbsp;<span style="font-variant-numeric: tabular-nums">+30 694 554 1114</span></a>
       </div>
     </div>
@@ -354,7 +351,7 @@
         <ul>
           <li><a class="footer__link" href="villa.html" data-i18n="navVilla">The villa</a></li>
           <li><a class="footer__link" href="location.html" data-i18n="navLocation">Location</a></li>
-          <li><a class="footer__link" href="#contact" data-i18n="navContact">Contact</a></li>
+          <li><a class="footer__link" href="contact.html" data-i18n="navContact">Contact</a></li>
         </ul>
       </nav>
       <div class="footer__col">
@@ -377,8 +374,7 @@
 
 <div class="sticky-cta" aria-hidden="true">
   <p><strong data-i18n="stickyA">Personal reply</strong><span data-i18n="stickyB">EN · EL · FR</span></p>
-  <!-- TODO: link to the Contact page (form + date picker) when it exists: add href="contact.html" (EL: el/contact.html) and remove aria-disabled. -->
-  <a class="btn btn--sm btn--pending" aria-disabled="true" tabindex="-1" data-i18n="cta">Request availability</a>
+  <a class="btn btn--sm" href="contact.html#request" tabindex="-1" data-i18n="cta">Request availability</a>
 </div>
 
 
