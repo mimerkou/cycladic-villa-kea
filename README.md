@@ -44,4 +44,4 @@ The page is a working draft while the photos and some facts are on their way.
 - The minimum-stay hint (three nights) is demo text.
 - The privacy policy link in the consent box is inactive until that page exists (`TODO`).
 
-Version: v5.4 (home, The villa, Location, Contact)
+Version: v5.5 (home, The villa, Location, Contact)

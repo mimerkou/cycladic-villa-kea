@@ -70,7 +70,8 @@
       askP: 'Send us the dates you have in mind and how many of you are coming. We’ll check availability and reply personally with the total price for your stay.',
       askLangs: 'We reply in English, Greek or French.',
       askCall: 'Call us', askInsta: 'Message us on Instagram',
-      tagline: 'Your Cycladic escape above the sea.', fExplore: 'Explore', fFollow: 'Follow us', fCall: 'Call',
+      tagline: 'Your Cycladic escape above the sea.',
+      toTop: 'Cycladic Villa Kea — back to top', fExplore: 'Explore', fFollow: 'Follow us', fCall: 'Call',
       fLangs: 'English · Ελληνικά · Français', privacy: 'Privacy policy', credit: 'Website by Michalis Merkouris',
       stickyA: 'Personal reply', stickyB: 'EN · EL · FR'
     },
@@ -135,7 +136,8 @@
       askP: 'Στείλτε μας τις ημερομηνίες που σας ενδιαφέρουν και πόσα άτομα θα είστε. Θα ελέγξουμε τη διαθεσιμότητα και θα σας απαντήσουμε προσωπικά με τη συνολική τιμή για τη διαμονή σας.',
       askLangs: 'Απαντάμε στα ελληνικά, στα αγγλικά ή στα γαλλικά.',
       askCall: 'Καλέστε μας', askInsta: 'Στείλτε μας μήνυμα στο Instagram',
-      tagline: 'Το κυκλαδίτικο καταφύγιό σας, πάνω από τη θάλασσα.', fExplore: 'Περιηγηθείτε', fFollow: 'Ακολουθήστε μας', fCall: 'Τηλέφωνο',
+      tagline: 'Το κυκλαδίτικο καταφύγιό σας, πάνω από τη θάλασσα.',
+      toTop: 'Cycladic Villa Kea — επιστροφή στην αρχή', fExplore: 'Περιηγηθείτε', fFollow: 'Ακολουθήστε μας', fCall: 'Τηλέφωνο',
       fLangs: 'Ελληνικά · English · Français', privacy: 'Πολιτική απορρήτου', credit: 'Δημιουργία ιστοσελίδας: Μιχάλης Μερκούρης',
       stickyA: 'Προσωπική απάντηση', stickyB: 'EL · EN · FR'
     }
