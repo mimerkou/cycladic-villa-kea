@@ -25,12 +25,15 @@
   document.documentElement.classList.add('js');
   window.__cvkFailsafe = setTimeout(function () { document.documentElement.classList.add('is-ready', 'reveal-all'); }, 3000);
 </script>
-<link rel="preload" as="image" type="image/webp" imagesrcset="assets/img/ioulida-clean-720.webp 720w, assets/img/ioulida-clean-1080.webp 1080w, assets/img/ioulida-clean-1440.webp 1440w" imagesizes="100vw">
+<link rel="preload" as="image" type="image/webp"
+      imagesrcset="assets/img/film-coffee-ioulida-960.webp 960w, assets/img/film-coffee-ioulida-1600.webp 1600w, assets/img/film-coffee-ioulida-2048.webp 2048w"
+      imagesizes="(orientation: portrait) 230vw, 100vw">
 <!-- Fonts are served from this site (Noto Serif Display, Commissioner; Latin + Greek, see css/style.css). The Latin files the first screen needs load first. -->
 <link rel="preload" href="assets/fonts/noto-serif-display-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/noto-serif-display-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/commissioner-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/cinema.css">
 <link rel="stylesheet" href="css/location.css">
 </head>
 <body class="page-location">
@@ -75,19 +78,27 @@
 </header>
 
 <main id="main" tabindex="-1">
-<!-- ================= HERO — the morning haze lifts off Ioulida ================= -->
-<section class="lhero" id="top" aria-labelledby="lhero-title">
-  <div class="wrap lhero__head">
-    <p class="kicker lhero__kicker" data-i18n="lKicker">Location</p>
-    <h1 id="lhero-title" class="display lhero__title" data-i18n-html="lTitle">Above Ioulida, <em>at the heart of Kea.</em></h1>
-    <p class="lead lhero__lead" data-i18n="lLead">Kea is the closest of the Cyclades to Athens, yet it keeps its own slow pace. The villa sits just above Ioulida, the island’s whitewashed capital, looking out over the hills to the Aegean.</p>
+<!-- ================= HERO — a zoom film (v6): from coffee on the terrace, down to Ioulida, into its lanes ================= -->
+<section class="lhero film film--loc" id="top" data-film aria-labelledby="lhero-title">
+  <div class="film__stage">
+      <div class="film__frame" data-to="0.305 0.405 3.1"><picture><source type="image/webp" srcset="assets/img/film-coffee-ioulida-960.webp 960w, assets/img/film-coffee-ioulida-1600.webp 1600w, assets/img/film-coffee-ioulida-2048.webp 2048w" sizes="(orientation: portrait) 230vw, 100vw"><img src="assets/img/film-coffee-ioulida-1600.jpg" width="2048" height="1366" fetchpriority="high" decoding="async" alt="Coffee for two on the terrace table, with Ioulida and the sea beyond the stone wall" data-i18n-alt="altF0"></picture></div>
+      <div class="film__frame" data-to="0.47 0.58 3.6"><picture><source type="image/webp" srcset="assets/img/ioulida-clean-720.webp 720w, assets/img/ioulida-clean-1080.webp 1080w, assets/img/ioulida-clean-1440.webp 1440w" sizes="(orientation: portrait) 230vw, 100vw"><img src="assets/img/ioulida-clean-1080.jpg" width="1440" height="932" decoding="async" alt="Ioulida spread across the hillside, with the hills and the sea beyond" data-i18n-alt="altF1"></picture></div>
+      <!-- Frame 03: ioulida-kea.png (sent 23/11/2026), same photo as ioulida-kea.jpg (© www.feelgreece.com) without the mark. Confirm the right to use it before going online. -->
+      <div class="film__frame" data-at="0.5 0.55"><picture><source type="image/webp" srcset="assets/img/ioulida-lane-960.webp 960w, assets/img/ioulida-lane-1280.webp 1280w" sizes="(orientation: portrait) 230vw, 100vw"><img src="assets/img/ioulida-lane-1280.jpg" width="1280" height="922" loading="lazy" decoding="async" alt="A stairway lane in Ioulida: a yellow house, a green door and an oleander in bloom" data-i18n-alt="altF2"></picture></div>
+    <div class="film__shade" aria-hidden="true"></div>
+    <div class="film__intro">
+      <p class="kicker" data-i18n="lKicker">Location</p>
+      <h1 id="lhero-title" class="film__title" data-i18n-html="lTitle">Above Ioulida, <em>at the heart of Kea.</em></h1>
+      <p class="film__lead" data-i18n="lLead">Kea is the closest of the Cyclades to Athens, yet it keeps its own slow pace. The villa sits just above Ioulida, the island’s whitewashed capital, looking out over the hills to the Aegean.</p>
+    </div>
+      <div class="film__cap" data-frame="1" aria-hidden="true"><span class="film__cap-k" data-i18n="fc1k">02 · Ioulida</span><span class="film__cap-t" data-i18n-html="fc1t">The island’s capital, <em>just below.</em></span><span class="film__cap-s" data-i18n="fc1s">From the terrace wall you look down over its rooftops and stairways.</span></div>
+      <div class="film__cap" data-frame="2" aria-hidden="true"><span class="film__cap-k" data-i18n="fc2k">03 · The lanes</span><span class="film__cap-t" data-i18n-html="fc2t">Stairways, oleander <em>and whitewash.</em></span><span class="film__cap-s" data-i18n="fc2s">A short way down from the villa: tavernas, the square and the Lion of Kea.</span></div>
+      <div class="film__rail" aria-hidden="true"><span class="film__count"><span class="film__n">01</span><span class="film__of"> / 03</span></span><span class="film__bar"><i></i></span><span class="film__geo">37.66° N · 24.32° E</span></div>
+      <div class="film__cue" aria-hidden="true"><span></span><b data-i18n="filmScroll">Scroll</b></div>
   </div>
-  <div class="lhero__frame">
-    <figure class="ph lhero__photo"><picture><source type="image/webp" srcset="assets/img/ioulida-clean-720.webp 720w, assets/img/ioulida-clean-1080.webp 1080w, assets/img/ioulida-clean-1440.webp 1440w" sizes="100vw"><img src="assets/img/ioulida-clean-1080.jpg" width="1080" height="699" fetchpriority="high" decoding="async" style="object-position:50% 62%" alt="Ioulida spread across the hillside, with the hills and the sea beyond" data-i18n-alt="altHeroL"></picture></figure>
-    <div class="haze" aria-hidden="true"><span class="haze__veil"></span><span class="haze__bank haze__bank--a"></span><span class="haze__bank haze__bank--b"></span></div>
-  </div>
-  <div class="wrap"><ul class="vfacts lfacts"><li style="--i:0"><span class="vfacts__n" data-i18n="lf1n">≈1 h</span><span class="vfacts__t" data-i18n="lf1">by ferry from Lavrio</span></li><li style="--i:1"><span class="vfacts__n" data-i18n="lf2n">Ioulida</span><span class="vfacts__t" data-i18n="lf2">just below the villa</span></li><li style="--i:2"><span class="vfacts__n" data-i18n="lf3n">≈15′</span><span class="vfacts__t" data-i18n="lf3">by car from the port</span></li></ul> <!-- DEMO: ferry and drive times to be confirmed --></div>
 </section>
+<div class="wrap film-facts"><ul class="vfacts lfacts"><li style="--i:0"><span class="vfacts__n" data-i18n="lf1n">≈1 h</span><span class="vfacts__t" data-i18n="lf1">by ferry from Lavrio</span></li><li style="--i:1"><span class="vfacts__n" data-i18n="lf2n">Ioulida</span><span class="vfacts__t" data-i18n="lf2">just below the villa</span></li><li style="--i:2"><span class="vfacts__n" data-i18n="lf3n">≈15′</span><span class="vfacts__t" data-i18n="lf3">by car from the port</span></li></ul> <!-- DEMO: ferry and drive times to be confirmed --></div>
+
 
 <!-- ================= 01 GETTING HERE — the island rises; the journey travels the map as you scroll ================= -->
 <section class="journey" id="getting-here" aria-labelledby="journey-title">
@@ -199,6 +210,13 @@
           <span class="dist__val"><b>20</b> <span data-i18n="min">min</span> <span class="dist__how" data-i18n="byCar">by car</span></span></li>
       </ul>
       <p class="dist__note" data-i18n="distNote">Indicative times · to be confirmed</p> <!-- DEMO: all times are placeholders -->
+    </div>
+  
+    <!-- v6: from the owners' listing (23/11/2026). Straight-line distances, not road distances: confirm before launch. -->
+    <div class="near">
+      <p class="kicker near__k" data-i18n="nearK">Around the villa</p>
+      <div class="near__cols"><div class="near__col" data-reveal><h3 class="near__g" data-i18n="nSights">Sights</h3><ul><li><span data-i18n="n1">Lion of Kea</span><b>0.75&nbsp;km</b></li><li><span data-i18n="n2">Tower of Agia Marina</span><b>6&nbsp;km</b></li><li><span data-i18n="n3">Agia Irini, prehistoric settlement</span><b>7&nbsp;km</b></li><li><span data-i18n="n4">Cave of Agios Timotheos</span><b>7.7&nbsp;km</b></li><li><span data-i18n="n5">Ancient Karthaia</span><b>11&nbsp;km</b></li></ul></div><div class="near__col" data-reveal><h3 class="near__g" data-i18n="nBeaches">Beaches</h3><ul><li><span data-i18n="n6">Otzias</span><b>5&nbsp;km</b></li><li><span data-i18n="n7">Sykamia</span><b>6&nbsp;km</b></li><li><span data-i18n="n8">Gialiskari</span><b>6&nbsp;km</b></li><li><span data-i18n="n9">Psathi</span><b>7&nbsp;km</b></li><li><span data-i18n="n10">Kalydonychi – Psili Ammos</span><b>7&nbsp;km</b></li></ul></div><div class="near__col" data-reveal><h3 class="near__g" data-i18n="nFood">Food & drinks</h3><ul><li><span data-i18n="n11">Rolando’s Ouzeri</span><b>1.3&nbsp;km</b></li><li><span data-i18n="n12">I Piatsa</span><b>1.6&nbsp;km</b></li><li><span data-i18n="n13">Breeze Finger Food Bar</span><b>6&nbsp;km</b></li></ul></div></div>
+      <p class="dist__note" data-i18n="nearNote">Distances as the crow flies, from the villa · by road they are a little longer</p>
     </div>
   </div>
 </section>
@@ -338,6 +356,9 @@
 </div>
 
 
+<script src="assets/vendor/gsap/gsap.min.js"></script>
+<script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
 <script src="js/location.js"></script>
+<script src="js/cinema.js"></script>
 </body>
 </html>

@@ -66,4 +66,37 @@ No video ever starts by itself, on any screen. The hero clip on the home page sh
 
 The footer copyright year updates itself every year; the credit links to michalismerkouris.com (new tab).
 
-Version: v5.13 (home, The villa, Location, Contact, Privacy, 404)
+## v6 — Cinematic (local draft, not deployed)
+
+**Zoom films.** Home, The villa and Location open with a scene that stays on screen while you scroll: the camera moves into one spot of a photograph and the next, closer photograph of that same spot opens exactly there.
+
+- Home: the estate at golden hour → the terrace lounge at dusk → the sun between the columns.
+- The villa: the estate from above → the terrace corner between the two pergolas → through the open living-room door, into the living room. (Replaces the shutters intro.)
+- Location: coffee on the terrace with Ioulida beyond → Ioulida → a stairway lane with an oleander (`ioulida-lane`).
+
+How it works: `js/cinema.js` + `css/cinema.css`, with GSAP 3 + ScrollTrigger served from the site (`assets/vendor/gsap/`, GreenSock standard licence, free to use). Each frame is a `.film__frame` with `data-to="x y zoom"`: the point of the photo (0–1) the camera travels to and how much closer it gets. Captions are `.film__cap[data-frame="n"]`. The first photo is the hero image and is preloaded. **Reduced motion:** no pinning, the first photo stays as a still with its text. Without GSAP the films still run on a plain scroll listener.
+
+**Also new:** a closing shot on Contact (table at sunset, drifts slower than the page), "Around the villa" on Location (sights, beaches, food, straight-line distances from the owners\' listing, to be confirmed), a slow push-in on the 404 photo, real photos in all ten "Photo to come" places on The villa, amenities in four groups from the listing, house rules (non-smoking, no pets).
+
+**Photos:** new hi-res set (2048 px) from `images-booking/images-0*.zip`, exported as WebP 960/1600/2048 + JPG fallback (`film-*`, `living-*`, `dining-table`, `bedroom-three`, `bath-*`, `stone-path`, `estate-oaks`, `arrival-road`, `closing-table`).
+
+**Run locally:** `npm install` once, then `npm run dev`, and open http://localhost:8080 (uses `serve`; addresses show without `.html`).
+
+### v6.1
+- **Transparent header** over the opening film on Home, The villa and Location (light text on a soft shade); it turns solid once the film has scrolled away, and whenever the menu is open. Contact, Privacy and 404 keep the solid header.
+- **One photo, one place.** Each of the 45 photos appears once on the whole site; only 02 (the hand-painted sign) twice (home welcome, villa details). Contact has no photo again.
+- **The villa, Layout:** no floor plan (until a real drawing exists). Cards 01–07: living & kitchen, three bedrooms, two bathrooms (05, 06), the terrace (07). The text on the left stays in place until the last card.
+
+### v6.2
+- **Location film back to three frames:** the third is `ioulida-lane` (from `ioulida-kea.jpg`, 1280 × 960). **Before going online:** the original photo carries a `© www.feelgreece.com` watermark. Get the photographer's permission (and credit as asked), or replace it with a photo the owners hold the rights to. Do not crop the watermark out.
+- The transparent header turns solid as soon as the film starts to leave the screen (no overlap with the last caption on phones).
+
+### v6.3
+- **The villa, Inside:** every room has three photos again. The bathroom shows its main photo plus the two bathroom shots also used on the layout cards 05 and 06 (the one place where photos repeat on purpose).
+- **Location film, frame 03:** now from `ioulida-kea.png` (1280 × 922). It is the same photograph as `ioulida-kea.jpg` without the © www.feelgreece.com mark, so the right to use it still has to be confirmed before going online.
+
+### v6.4
+- **The villa, The estate:** the zoom out now uses `estate-zoom` (from `villa-kea-zoom-4096.webp`, 4096 × 3072, the same aerial at much higher resolution), served up to 4096 px because the scene starts 2.3× closer. The zoom starts on the house (transform-origin 58% 46%).
+- **Inside, 04:** "The bathrooms" / «Τα μπάνια».
+
+Version: v6.4-draft (cinematic, local) · previous: v5.13 (home, The villa, Location, Contact, Privacy, 404)

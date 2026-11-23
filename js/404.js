@@ -59,7 +59,7 @@
   "nfTitle": "This path <em>leads nowhere.</em>",
   "nfLead": "The page you are looking for does not exist, or it has moved. The villa, though, is right where it has always been: above Ioulida, looking out to the sea.",
   "nfHome": "Back to home",
-  "nfAlt": "A clay jar on the terrace at sunset, with the sea behind",
+  "nfAlt": "An open door to the terrace, a wooden sideboard and a painting of the harbour",
   "nfNumAria": "Error 404"
  },
  "el": {
@@ -113,7 +113,7 @@
   "nfTitle": "Αυτό το μονοπάτι <em>δεν βγάζει πουθενά.</em>",
   "nfLead": "Η σελίδα που ψάχνετε δεν υπάρχει ή έχει μετακινηθεί. Η βίλα πάντως είναι εκεί που ήταν πάντα: πάνω από την Ιουλίδα, με θέα τη θάλασσα.",
   "nfHome": "Επιστροφή στην αρχική",
-  "nfAlt": "Πιθάρι στη βεράντα στο ηλιοβασίλεμα, με τη θάλασσα πίσω",
+  "nfAlt": "Μια ανοιχτή πόρτα προς τη βεράντα, ένας ξύλινος μπουφές και ένας πίνακας με λιμάνι",
   "nfNumAria": "Σφάλμα 404"
  }
 };

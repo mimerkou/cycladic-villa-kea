@@ -1,0 +1,207 @@
+/* ==========================================================================
+   Cycladic Villa Kea — cinema (v6), shared by every page
+   Zoom films: a stage that stays under the header while the camera moves
+   into a photograph and the next, closer photograph of the same spot opens
+   there. Text over the photos is white on a soft shade, never on bare sky.
+   ========================================================================== */
+
+.film { position: relative; height: var(--film-h, 430vh); background: var(--aegean-ink); }
+.film__stage {
+  position: sticky; top: var(--hdr, var(--header)); overflow: hidden;
+  height: calc(100svh - var(--hdr, var(--header)));
+  background: #0B1A2B; color: #fff; isolation: isolate;
+}
+.film__frame { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; transform-origin: 0 0; backface-visibility: hidden; }
+.film__frame img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; user-select: none; -webkit-user-drag: none; }
+.film__frame + .film__frame { visibility: hidden; }
+html.cine .film__frame { will-change: transform, opacity; }
+html.cine .film__frame img { object-fit: fill; }
+/* The incoming, closer photograph opens with a soft edge instead of a hard rectangle */
+.film__frame.is-incoming {
+  -webkit-mask-image: radial-gradient(ellipse 71% 71% at 50% 50%, #000 var(--feather, 40%), transparent calc(var(--feather, 40%) + 34%));
+          mask-image: radial-gradient(ellipse 71% 71% at 50% 50%, #000 var(--feather, 40%), transparent calc(var(--feather, 40%) + 34%));
+}
+
+/* Shade for legibility (bottom-left), and a faint vignette like a lens */
+.film__shade { position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background:
+    radial-gradient(120% 95% at 0% 100%, rgba(8, 22, 38, .7) 0%, rgba(8, 22, 38, .34) 40%, rgba(8, 22, 38, 0) 68%),
+    linear-gradient(0deg, rgba(8, 22, 38, .42) 0%, rgba(8, 22, 38, 0) 34%),
+    radial-gradient(140% 110% at 50% 50%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, .22) 100%);
+}
+
+/* Opening text (frame 0) */
+.film__intro, .film__cap { text-shadow: 0 1px 28px rgba(8, 22, 38, .42), 0 0 2px rgba(8, 22, 38, .18); }
+.film__intro {
+  position: absolute; z-index: 4; left: var(--pad); right: var(--pad); bottom: clamp(92px, 13svh, 132px);
+  max-width: 760px; will-change: opacity, transform;
+}
+.film__intro .kicker { color: rgba(255, 255, 255, .86); margin-bottom: 14px; }
+.film__intro .kicker::before { background: rgba(255, 255, 255, .6); }
+.film__title { font-family: var(--f-display); font-weight: 300; letter-spacing: -.022em; line-height: 1; color: #fff; font-size: clamp(40px, 10.6vw, 52px); text-wrap: balance; }
+.film__title em { color: #fff; font-weight: 300; }
+html[lang="el"] .film__title { font-size: clamp(34px, 9vw, 44px); line-height: 1.04; }
+.film__lead { margin-top: 18px; max-width: 34em; font-size: clamp(16px, 1.15vw, 18px); line-height: 1.55; color: rgba(255, 255, 255, .9); }
+.film__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 26px; margin-top: 26px; }
+
+/* Captions: one per frame, bottom-left, like a title card */
+.film__cap {
+  position: absolute; z-index: 4; left: var(--pad); right: var(--pad); bottom: clamp(92px, 13svh, 132px);
+  max-width: 560px; visibility: hidden; opacity: 0; will-change: opacity, transform;
+}
+.film__cap-k { display: flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255, 255, 255, .82); }
+.film__cap-k::before { content: ""; width: 28px; height: 1px; background: rgba(255, 255, 255, .6); }
+.film__cap-t { display: block; margin-top: 12px; font-family: var(--f-display); font-weight: 300; font-size: clamp(30px, 7.4vw, 56px); line-height: 1.02; letter-spacing: -.02em; color: #fff; text-wrap: balance; }
+.film__cap-t em { font-style: italic; }
+html[lang="el"] .film__cap-t { font-size: clamp(27px, 6.4vw, 48px); line-height: 1.06; }
+.film__cap-s { display: block; margin-top: 12px; max-width: 30em; font-size: 15.5px; line-height: 1.55; color: rgba(255, 255, 255, .86); }
+
+/* Bottom rail: counter, progress, coordinates */
+.film__rail {
+  position: absolute; z-index: 4; left: var(--pad); right: var(--pad); bottom: clamp(26px, 4.4svh, 44px);
+  display: flex; align-items: center; gap: 16px; font-size: 12px; letter-spacing: .14em; color: rgba(255, 255, 255, .8);
+  font-variant-numeric: tabular-nums;
+}
+.film__count { white-space: nowrap; }
+.film__count .film__of { opacity: .6; }
+.film__bar { position: relative; flex: 1; height: 1px; background: rgba(255, 255, 255, .26); overflow: hidden; }
+.film__bar i { position: absolute; inset: 0; background: #fff; transform: scaleX(0); transform-origin: 0 50%; }
+.film__geo { white-space: nowrap; opacity: .72; display: none; }
+
+/* Scroll cue (only before the first move) */
+.film__cue { position: absolute; z-index: 4; right: var(--pad); bottom: clamp(56px, 8.4svh, 84px); display: flex; flex-direction: column; align-items: center; gap: 10px;
+  font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255, 255, 255, .82); pointer-events: none; }
+.film__cue span { position: relative; width: 1px; height: 46px; background: rgba(255, 255, 255, .25); overflow: hidden; }
+.film__cue span::after { content: ""; position: absolute; left: 0; top: -40%; width: 1px; height: 40%; background: #fff; animation: cue 2.2s cubic-bezier(.6, 0, .3, 1) infinite; }
+@keyframes cue { 0% { top: -40%; } 70%, 100% { top: 100%; } }
+
+/* Light buttons on photographs */
+.film .btn--light { background: #fff; color: var(--ink); }
+.film .link--light { color: #fff; }
+
+/* Opening fade (first paint): the title rises out of the photograph */
+html.js .film__intro > * { opacity: 0; transform: translateY(18px); transition: opacity 1s var(--ease-soft), transform 1.2s var(--ease-out); }
+html.js .film__intro > :nth-child(2) { transition-delay: .1s; }
+html.js .film__intro > :nth-child(3) { transition-delay: .22s; }
+html.js .film__intro > :nth-child(4) { transition-delay: .34s; }
+html.is-ready .film__intro > *, html.reveal-all .film__intro > * { opacity: 1; transform: none; }
+html.js .film__frame:first-child img { animation: film-in 2.4s var(--ease-out) both; }
+@keyframes film-in { from { filter: brightness(.7) saturate(.85); } to { filter: none; } }
+
+@media (min-width: 720px) {
+  .film__title { font-size: clamp(52px, 6.2vw, 92px); }
+  html[lang="el"] .film__title { font-size: clamp(44px, 5vw, 74px); }
+  .film__geo { display: inline; }
+}
+@media (min-width: 960px) {
+  .film__intro, .film__cap { bottom: clamp(110px, 15svh, 150px); }
+}
+
+/* A shorter film on phones: fewer screens of scrolling for the same story */
+@media (max-width: 719px) { .film { height: var(--film-h-m, 340vh); } }
+
+/* Reduced motion, or the film could not start: a still of the first frame with its text */
+html.cine-still .film { height: auto; }
+html.cine-still .film__stage { position: relative; top: 0; }
+html.cine-still .film__frame + .film__frame, html.cine-still .film__cap, html.cine-still .film__cue, html.cine-still .film__rail { display: none; }
+html.cine-still .film__frame:first-child img { animation: none; }
+
+/* Drift: the photo is a little larger than its frame and moves slower than the page */
+[data-drift] { overflow: hidden; }
+html.cine [data-drift] img { will-change: transform; }
+
+/* Print: just the first frame */
+@media print { .film { height: auto; } .film__stage { position: relative; height: 60vh; } .film__frame + .film__frame, .film__rail, .film__cue { display: none; } }
+
+/* Page heroes that became films: no padding of their own; the facts follow under the stage */
+.film.vhero, .film.lhero { padding: 0; }
+.film-facts { padding-top: clamp(8px, 2vw, 24px); }
+.facts--after-film { margin-top: 0; }
+
+/* Villa amenities: four groups from the listing */
+@media (min-width: 720px) { .amen__cols--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; } }
+@media (min-width: 1200px) { .amen__cols.amen__cols--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; } }
+
+/* Real photos where the "Photo to come" slots used to be: fill their frame like the slot did */
+.rcard__media > picture, .room__main .gfig__btn > picture, .room__thumb .gfig__btn > picture,
+.detail__img > picture, .estate__slot > picture { display: block; width: 100%; height: 100%; }
+.rcard__media > picture img, .gfig__btn > picture img, .detail__img > picture img, .estate__slot > picture img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Contact: a closing shot between "How it works" and the other ways to reach us */
+.cshot { position: relative; min-height: clamp(420px, 78svh, 760px); display: flex; align-items: flex-end; overflow: hidden; background: var(--aegean-ink); color: #fff; }
+.cshot__fig { position: absolute; inset: 0; margin: 0; }
+.cshot__fig picture, .cshot__fig img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.cshot__fig img { object-position: 50% 55%; }
+.cshot__shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(8, 22, 38, .72) 0%, rgba(8, 22, 38, .2) 46%, rgba(8, 22, 38, 0) 70%); }
+.cshot__text { position: relative; z-index: 2; width: 100%; padding-bottom: clamp(40px, 8svh, 88px); text-shadow: 0 1px 28px rgba(8, 22, 38, .4); }
+.cshot__text .kicker { color: rgba(255, 255, 255, .86); margin-bottom: 14px; }
+.cshot__t { max-width: 15em; font-family: var(--f-display); font-weight: 300; font-size: clamp(32px, 4.6vw, 64px); line-height: 1.04; letter-spacing: -.02em; text-wrap: balance; }
+.cshot + .other { margin-top: 0; }
+
+/* Location: around the villa (listing distances) */
+.near { grid-column: 1 / -1; margin-top: clamp(40px, 6vw, 72px); }
+.near__k { margin-bottom: 18px; }
+.near__cols { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; }
+.near__g { margin: 0 0 6px; font-family: var(--f-display); font-size: 22px; font-weight: 300; color: var(--ink); }
+.near ul { margin: 0; padding: 0; list-style: none; }
+.near li { display: flex; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; line-height: 1.35; color: var(--ink-2); }
+.near li b { font-weight: 400; color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.near .dist__note { margin-top: 16px; }
+@media (min-width: 720px) { .near__cols { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; } }
+
+/* 404: a slow push-in on the photograph, once */
+html.cine .nf__media img { animation: nf-push 16s cubic-bezier(.33, 0, .2, 1) both; transform-origin: 55% 60%; }
+@keyframes nf-push { from { transform: scale(1); } to { transform: scale(1.12); } }
+
+/* Villa layout (v6.1): no plan. The text stays beside the cards until the last one has passed. */
+@media (min-width: 960px) {
+  .layout__intro { grid-row: 1; align-self: start; position: sticky; top: calc(var(--header) + var(--subnav, 56px) + 40px); }
+  .layout__cards { grid-row: 1; padding-top: 0; padding-bottom: 12vh; }
+}
+
+/* ==========================================================================
+   Transparent header over the opening film (v6.1) — Home, The villa, Location.
+   The header keeps its place in the page but no longer pushes the film down:
+   the film starts at the very top and the header lies over it, light on photo.
+   ========================================================================== */
+html.film-top .site-header {
+  margin-bottom: calc(-1 * var(--header));
+  background: transparent; color: #fff; box-shadow: none;
+  transition: background-color .45s var(--ease-soft), color .45s var(--ease-soft), box-shadow .45s var(--ease-soft);
+}
+/* a soft shade under the header so the white text always reads, even over a bright sky */
+html.film-top .site-header::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: calc(var(--header) * 1.9); z-index: -1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(8, 22, 38, .5) 0%, rgba(8, 22, 38, .22) 48%, rgba(8, 22, 38, 0) 100%);
+  transition: opacity .45s var(--ease-soft);
+}
+html.film-top .site-header .brand__place { color: rgba(255, 255, 255, .78); }
+html.film-top .site-header .lang button { color: rgba(255, 255, 255, .72); }
+html.film-top .site-header .lang button[aria-pressed="true"], html.film-top .site-header .lang button:hover { color: #fff; }
+html.film-top .site-header .lang span { color: rgba(255, 255, 255, .4); }
+html.film-top .site-header .nav .btn--sm { background: #fff; color: var(--ink); }
+html.film-top .site-header .nav .btn--sm:hover, html.film-top .site-header .nav .btn--sm:focus-visible { color: #fff; }
+html.film-top .site-header :focus-visible { outline-color: #fff; }
+html.film-top .film__stage { top: 0; height: 100svh; }
+html.film-top .film__frame:first-child img { animation-name: film-in-top; }
+@keyframes film-in-top { from { filter: brightness(.62) saturate(.85); } to { filter: none; } }
+
+/* After the film, or with the menu open: the usual solid header */
+html.film-top.header-solid .site-header, html.film-top.menu-open .site-header {
+  background: var(--chalk); color: var(--ink);
+  box-shadow: 0 1px 0 var(--line), 0 14px 30px -26px rgba(14, 34, 56, .45);
+}
+html.film-top.header-solid .site-header::before, html.film-top.menu-open .site-header::before { opacity: 0; }
+html.film-top.header-solid .site-header .brand__place, html.film-top.menu-open .site-header .brand__place { color: var(--muted); }
+html.film-top.header-solid .site-header .lang button, html.film-top.menu-open .site-header .lang button { color: var(--muted); }
+html.film-top.header-solid .site-header .lang button[aria-pressed="true"], html.film-top.menu-open .site-header .lang button[aria-pressed="true"],
+html.film-top.header-solid .site-header .lang button:hover, html.film-top.menu-open .site-header .lang button:hover { color: var(--ink); }
+html.film-top.header-solid .site-header .lang span, html.film-top.menu-open .site-header .lang span { color: var(--line); }
+html.film-top.header-solid .site-header .nav .btn--sm, html.film-top.menu-open .site-header .nav .btn--sm { background: var(--aegean); color: #fff; }
+html.film-top.header-solid .site-header :focus-visible { outline-color: var(--aegean); }
+
+/* Reduced motion: the still sits under the header in the same way */
+html.film-top.cine-still .film__stage { height: 100svh; }
+
+/* Villa estate (v6.4): the 4096 px photo; the zoom out starts on the house, not on the middle of the frame */
+.estate__img { transform-origin: 58% 46%; }

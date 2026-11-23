@@ -26,13 +26,14 @@
   window.__cvkFailsafe = setTimeout(function () { document.documentElement.classList.add('is-ready', 'reveal-all'); }, 3000);
 </script>
 <link rel="preload" as="image" type="image/webp"
-      imagesrcset="assets/img/hero-terrace-lounge-720.webp 720w, assets/img/hero-terrace-lounge-800.webp 800w, assets/img/hero-terrace-lounge-1080.webp 1080w, assets/img/hero-terrace-lounge-1440.webp 1440w"
-      imagesizes="(min-width: 960px) 56vw, 100vw">
+      imagesrcset="assets/img/film-estate-golden-960.webp 960w, assets/img/film-estate-golden-1600.webp 1600w, assets/img/film-estate-golden-1866.webp 1866w"
+      imagesizes="(orientation: portrait) 230vw, 100vw">
 <!-- Fonts are served from this site (Noto Serif Display, Commissioner; Latin + Greek, see css/style.css). The Latin files the first screen needs load first. -->
 <link rel="preload" href="assets/fonts/noto-serif-display-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/noto-serif-display-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/commissioner-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/cinema.css">
 <!-- Live preview on michalismerkouris.com: active only when this page is framed there with ?mm-preview=1.
      Lime scrollbar, links off (the visitor can only scroll the homepage). Normal visitors are not affected. -->
 <script>(function(){if(window.self===window.top||!/[?&]mm-preview=1(&|$)/.test(location.search))return;var d=document,s=d.createElement('style');s.textContent='html{scrollbar-width:thin!important;scrollbar-color:#C6F432 #131518!important}@supports not (scrollbar-color:red blue){::-webkit-scrollbar{width:8px!important;height:8px!important;background:#131518!important}::-webkit-scrollbar-thumb{background:#C6F432!important;border-radius:8px!important}}a[href]{cursor:default!important}';(d.head||d.documentElement).appendChild(s);d.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href]');if(a){e.preventDefault();e.stopImmediatePropagation()}},true);d.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation()},true)})();</script>
@@ -84,77 +85,42 @@
 </header>
 
 <main id="main">
-<!-- ================= 1 · HERO =================
-     Photo of the terrace lounge = first image and fallback. On desktop a discreet moving shot
-     (the live panel of 01-kea-terrace-landscape.mp4) plays muted beside it; on mobile, with
-     reduced motion, or if playback fails, the photo stays and a Play button offers the clip. -->
-<section class="hero" id="top" data-scene="flow" tabindex="-1" aria-labelledby="hero-title">
-  <div class="hero__grid">
-    <div class="hero__media">
-      <figure class="ph hero__photo">
-        <picture>
-          <source type="image/webp"
-                  srcset="assets/img/hero-terrace-lounge-720.webp 720w, assets/img/hero-terrace-lounge-800.webp 800w, assets/img/hero-terrace-lounge-1080.webp 1080w, assets/img/hero-terrace-lounge-1440.webp 1440w"
-                  sizes="(min-width: 960px) 56vw, 100vw">
-          <img src="assets/img/hero-terrace-lounge-1440.jpg" width="1440" height="1084" fetchpriority="high"
-               alt="The shaded terrace lounge between two stone columns, looking out over the hills to the Aegean" data-i18n-alt="altHero">
-        </picture>
-      </figure>
-      <!-- Intro: a hairline appears on the sea horizon, then the view opens up and down from it. -->
-      <span class="hero__horizon" aria-hidden="true"></span>
-      <svg class="parapet" viewBox="0 0 1600 60" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path class="cap" d="M0 14 C160 9 300 16 470 11 C640 6 780 15 960 10 C1140 5 1300 13 1460 9 C1530 7 1570 9 1600 8 L1600 60 L0 60 Z"/>
-        <path class="wall" d="M0 22 C160 17 300 24 470 19 C640 14 780 23 960 18 C1140 13 1300 21 1460 17 C1530 15 1570 17 1600 16 L1600 60 L0 60 Z"/>
-      </svg>
-
-      <!-- Moving shot: only the right-hand live panel of the landscape file is shown (CSS crop, see .clip--panel). -->
-      <figure class="clip clip--panel hero-clip" data-clip="hero">
-        <video muted playsinline loop preload="none" data-poster="assets/video/01-kea-terrace-poster"
-               aria-label="Video: walking out from under the pergola towards the view" data-i18n-aria="vHeroAria">
-          <source src="assets/video/01-kea-terrace-landscape.mp4" type="video/mp4">
-        </video>
-        <button class="clip__btn" type="button" data-action="toggle" hidden>
-          <svg class="i-play" width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>
-          <svg class="i-pause" width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z" fill="currentColor"/></svg>
-          <span class="sr-only clip__label" data-i18n="vPause">Pause video</span>
-        </button>
-      </figure>
-      <button class="hero-play" type="button" hidden>
-        <svg width="12" height="12" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>
-        <span data-i18n="vHeroPlay">The terrace · 15 s</span>
-      </button>
-    </div>
-
-    <div class="hero__text">
-      <h1 id="hero-title" class="display">
-        <span class="l1-group">
-          <span class="kicker" data-i18n="eyebrow">A private villa on Kea, Cyclades</span>
-          <span class="l l1"><span data-i18n="h1a">Above Ioulida,</span></span>
-        </span>
-        <span class="l l2"><span><em data-i18n="h1b">facing the Aegean.</em></span></span>
-      </h1>
-      <div class="hero__after">
-        <p class="lead" data-i18n="heroSub">An elegant Cycladic house for up to six guests, with a shaded terrace that looks straight out to the Aegean.</p>
-      </div>
-      <!-- The two actions sit in their own row, lower in the column: they close the hero. -->
-      <div class="hero__actions">
-          <a class="btn" href="contact.html#request"><span data-i18n="cta">Request availability</span><svg class="arr" width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a>
-        <a class="link" href="#villa"><span data-i18n="heroLink">Discover the house</span><svg class="arr" width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
+<!-- ================= 1 · HERO — a zoom film (v6) =================
+     The camera starts above the estate at golden hour, moves into the terrace lounge under the pergola,
+     and ends with the sun between the columns. Same place, closer and closer, as you scroll.
+     The first photograph is the hero image (and the only one on reduced motion). -->
+<section class="film film--home" id="top" data-film tabindex="-1" aria-labelledby="hero-title">
+  <div class="film__stage">
+      <div class="film__frame" data-to="0.395 0.605 4.4"><picture><source type="image/webp" srcset="assets/img/film-estate-golden-960.webp 960w, assets/img/film-estate-golden-1600.webp 1600w, assets/img/film-estate-golden-1866.webp 1866w" sizes="(orientation: portrait) 230vw, 100vw"><img src="assets/img/film-estate-golden-1600.jpg" width="1866" height="1536" fetchpriority="high" decoding="async" alt="The villa on its hillside among oak trees, lit by the golden evening light" data-i18n-alt="altF0"></picture></div>
+      <div class="film__frame" data-to="0.64 0.44 2.5"><picture><source type="image/webp" srcset="assets/img/film-lounge-dusk-960.webp 960w, assets/img/film-lounge-dusk-1600.webp 1600w, assets/img/film-lounge-dusk-2048.webp 2048w" sizes="(orientation: portrait) 230vw, 100vw"><img src="assets/img/film-lounge-dusk-1600.jpg" width="2048" height="1366" decoding="async" alt="The terrace lounge under the pergola at dusk, the lamps on and the sea beyond" data-i18n-alt="altF1"></picture></div>
+      <div class="film__frame" data-at="0.52 0.45"><picture><source type="image/webp" srcset="assets/img/film-sunset-pillars-960.webp 960w, assets/img/film-sunset-pillars-1600.webp 1600w, assets/img/film-sunset-pillars-2048.webp 2048w" sizes="(orientation: portrait) 230vw, 100vw"><img src="assets/img/film-sunset-pillars-1600.jpg" width="2048" height="1366" loading="lazy" decoding="async" alt="The sun setting over the sea between the stone columns of the terrace" data-i18n-alt="altF2"></picture></div>
+    <div class="film__shade" aria-hidden="true"></div>
+    <div class="film__intro">
+      <p class="kicker" data-i18n="eyebrow">A private villa on Kea, Cyclades</p>
+      <h1 id="hero-title" class="film__title" data-i18n-html="heroTitle">Above Ioulida, <em>facing the Aegean.</em></h1>
+      <p class="film__lead" data-i18n="heroSub">An elegant Cycladic house for up to six guests, with a shaded terrace that looks straight out to the Aegean.</p>
+      <div class="film__actions hero__actions">
+        <a class="btn btn--light" href="contact.html#request"><span data-i18n="cta">Request availability</span><svg class="arr" width="18" height="10" viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4"/></svg></a>
+        <a class="link link--light" href="#villa"><span data-i18n="heroLink">Discover the house</span><svg class="arr" width="16" height="10" viewBox="0 0 16 10" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4"/></svg></a>
       </div>
     </div>
-  </div>
-
-  <div class="facts">
-    <div class="wrap">
-      <ul>
-        <li style="--i:0"><strong>6</strong><span data-i18n="fGuests">guests at most</span></li>
-        <li style="--i:1"><strong>3</strong><span data-i18n="fBeds">bedrooms, double beds</span></li>
-        <li style="--i:2"><strong>100 m²</strong><span data-i18n="fSize">Cycladic house</span></li>
-        <li style="--i:3"><strong>2</strong><span data-i18n="fPark">cars, private parking</span></li>
-      </ul>
-    </div>
+      <div class="film__cap" data-frame="1" aria-hidden="true"><span class="film__cap-k" data-i18n="fc1k">02 · The terrace</span><span class="film__cap-t" data-i18n-html="fc1t">Under the pergola, <em>as the lamps come on.</em></span><span class="film__cap-s" data-i18n="fc1s">The lounge looks west, over the hills to the sea.</span></div>
+      <div class="film__cap" data-frame="2" aria-hidden="true"><span class="film__cap-k" data-i18n="fc2k">03 · Sunset</span><span class="film__cap-t" data-i18n-html="fc2t">The sun goes down <em>between the columns.</em></span><span class="film__cap-s" data-i18n="fc2s">Every clear evening, straight in front of the main terrace.</span></div>
+      <div class="film__rail" aria-hidden="true"><span class="film__count"><span class="film__n">01</span><span class="film__of"> / 03</span></span><span class="film__bar"><i></i></span><span class="film__geo">37.66° N · 24.32° E</span></div>
+      <div class="film__cue" aria-hidden="true"><span></span><b data-i18n="filmScroll">Scroll</b></div>
   </div>
 </section>
+
+<div class="facts facts--after-film">
+  <div class="wrap">
+    <ul>
+      <li style="--i:0"><strong>6</strong><span data-i18n="fGuests">guests at most</span></li>
+      <li style="--i:1"><strong>3</strong><span data-i18n="fBeds">bedrooms, double beds</span></li>
+      <li style="--i:2"><strong>2</strong><span data-i18n="fBaths">bathrooms, bath and shower</span></li>
+      <li style="--i:3"><strong>100 m²</strong><span data-i18n="fSize">Cycladic house, all on one level</span></li>
+    </ul>
+  </div>
+</div>
 
 <!-- ================= 2 · WELCOME — the statement lights up word by word as you scroll ================= -->
 <section class="welcome" data-scene="flow" aria-labelledby="welcome-title">
@@ -185,7 +151,7 @@
       <div class="house__ticker" aria-hidden="true"><span class="house__n">01</span><span class="house__of">/07</span><span class="house__label" data-i18n="gl1">The façade</span><span class="house__bar"><span class="house__fill"></span></span></div>
 
       <div class="g-item g--wide" data-index="1" data-label="gl1">
-        <figure class="ph ph--hover g-ph" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/facade-800.webp 800w, assets/img/facade-1280.webp 1280w, assets/img/facade-1800.webp 1800w" sizes="(min-width: 960px) 57vw, 90vw"><img src="assets/img/facade-1280.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="The whitewashed façade with blue shutters, stone paving and a terracotta jar" data-i18n-alt="altFacade"></picture></figure>
+        <figure class="ph ph--hover g-ph" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/kv-45-640.webp 640w, assets/img/kv-45-1080.webp 1080w, assets/img/kv-45-1600.webp 1600w" sizes="(min-width: 960px) 57vw, 90vw"><img src="assets/img/kv-45-1080.jpg" width="2048" height="1152" loading="lazy" decoding="async" alt="The whitewashed façade from above, blue shutters open onto the stone courtyard" data-i18n-alt="altK45"></picture></figure>
         <p class="g-cap"><span class="g-cap__n">01</span> <span data-i18n="gl1">The façade</span><span class="g-cap__sep" aria-hidden="true"> · </span><span class="g-cap__t" data-i18n="gc1">Whitewash, blue shutters, stone underfoot.</span></p>
       </div>
       <div class="g-item g--left" data-index="2" data-label="gl2">
@@ -193,20 +159,20 @@
         <p class="g-cap"><span class="g-cap__n">02</span> <span data-i18n="gl2">On its own land</span><span class="g-cap__sep" aria-hidden="true"> · </span><span class="g-cap__t" data-i18n="gc2">Terraces around the house, the hills and the sea beyond.</span></p>
       </div>
       <div class="g-item g--wide" data-index="3" data-label="gl3">
-        <figure class="ph ph--hover g-ph" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/living-room-640.webp 640w, assets/img/living-room-1080.webp 1080w" sizes="(min-width: 960px) 57vw, 90vw"><img src="assets/img/living-room-1080.jpg" width="1080" height="1080" loading="lazy" decoding="async" alt="The living room with blue sofas, a coffee table and the kitchen beyond" data-i18n-alt="altLiving"></picture></figure>
+        <figure class="ph ph--hover g-ph" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/kv-18-640.webp 640w, assets/img/kv-18-1080.webp 1080w, assets/img/kv-18-1600.webp 1600w" sizes="(min-width: 960px) 57vw, 90vw"><img src="assets/img/kv-18-1080.jpg" width="2048" height="1366" loading="lazy" decoding="async" alt="Blue sofas, a wooden coffee table and island paintings in the living room" data-i18n-alt="altK18"></picture></figure>
         <p class="g-cap"><span class="g-cap__n">03</span> <span data-i18n="gl3">The living room</span><span class="g-cap__sep" aria-hidden="true"> · </span><span class="g-cap__t" data-i18n="gc3">Deep sofas in island blue, open to the kitchen.</span></p>
       </div>
       <div class="g-item g--right" data-index="4" data-label="gl4">
-        <figure class="ph ph--hover g-ph" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/kitchen-640.webp 640w, assets/img/kitchen-1080.webp 1080w" sizes="(min-width: 960px) 35vw, 72vw"><img src="assets/img/kitchen-1080.jpg" width="1080" height="1080" loading="lazy" decoding="async" alt="The kitchen with grey cabinets, patterned tiles and a wooden dining table" data-i18n-alt="altKitchen"></picture></figure>
+        <figure class="ph ph--hover g-ph" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/kv-24-640.webp 640w, assets/img/kv-24-1080.webp 1080w, assets/img/kv-24-1600.webp 1600w" sizes="(min-width: 960px) 35vw, 72vw"><img src="assets/img/kv-24-1080.jpg" width="2048" height="1366" loading="lazy" decoding="async" alt="The kitchen, a tall fridge and a bookcase beside the dining table" data-i18n-alt="altK24"></picture></figure>
         <p class="g-cap"><span class="g-cap__n">04</span> <span data-i18n="gl4">The kitchen</span><span class="g-cap__sep" aria-hidden="true"> · </span><span class="g-cap__t" data-i18n="gc4">Fully equipped, with a dining table for meals indoors.</span></p>
       </div>
       <div class="g-item g--pair" data-index="5" data-label="gl5">
-        <figure class="ph ph--hover g-ph g-ph--a" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/bedroom-canopy-640.webp 640w, assets/img/bedroom-canopy-1080.webp 1080w" sizes="(min-width: 960px) 25vw, 44vw"><img src="assets/img/bedroom-canopy-1080.jpg" width="1080" height="1080" loading="lazy" decoding="async" alt="A bedroom with a canopy over the double bed and a door to the garden" data-i18n-alt="altCanopy"></picture></figure><figure class="ph ph--hover g-ph g-ph--b g-arch" data-reveal="photo" style="--d:140ms"><picture><source type="image/webp" srcset="assets/img/bedroom-640.webp 640w, assets/img/bedroom-1024.webp 1024w, assets/img/bedroom-1080.webp 1080w, assets/img/bedroom-1600.webp 1600w" sizes="(min-width: 960px) 25vw, 44vw"><img src="assets/img/bedroom-1024.jpg" width="1024" height="576" loading="lazy" decoding="async" style="object-position:62% 50%" alt="A bright bedroom with a double bed and windows open to the hills" data-i18n-alt="altBedroom"></picture></figure>
+        <figure class="ph ph--hover g-ph g-ph--a" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/kv-27-640.webp 640w, assets/img/kv-27-1080.webp 1080w, assets/img/kv-27-1600.webp 1600w" sizes="(min-width: 960px) 25vw, 44vw"><img src="assets/img/kv-27-1080.jpg" width="2048" height="1366" loading="lazy" decoding="async" alt="A bedroom with a canopy over the bed and a nautical wheel on the wall" data-i18n-alt="altK27"></picture></figure><figure class="ph ph--hover g-ph g-ph--b g-arch" data-reveal="photo" style="--d:140ms"><picture><source type="image/webp" srcset="assets/img/kv-35-640.webp 640w, assets/img/kv-35-1080.webp 1080w, assets/img/kv-35-1600.webp 1600w" sizes="(min-width: 960px) 25vw, 44vw"><img src="assets/img/kv-35-1080.jpg" width="2048" height="1366" loading="lazy" decoding="async" alt="A bedroom window open to the hills and the sea, with fresh towels in a basket" data-i18n-alt="altK35"></picture></figure>
         <p class="g-cap"><span class="g-cap__n">05</span> <span data-i18n="gl5">The bedrooms</span><span class="g-cap__sep" aria-hidden="true"> · </span><span class="g-cap__t" data-i18n="gc5">Three, each with a double bed.</span></p>
       </div>
       <div class="g-item g--trio" data-index="6" data-label="gl6">
-        <figure class="ph ph--hover g-ph g-ph--a" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/detail-plate-640.webp 640w, assets/img/detail-plate-1080.webp 1080w" sizes="(min-width: 960px) 17vw, 29vw"><img src="assets/img/detail-plate-1080.jpg" width="1080" height="1351" loading="lazy" decoding="async" alt="Hand-painted blue plates on a whitewashed wall" data-i18n-alt="altPlate"></picture></figure><figure class="ph ph--hover g-ph g-ph--b" data-reveal="photo" style="--d:120ms"><picture><source type="image/webp" srcset="assets/img/detail-towels-640.webp 640w, assets/img/detail-towels-1080.webp 1080w, assets/img/detail-towels-1440.webp 1440w" sizes="(min-width: 960px) 17vw, 29vw"><img src="assets/img/detail-towels-1080.jpg" width="1080" height="1080" loading="lazy" decoding="async" alt="Rolled white towels on a made bed" data-i18n-alt="altTowels"></picture></figure><figure class="ph ph--hover g-ph g-ph--c" data-reveal="photo" style="--d:240ms"><picture><source type="image/webp" srcset="assets/img/detail-window-640.webp 640w, assets/img/detail-window-1080.webp 1080w" sizes="(min-width: 960px) 17vw, 29vw"><img src="assets/img/detail-window-1080.jpg" width="1080" height="1350" loading="lazy" decoding="async" alt="A window with blue shutters and a pot of geraniums" data-i18n-alt="altWindow"></picture></figure>
-        <p class="g-cap"><span class="g-cap__n">06</span> <span data-i18n="gl6">Details</span><span class="g-cap__sep" aria-hidden="true"> · </span><span class="g-cap__t" data-i18n="gc6">Hand-painted plates, soft linen, blue shutters.</span></p>
+        <figure class="ph ph--hover g-ph g-ph--a" data-reveal="photo"><picture><source type="image/webp" srcset="assets/img/kv-14-640.webp 640w, assets/img/kv-14-1080.webp 1080w, assets/img/kv-14-1600.webp 1600w" sizes="(min-width: 960px) 17vw, 29vw"><img src="assets/img/kv-14-1080.jpg" width="2048" height="1366" loading="lazy" decoding="async" alt="Shelves with small island objects and gold mirrors on a white wall" data-i18n-alt="altK14"></picture></figure><figure class="ph ph--hover g-ph g-ph--b" data-reveal="photo" style="--d:120ms"><picture><source type="image/webp" srcset="assets/img/detail-towels-640.webp 640w, assets/img/detail-towels-1080.webp 1080w, assets/img/detail-towels-1440.webp 1440w" sizes="(min-width: 960px) 17vw, 29vw"><img src="assets/img/detail-towels-1080.jpg" width="1080" height="1080" loading="lazy" decoding="async" alt="Rolled white towels on a made bed" data-i18n-alt="altTowels"></picture></figure><figure class="ph ph--hover g-ph g-ph--c" data-reveal="photo" style="--d:240ms"><picture><source type="image/webp" srcset="assets/img/kv-21-640.webp 640w, assets/img/kv-21-1080.webp 1080w, assets/img/kv-21-1600.webp 1600w" sizes="(min-width: 960px) 17vw, 29vw"><img src="assets/img/kv-21-1080.jpg" width="2048" height="1366" loading="lazy" decoding="async" alt="Patterned tiles, a wooden worktop and the hob in the kitchen" data-i18n-alt="altK21"></picture></figure>
+        <p class="g-cap"><span class="g-cap__n">06</span> <span data-i18n="gl6">Details</span><span class="g-cap__sep" aria-hidden="true"> · </span><span class="g-cap__t" data-i18n="gc6">Gold mirrors, soft linen, patterned tiles.</span></p>
       </div>
 
       <div class="g-item g--tour" data-index="7" data-label="gl7">
@@ -264,8 +230,8 @@
       </div>
       <div class="stage__media">
         <div class="layer layer--am">
-          <figure class="ph ph--hover layer__main"><picture><source type="image/webp" srcset="assets/img/terrace-table-640.webp 640w, assets/img/terrace-table-960.webp 960w, assets/img/terrace-table-1365.webp 1365w" sizes="(min-width: 960px) 57vw, 82vw"><img src="assets/img/terrace-table-960.jpg" width="960" height="960" loading="lazy" decoding="async" alt="The dining table under the pergola, with the hills and the Aegean beyond" data-i18n-alt="altTerrace"></picture></figure>
-          <figure class="ph ph--hover layer__aside"><picture><source type="image/webp" srcset="assets/img/breakfast-view-640.webp 640w, assets/img/breakfast-view-1080.webp 1080w, assets/img/breakfast-view-1440.webp 1440w" sizes="(min-width: 960px) 16vw, 31vw"><img src="assets/img/breakfast-view-1080.jpg" width="1080" height="950" loading="lazy" decoding="async" alt="Coffee for two on the glass table, with Ioulida and the sea beyond" data-i18n-alt="altBreakfast"></picture></figure>
+          <figure class="ph ph--hover layer__main"><picture><source type="image/webp" srcset="assets/img/kv-05-640.webp 640w, assets/img/kv-05-1080.webp 1080w, assets/img/kv-05-1600.webp 1600w" sizes="(min-width: 960px) 57vw, 82vw"><img src="assets/img/kv-05-1080.jpg" width="2048" height="1366" loading="lazy" decoding="async" alt="The terrace lounge at midday, the pergola throwing striped shade across the stone" data-i18n-alt="altK05"></picture></figure>
+          <figure class="ph ph--hover layer__aside"><picture><source type="image/webp" srcset="assets/img/kv-10-640.webp 640w, assets/img/kv-10-1080.webp 1080w, assets/img/kv-10-1156.webp 1156w" sizes="(min-width: 960px) 16vw, 31vw"><img src="assets/img/kv-10-1080.jpg" width="1156" height="1536" loading="lazy" decoding="async" alt="Cushioned wicker seats on the terrace, facing the stone wall and the sea" data-i18n-alt="altK10"></picture></figure>
         </div>
         <div class="layer layer--pm">
           <figure class="ph ph--hover layer__main"><picture><source type="image/webp" srcset="assets/img/sunset-house-640.webp 640w, assets/img/sunset-house-1080.webp 1080w, assets/img/sunset-house-1440.webp 1440w" sizes="(min-width: 960px) 57vw, 82vw"><img src="assets/img/sunset-house-1080.jpg" width="1080" height="720" loading="lazy" decoding="async" alt="The villa at sunset, the sun low over the sea beyond the stone terrace" data-i18n-alt="altSunsetHouse"></picture></figure>
@@ -294,7 +260,7 @@
   <div class="window">
     <p class="window__title display" aria-hidden="true" data-i18n-html="windowTitle">Ioulida, <em>just below.</em></p>
     <figure class="window__frame">
-      <picture><source type="image/webp" srcset="assets/img/ioulida-view-600.webp 600w, assets/img/ioulida-view-960.webp 960w, assets/img/ioulida-view-1440.webp 1440w" sizes="100vw"><img src="assets/img/ioulida-view-960.jpg" width="960" height="1200" loading="lazy" decoding="async" style="object-position:50% 36%" alt="Ioulida spread across the hillside, seen from the villa’s terrace wall" data-i18n-alt="altIoulida"></picture>
+      <picture><source type="image/webp" srcset="assets/img/kv-42-640.webp 640w, assets/img/kv-42-1080.webp 1080w, assets/img/kv-42-1600.webp 1600w" sizes="100vw"><img style="object-position:22% 50%" src="assets/img/kv-42-1080.jpg" width="2048" height="1152" loading="lazy" decoding="async" alt="Ioulida below the villa at sunset, the sun reflected on the sea" data-i18n-alt="altK42"></picture>
     </figure>
     <div class="window__card">
       <div class="window__head">
@@ -377,6 +343,9 @@
   <a class="btn btn--sm" href="contact.html#request" tabindex="-1" data-i18n="cta">Request availability</a>
 </div>
 
+<script src="assets/vendor/gsap/gsap.min.js"></script>
+<script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/cinema.js"></script>
 </body>
 </html>
