@@ -118,4 +118,7 @@ How it works: `js/cinema.js` + `css/cinema.css`, with GSAP 3 + ScrollTrigger ser
 - **Link previews (Viber, WhatsApp, Facebook):** `og:url` and `og:image` now point to `https://cycladic-villa-kea.netlify.app`, because cycladicvillakea.com does not exist yet and the preview image could not be fetched.
   **When the site moves to its domain:** replace `https://cycladic-villa-kea.netlify.app` with `https://cycladicvillakea.com` in the `og:url` / `og:image` lines of every page (11 lines, 6 pages). The `info@cycladicvillakea.com` addresses were not touched.
 
-Version: v6.6.2-draft (cinematic) · previous: v5.13 (home, The villa, Location, Contact, Privacy, 404)
+### v6.6.3
+- **Wording about the house:** the walls are painted white (not whitewashed) and the shutters are grey-blue (not blue). Texts, captions and photo descriptions updated in EN and EL ("white-painted walls", "grey-blue shutters" / «λευκοβαμμένοι τοίχοι», «γκριζογάλανα παντζούρια»). Ioulida itself stays "whitewashed".
+
+Version: v6.6.3-draft (cinematic) · previous: v5.13 (home, The villa, Location, Contact, Privacy, 404)
