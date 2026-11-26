@@ -145,7 +145,7 @@ section[id] { scroll-margin-top: var(--header); }
    ========================================================================== */
 .hero { position: relative; }
 .hero__grid { display: grid; grid-template-columns: minmax(0, 1fr); }
-.hero__media { position: relative; overflow: hidden; aspect-ratio: 4 / 3.25; max-height: 58svh; width: 100%; }
+.hero__media { position: relative; overflow: hidden; aspect-ratio: 4 / 3.25; max-height: 58vh; max-height: 58svh; width: 100%; }
 .hero__media .ph { position: absolute; inset: 0; }
 .hero__media img { object-position: 50% 45%; }
 .hero__text { position: relative; z-index: 3; margin-top: -8px; padding: 0 var(--pad); }
@@ -262,7 +262,7 @@ html[lang="el"] .hero h1 { font-size: clamp(34px, 9.6vw, 44px); }
   .hero__grid {
     grid-template-columns: minmax(0, 5.4fr) minmax(0, 6.6fr);
     grid-template-rows: var(--hero-horizon) auto auto auto minmax(0, 1fr);
-    height: clamp(540px, calc(100svh - var(--header) - var(--facts-h)), 700px);
+    height: clamp(540px, calc(100vh - var(--header) - var(--facts-h)), 700px); height: clamp(540px, calc(100svh - var(--header) - var(--facts-h)), 700px);
   }
   .hero__media { grid-column: 2; grid-row: 1 / -1; aspect-ratio: auto; max-height: none; height: 100%; }
   .hero__media img { object-position: 50% 50%; }
@@ -402,14 +402,14 @@ html.js .welcome__text .w.on { opacity: 1; }
 .in-short__title { margin-bottom: 14px; font-size: 13.5px; font-weight: 500; }
 
 /* ---------- The terrace: a pinned stage, morning → late afternoon ---------- */
-.stage-scene { position: relative; height: 250svh; }
+.stage-scene { position: relative; height: 250vh; height: 250svh; }
 .stage {
-  position: sticky; top: var(--header); height: calc(100svh - var(--header)); overflow: hidden;
+  position: sticky; top: var(--header); height: calc(100vh - var(--header)); height: calc(100svh - var(--header)); overflow: hidden;
   display: flex; align-items: center; background: var(--chalk);
 }
 .stage__sky { position: absolute; inset: 0; background: linear-gradient(180deg, #F4E6D4 0%, #ECD5BC 55%, #E6CCAF 100%); opacity: var(--k, 0); }
 .stage__grid { position: relative; width: 100%; display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
-.stage__media { position: relative; order: -1; height: 35svh; margin-inline: calc(-1 * var(--pad)); }
+.stage__media { position: relative; order: -1; height: 35vh; height: 35svh; margin-inline: calc(-1 * var(--pad)); }
 .layer { position: absolute; inset: 0; }
 .layer--am { opacity: calc(1 - var(--k, 0)); }
 .layer--pm { opacity: var(--k, 0); pointer-events: none; }
@@ -455,11 +455,11 @@ html.js .welcome__text .w.on { opacity: 1; }
   background: #F2C98F; box-shadow: 0 0 0 4px rgba(242, 201, 143, .25), 0 0 14px 3px rgba(240, 160, 90, calc(var(--k, 0) * .55));
 }
 /* Short phones (e.g. 375×667): give back the height the day line takes, so the text still fits above the bottom bar */
-@media (max-height: 720px) { .stage__media { height: 30svh; } .dayline { margin-top: 0; } }
+@media (max-height: 720px) { .stage__media { height: 30vh; height: 30svh; } .dayline { margin-top: 0; } }
 
 /* ---------- Ioulida: a Cycladic arch opens onto the village ---------- */
-.window-scene { position: relative; height: 210svh; }
-.window { position: sticky; top: var(--header); height: calc(100svh - var(--header)); overflow: hidden; background: var(--mist); }
+.window-scene { position: relative; height: 210vh; height: 210svh; }
+.window { position: sticky; top: var(--header); height: calc(100vh - var(--header)); height: calc(100svh - var(--header)); overflow: hidden; background: var(--mist); }
 .window__title {
   position: absolute; z-index: 1; left: 0; right: 0; top: 4%; text-align: center; padding: 0 var(--pad);
   font-size: clamp(34px, 8.6vw, 62px); line-height: 1.04; color: var(--ink); text-wrap: balance;
@@ -502,7 +502,7 @@ html:not(.js) .window__card { position: relative; opacity: 1; transform: none; l
 @media (min-width: 600px) and (max-width: 959.98px) {
   .welcome__sign { width: 40%; }
   .g--tour .house__tour { width: 44%; }
-  .stage__media { height: 46svh; }
+  .stage__media { height: 46vh; height: 46svh; }
   .window__card { right: auto; max-width: 480px; }
 }
 

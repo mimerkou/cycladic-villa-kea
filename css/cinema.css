@@ -8,7 +8,7 @@
 .film { position: relative; height: var(--film-h, 430vh); background: var(--aegean-ink); }
 .film__stage {
   position: sticky; top: var(--hdr, var(--header)); overflow: hidden;
-  height: calc(100svh - var(--hdr, var(--header)));
+  height: calc(100vh - var(--hdr, var(--header))); height: calc(100svh - var(--hdr, var(--header)));
   background: #0B1A2B; color: #fff; isolation: isolate;
 }
 .film__frame { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; transform-origin: 0 0; backface-visibility: hidden; }
@@ -33,7 +33,7 @@ html.cine .film__frame img { object-fit: fill; }
 /* Opening text (frame 0) */
 .film__intro, .film__cap { text-shadow: 0 1px 28px rgba(8, 22, 38, .42), 0 0 2px rgba(8, 22, 38, .18); }
 .film__intro {
-  position: absolute; z-index: 4; left: var(--pad); right: var(--pad); bottom: clamp(92px, 13svh, 132px);
+  position: absolute; z-index: 4; left: var(--pad); right: var(--pad); bottom: clamp(92px, 13vh, 132px); bottom: clamp(92px, 13svh, 132px);
   max-width: 760px; will-change: opacity, transform;
 }
 .film__intro .kicker { color: rgba(255, 255, 255, .86); margin-bottom: 14px; }
@@ -46,7 +46,7 @@ html[lang="el"] .film__title { font-size: clamp(34px, 9vw, 44px); line-height: 1
 
 /* Captions: one per frame, bottom-left, like a title card */
 .film__cap {
-  position: absolute; z-index: 4; left: var(--pad); right: var(--pad); bottom: clamp(92px, 13svh, 132px);
+  position: absolute; z-index: 4; left: var(--pad); right: var(--pad); bottom: clamp(92px, 13vh, 132px); bottom: clamp(92px, 13svh, 132px);
   max-width: 560px; visibility: hidden; opacity: 0; will-change: opacity, transform;
 }
 .film__cap-k { display: flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255, 255, 255, .82); }
@@ -58,7 +58,7 @@ html[lang="el"] .film__cap-t { font-size: clamp(27px, 6.4vw, 48px); line-height:
 
 /* Bottom rail: counter, progress, coordinates */
 .film__rail {
-  position: absolute; z-index: 4; left: var(--pad); right: var(--pad); bottom: clamp(26px, 4.4svh, 44px);
+  position: absolute; z-index: 4; left: var(--pad); right: var(--pad); bottom: clamp(26px, 4.4vh, 44px); bottom: clamp(26px, 4.4svh, 44px);
   display: flex; align-items: center; gap: 16px; font-size: 12px; letter-spacing: .14em; color: rgba(255, 255, 255, .8);
   font-variant-numeric: tabular-nums;
 }
@@ -69,7 +69,7 @@ html[lang="el"] .film__cap-t { font-size: clamp(27px, 6.4vw, 48px); line-height:
 .film__geo { white-space: nowrap; opacity: .72; display: none; }
 
 /* Scroll cue (only before the first move) */
-.film__cue { position: absolute; z-index: 4; right: var(--pad); bottom: clamp(56px, 8.4svh, 84px); display: flex; flex-direction: column; align-items: center; gap: 10px;
+.film__cue { position: absolute; z-index: 4; right: var(--pad); bottom: clamp(56px, 8.4vh, 84px); bottom: clamp(56px, 8.4svh, 84px); display: flex; flex-direction: column; align-items: center; gap: 10px;
   font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255, 255, 255, .82); pointer-events: none; }
 .film__cue span { position: relative; width: 1px; height: 46px; background: rgba(255, 255, 255, .25); overflow: hidden; }
 .film__cue span::after { content: ""; position: absolute; left: 0; top: -40%; width: 1px; height: 40%; background: #fff; animation: cue 2.2s cubic-bezier(.6, 0, .3, 1) infinite; }
@@ -94,7 +94,7 @@ html.js .film__frame:first-child img { animation: film-in 2.4s var(--ease-out) b
   .film__geo { display: inline; }
 }
 @media (min-width: 960px) {
-  .film__intro, .film__cap { bottom: clamp(110px, 15svh, 150px); }
+  .film__intro, .film__cap { bottom: clamp(110px, 15vh, 150px); bottom: clamp(110px, 15svh, 150px); }
 }
 
 /* A shorter film on phones: fewer screens of scrolling for the same story */
@@ -128,12 +128,12 @@ html.cine [data-drift] img { will-change: transform; }
 .rcard__media > picture img, .gfig__btn > picture img, .detail__img > picture img, .estate__slot > picture img { width: 100%; height: 100%; object-fit: cover; }
 
 /* Contact: a closing shot between "How it works" and the other ways to reach us */
-.cshot { position: relative; min-height: clamp(420px, 78svh, 760px); display: flex; align-items: flex-end; overflow: hidden; background: var(--aegean-ink); color: #fff; }
+.cshot { position: relative; min-height: clamp(420px, 78vh, 760px); min-height: clamp(420px, 78svh, 760px); display: flex; align-items: flex-end; overflow: hidden; background: var(--aegean-ink); color: #fff; }
 .cshot__fig { position: absolute; inset: 0; margin: 0; }
 .cshot__fig picture, .cshot__fig img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .cshot__fig img { object-position: 50% 55%; }
 .cshot__shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(8, 22, 38, .72) 0%, rgba(8, 22, 38, .2) 46%, rgba(8, 22, 38, 0) 70%); }
-.cshot__text { position: relative; z-index: 2; width: 100%; padding-bottom: clamp(40px, 8svh, 88px); text-shadow: 0 1px 28px rgba(8, 22, 38, .4); }
+.cshot__text { position: relative; z-index: 2; width: 100%; padding-bottom: clamp(40px, 8vh, 88px); padding-bottom: clamp(40px, 8svh, 88px); text-shadow: 0 1px 28px rgba(8, 22, 38, .4); }
 .cshot__text .kicker { color: rgba(255, 255, 255, .86); margin-bottom: 14px; }
 .cshot__t { max-width: 15em; font-family: var(--f-display); font-weight: 300; font-size: clamp(32px, 4.6vw, 64px); line-height: 1.04; letter-spacing: -.02em; text-wrap: balance; }
 .cshot + .other { margin-top: 0; }
@@ -182,7 +182,7 @@ html.film-top .site-header .lang span { color: rgba(255, 255, 255, .4); }
 html.film-top .site-header .nav .btn--sm { background: #fff; color: var(--ink); }
 html.film-top .site-header .nav .btn--sm:hover, html.film-top .site-header .nav .btn--sm:focus-visible { color: #fff; }
 html.film-top .site-header :focus-visible { outline-color: #fff; }
-html.film-top .film__stage { top: 0; height: 100svh; }
+html.film-top .film__stage { top: 0; height: 100vh; height: 100svh; }
 html.film-top .film__frame:first-child img { animation-name: film-in-top; }
 @keyframes film-in-top { from { filter: brightness(.62) saturate(.85); } to { filter: none; } }
 
@@ -201,7 +201,38 @@ html.film-top.header-solid .site-header .nav .btn--sm, html.film-top.menu-open .
 html.film-top.header-solid .site-header :focus-visible { outline-color: var(--aegean); }
 
 /* Reduced motion: the still sits under the header in the same way */
-html.film-top.cine-still .film__stage { height: 100svh; }
+html.film-top.cine-still .film__stage { height: 100vh; height: 100svh; }
 
 /* Villa estate (v6.4): the 4096 px photo; the zoom out starts on the house, not on the middle of the frame */
 .estate__img { transform-origin: 58% 46%; }
+
+/* ==========================================================================
+   v6.5 — every device
+   ========================================================================== */
+/* Lite mode (weaker devices, or when the film plays below ~30 fps): same camera moves, cheaper drawing.
+   The closer photo fades in without the soft-edge mask, and the shade drops the lens vignette. */
+html.cine-lite .film__frame.is-incoming { -webkit-mask-image: none; mask-image: none; }
+html.cine-lite .film__shade {
+  background:
+    radial-gradient(120% 95% at 0% 100%, rgba(8, 22, 38, .7) 0%, rgba(8, 22, 38, .34) 40%, rgba(8, 22, 38, 0) 68%),
+    linear-gradient(0deg, rgba(8, 22, 38, .42) 0%, rgba(8, 22, 38, 0) 34%);
+}
+html.cine-lite .film__intro, html.cine-lite .film__cap { text-shadow: 0 1px 10px rgba(8, 22, 38, .5); }
+html.cine-lite .film__frame:first-child img { animation: none; }
+
+/* A film that could not start shows its first photo as a still, never an empty stage */
+.film.film--still { height: auto; }
+.film--still .film__stage { position: relative; top: 0; }
+.film--still .film__frame img { object-fit: cover !important; }
+.film--still .film__frame + .film__frame, .film--still .film__cap, .film--still .film__cue, .film--still .film__rail { display: none; }
+
+/* ==========================================================================
+   v6.6
+   ========================================================================== */
+/* Mobile menu button: white over the film, like the rest of the transparent header; back to ink once the header is solid */
+html.film-top .site-header .menu-btn { color: #fff; transition: color .45s var(--ease-soft); }
+html.film-top.header-solid .site-header .menu-btn, html.film-top.menu-open .site-header .menu-btn { color: var(--ink); }
+
+/* A soft, even dark veil over every film photo: just enough contrast for the white text, the photo stays bright.
+   It sits under the bottom-left shade, so the text corner gets a little more and the rest only a touch. */
+.film__shade::before { content: ""; position: absolute; inset: 0; background: rgba(8, 22, 38, .16); }

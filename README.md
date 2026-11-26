@@ -99,4 +99,16 @@ How it works: `js/cinema.js` + `css/cinema.css`, with GSAP 3 + ScrollTrigger ser
 - **The villa, The estate:** the zoom out now uses `estate-zoom` (from `villa-kea-zoom-4096.webp`, 4096 × 3072, the same aerial at much higher resolution), served up to 4096 px because the scene starts 2.3× closer. The zoom starts on the house (transform-origin 58% 46%).
 - **Inside, 04:** "The bathrooms" / «Τα μπάνια».
 
-Version: v6.4-draft (cinematic, local) · previous: v5.13 (home, The villa, Location, Contact, Privacy, 404)
+### v6.5 — every device
+- **Older browsers** (Chrome/Edge < 108, Firefox < 101, Safari < 15.4) did not know `svh`/`dvh` and dropped those lines: the film stage had no height and the hero was an empty navy block. Every `svh`/`dvh` line now has a `vh` line right before it (30 places, all CSS files). New code: always write the `vh` line first.
+- **Never an empty hero:** if a film fails to start, its first photo shows as a still (`.film--still`).
+- **Lite mode** (`html.cine-lite`) for weaker devices: no soft-edge mask, no lens vignette, a clean crossfade when the closer photo nearly fills the screen. On from the start for very low-end hardware or Data Saver; switches on by itself when the film plays below ~30 fps. Test it with `?lite=1`.
+- **Reduced motion** is unchanged on purpose: with Windows "Animation effects" off (or "Reduce motion" on a Mac/phone), the browser asks for less motion and each film shows its first photo as a still.
+
+### v6.6
+- **Mobile menu button** (burger + "Menu") is white over the film, like the rest of the transparent header, and ink once the header turns solid.
+- **Films:** a soft, even dark veil (`rgba(8, 22, 38, .16)`) over every photo, for a little more contrast under the white text.
+- **Location, 02 Distances:** nearest sandy beach 15 min (was 20); the desktop scale runs 0′–20′ (was 0′–30′), bars recalculated.
+- **Contact form:** the "Choose your dates above" summary line is gone; the button sits in its place, "Not a booking · nothing to pay" stays below it.
+
+Version: v6.6-draft (cinematic) · previous: v5.13 (home, The villa, Location, Contact, Privacy, 404)

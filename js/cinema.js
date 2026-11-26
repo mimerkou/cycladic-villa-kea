@@ -20,6 +20,34 @@
   if (G && ST) G.registerPlugin(ST);
   root.classList.add(reduce ? 'cine-still' : 'cine');
 
+  /* Lite mode (v6.5) for weaker devices: same film, without the soft-edge mask and the lens vignette,
+     which are the costly parts for an older graphics chip. On from the start for low-end hardware or
+     Data Saver; otherwise it switches on by itself if the film plays below ~30 fps. ?lite=1 forces it (for testing). */
+  var nav = window.navigator || {};
+  var lite = /[?&]lite=1/.test(location.search) ||
+    (nav.hardwareConcurrency && nav.hardwareConcurrency <= 2) ||
+    (nav.deviceMemory && nav.deviceMemory <= 2) ||
+    (nav.connection && nav.connection.saveData);
+  function goLite() { if (!root.classList.contains('cine-lite')) root.classList.add('cine-lite'); lite = true; }
+  if (lite) goLite();
+  var slow = 0, lastT = 0;
+  function probe(now) {        // called on every rendered film frame
+    if (lite) return;
+    if (lastT && now - lastT < 200) {            // ignore gaps (tab hidden, scrolling paused)
+      slow = now - lastT > 34 ? slow + 1 : Math.max(0, slow - 1);
+      if (slow > 24) goLite();
+    }
+    lastT = now;
+  }
+
+  /* If anything in a film fails, show its first photo as a still instead of an empty stage. */
+  function still(sec) {
+    sec.classList.add('film--still');
+    var frames = sec.querySelectorAll('.film__frame');
+    for (var i = 0; i < frames.length; i++) { frames[i].removeAttribute('style'); var im = frames[i].querySelector('img'); if (im) im.removeAttribute('style'); }
+    var intro = sec.querySelector('.film__intro'); if (intro) intro.removeAttribute('style');
+  }
+
   var clamp = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
   var smooth = function (a, b, v) { var t = clamp((v - a) / (b - a)); return t * t * (3 - 2 * t); };
   var inOut = function (t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };   // camera travel
@@ -112,6 +140,7 @@
     if (!this.W) return;
     if (!force && Math.abs(p - this.p) < 1e-5) return;
     this.p = p;
+    probe(window.performance && performance.now ? performance.now() : Date.now());
     var W = this.W, H = this.H, seg = this.segment(p), k = seg.k, t = seg.t;
     var f = this.frames[k], last = k === this.n - 1;
     // Camera: zoom grows evenly (exponential); the target point glides to the centre of the screen.
@@ -135,7 +164,8 @@
       var so = (W * sc + 2) / W;
       el.style.transform = 'translate3d(' + (x - 1).toFixed(2) + 'px,' + (y - 1).toFixed(2) + 'px,0) scale(' + so.toFixed(5) + ')';
       if (j === k + 1) {
-        el.style.opacity = fadeIn.toFixed(3);
+        // Lite mode has no soft edge, so the closer photo only appears once it nearly fills the screen: a clean crossfade.
+        el.style.opacity = (lite ? fadeIn * smooth(.7, .97, sc) : fadeIn).toFixed(3);
         // Soft edge while the closer photo is smaller than the screen; it hardens only as it fills the frame.
         el.style.setProperty('--feather', (6 + 94 * smooth(.5, 1.08, sc)).toFixed(1) + '%');
         el.classList.add('is-incoming');
@@ -172,6 +202,10 @@
   var films = [];
   if (!reduce) {
     Array.prototype.forEach.call(document.querySelectorAll('[data-film]'), function (sec) {
+      try { initFilm(sec); } catch (err) { still(sec); if (window.console) console.warn('Film fell back to a still:', err); }
+    });
+  }
+  function initFilm(sec) {
       var film = new Film(sec);
       films.push(film);
       // Frames after the first load once the page has settled, so they are ready before the camera arrives.
@@ -195,7 +229,6 @@
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
       }
-    });
   }
 
   /* ---------------------------------------------------------------- Drift */

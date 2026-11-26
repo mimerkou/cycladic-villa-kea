@@ -540,6 +540,7 @@
     setL('name', nm || d.lBlank); ln.classList.toggle('is-blank', !nm);
     var m = msgIn.value.trim();
     setL('msg', m ? '“' + (m.length > 110 ? m.slice(0, 107) + '…' : m) + '”' : '');
+    if (!mini) return;   // v6.6: the summary line above the button was removed
     mini.removeAttribute('data-i18n');
     mini.textContent = n ? rangeText() + ' · ' + n + ' ' + (n === 1 ? d.night1 : d.nightN) + ' · ' + gVal + ' ' + (gVal === 1 ? d.guest1 : d.guestN) : d.summaryEmpty;
   }

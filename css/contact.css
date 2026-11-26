@@ -213,7 +213,7 @@ a.other__v:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
   .form__row { grid-template-columns: 1fr 1fr; }
   .cal { padding: 16px 18px 14px; }
   .form__btn { width: auto; }
-  .form__send { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4px 20px; }
+  .form__send { display: block; }   /* v6.6: the button now sits where the date summary was, on the left */
   .form__mini { margin: 0; }
   .form__note { grid-column: 1 / -1; text-align: left; margin-top: 4px; }
   .other__list { grid-template-columns: 1fr 1fr; column-gap: 28px; }

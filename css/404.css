@@ -45,9 +45,9 @@ html[lang="el"] .nf__title { font-size: clamp(34px, 9.6vw, 44px); }
 }
 
 @media (min-width: 960px) {
-  .nf { padding: 0; min-height: calc(100svh - var(--header)); display: flex; align-items: stretch; }
+  .nf { padding: 0; min-height: calc(100vh - var(--header)); min-height: calc(100svh - var(--header)); display: flex; align-items: stretch; }
   .nf__grid { width: 100%; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(48px, 6vw, 112px); align-items: center; padding-block: 48px 64px; }
-  .nf__media { order: 0; aspect-ratio: auto; height: min(72svh, 680px); }
+  .nf__media { order: 0; aspect-ratio: auto; height: min(72vh, 680px); height: min(72svh, 680px); }
   .nf__num { left: 32px; bottom: 10px; font-size: clamp(120px, 11vw, 168px); }
   .nf__title { font-size: clamp(52px, 5.2vw, 76px); }
   html[lang="el"] .nf__title { font-size: clamp(44px, 4.4vw, 64px); }
