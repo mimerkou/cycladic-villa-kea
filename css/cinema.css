@@ -236,3 +236,18 @@ html.film-top.header-solid .site-header .menu-btn, html.film-top.menu-open .site
 /* A soft, even dark veil over every film photo: just enough contrast for the white text, the photo stays bright.
    It sits under the bottom-left shade, so the text corner gets a little more and the rest only a touch. */
 .film__shade::before { content: ""; position: absolute; inset: 0; background: rgba(8, 22, 38, .16); }
+
+/* Home · "Ioulida, just below" on phones and tablets (v6.6.1).
+   The settle move was tuned for the old portrait photo; with the wide sunset photo (42) it lifted the image
+   12% and left a band of the section background under the card, and Ioulida sat behind the card.
+   Now the photo is framed on the village, grows a little as the window opens, and always reaches the bottom edge:
+   at the end Ioulida sits in the upper third, above the card. */
+@media (max-width: 959.98px) {
+  .window__frame img {
+    object-position: 4% 50% !important;
+    transform: translateY(calc((1 - var(--w, 0)) * 19% - var(--w, 0) * 24%)) scale(calc(1.14 + var(--w, 0) * .36));
+  }
+}
+@media (max-width: 959.98px) and (max-height: 780px) {
+  .window__frame img { transform: translateY(calc((1 - var(--w, 0)) * 19% - var(--w, 0) * 24%)) scale(calc(1.14 + var(--w, 0) * .36)); }
+}

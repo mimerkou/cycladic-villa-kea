@@ -111,4 +111,7 @@ How it works: `js/cinema.js` + `css/cinema.css`, with GSAP 3 + ScrollTrigger ser
 - **Location, 02 Distances:** nearest sandy beach 15 min (was 20); the desktop scale runs 0′–20′ (was 0′–30′), bars recalculated.
 - **Contact form:** the "Choose your dates above" summary line is gone; the button sits in its place, "Not a booking · nothing to pay" stays below it.
 
-Version: v6.6-draft (cinematic) · previous: v5.13 (home, The villa, Location, Contact, Privacy, 404)
+### v6.6.1
+- **Home · "Ioulida, just below" on phones:** the photo no longer lifts off the bottom edge (no band of section background under the card), and it is framed on the village, so Ioulida shows in the arch and, at the end, above the card. `kv-42` now also in 2048 px.
+
+Version: v6.6.1-draft (cinematic) · previous: v5.13 (home, The villa, Location, Contact, Privacy, 404)
