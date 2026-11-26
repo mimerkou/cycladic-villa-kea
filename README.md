@@ -114,4 +114,8 @@ How it works: `js/cinema.js` + `css/cinema.css`, with GSAP 3 + ScrollTrigger ser
 ### v6.6.1
 - **Home · "Ioulida, just below" on phones:** the photo no longer lifts off the bottom edge (no band of section background under the card), and it is framed on the village, so Ioulida shows in the arch and, at the end, above the card. `kv-42` now also in 2048 px.
 
-Version: v6.6.1-draft (cinematic) · previous: v5.13 (home, The villa, Location, Contact, Privacy, 404)
+### v6.6.2
+- **Link previews (Viber, WhatsApp, Facebook):** `og:url` and `og:image` now point to `https://cycladic-villa-kea.netlify.app`, because cycladicvillakea.com does not exist yet and the preview image could not be fetched.
+  **When the site moves to its domain:** replace `https://cycladic-villa-kea.netlify.app` with `https://cycladicvillakea.com` in the `og:url` / `og:image` lines of every page (11 lines, 6 pages). The `info@cycladicvillakea.com` addresses were not touched.
+
+Version: v6.6.2-draft (cinematic) · previous: v5.13 (home, The villa, Location, Contact, Privacy, 404)
